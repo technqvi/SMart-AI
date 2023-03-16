@@ -1,0 +1,58 @@
+[
+  {
+    "name": "sla",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "product_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "brand",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "service_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "incident_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "open_to_close_hour",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "response_to_resolved_hour",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "severity",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  }
+]
