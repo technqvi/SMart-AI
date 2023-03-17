@@ -1,5 +1,19 @@
 [
   {
+    "name": "severity_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "severity_name",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
     "name": "sla",
     "mode": "NULLABLE",
     "type": "STRING",
@@ -45,13 +59,6 @@
     "name": "response_to_resolved_hour",
     "mode": "NULLABLE",
     "type": "FLOAT",
-    "description": null,
-    "fields": []
-  },
-  {
-    "name": "severity",
-    "mode": "NULLABLE",
-    "type": "INTEGER",
     "description": null,
     "fields": []
   }
