@@ -1,0 +1,13 @@
+CREATE OR REPLACE MODEL
+pongthorn.SMartML.model_bt_multiclasses_incident
+OPTIONS(model_type='BOOSTED_TREE_CLASSIFIER', auto_class_weights=TRUE,
+INPUT_LABEL_COLS = ["label_multi_severity"]
+)
+AS
+SELECT  sla, product_type,brand, service_type,incident_type,
+open_to_close_hour,response_to_resolved_hour,label_multi_severity
+FROM pongthorn.SMartML.train_incident
+
+
+
+pongthorn.SMartML.model_bt_multiclasses_incident

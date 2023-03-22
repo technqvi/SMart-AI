@@ -1,0 +1,58 @@
+CREATE OR REPLACE MODEL advdata.ulb_fraud_detection 
+TRANSFORM(
+    * EXCEPT(Amount),
+    SAFE.LOG(Amount) AS log_amount
+)
+OPTIONS(
+    INPUT_LABEL_COLS=['class'],
+    AUTO_CLASS_WEIGHTS = TRUE,
+    DATA_SPLIT_METHOD='seq',
+    DATA_SPLIT_COL='Time',
+    MODEL_TYPE='logistic_reg'
+) AS
+transform all excpt Amount because we tranflow amount with log manulally
+
+SELECT 
+ *
+FROM `bigquery-public-data.ml_datasets.ulb_fraud_detection`
+
+
+
+
+
+CREATE OR REPLACE MODEL
+pongthorn.SMartML.model_bt_multiclasses_incident
+OPTIONS(model_type='BOOSTED_TREE_CLASSIFIER', auto_class_weights=TRUE,
+INPUT_LABEL_COLS = ["label_multi_severity"]
+)
+AS
+SELECT  sla, product_type,brand, service_type,incident_type,
+open_to_close_hour,response_to_resolved_hour,label_multi_severity
+FROM pongthorn.SMartML.train_incident
+
+
+
+pongthorn.SMartML.model_bt_multiclasses_incident
+
+
+
+
+SELECT  predicted_label_multi_severity as predicted, label_multi_severity as actual
+FROM
+  ML.PREDICT(MODEL `pongthorn.SMartML.model_bt_multiclasses_incident`,
+   (
+    SELECT  *
+    FROM  `pongthorn.SMartML.test_incident`
+   )
+  ), unnest(predicted_label_multi_severity_probs) as p
+where p.label = 1 and p.prob > 0.5
+
+
+
+
+SELECT predicted_label_multi_severity	, predicted_label_multi_severity_probs
+FROM ML.PREDICT( MODEL pongthorn.SMartML.model_bt_multiclasses_incident,
+ (SELECT * FROM `pongthorn.SMartML.test_incident` )
+)
+
+
