@@ -61,5 +61,19 @@
     "type": "FLOAT",
     "description": null,
     "fields": []
+  },
+  {
+    "name": "label_multi_severity",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "label_binary_severity",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
   }
 ]
