@@ -1,0 +1,7 @@
+{"sla":"24x7 4Hrs Response Time",
+  "product_type":"Server",
+  "brand": "VMWare",
+  "service_type":"Incident",
+  "incident_type":"General Incident",
+  "open_to_close_hour":10,
+  "response_to_resolved_hour":6}
