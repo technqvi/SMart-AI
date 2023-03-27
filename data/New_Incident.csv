@@ -1,40 +1,44 @@
-id,severity_id,severity_name,sla,product_type,brand,service_type,incident_type,imported_at,open_to_close_hour,response_to_resolved_hour
-2465,3,Minor,24x7 4Hrs Response Time,Software,NetApp,Incident,General Incident,2023-03-21 18:29:01.995333,24.766666666666666,24.55
-2474,4,Cosmatic,24x7 4Hrs Response Time,Software,VMWare,Request,General Incident,2023-03-21 18:29:01.995333,1.1833333333333333,0.9166666666666666
-2501,2,Major,24x7 4Hrs Resolution Time,Software,VMWare,Incident,Software,2023-03-21 18:29:01.995333,5.333333333333333,4.933333333333334
-2490,2,Major,24x7 4Hrs Resolution Time,Storage,HPE,Incident,Hard Disk Drive Failure,2023-03-21 18:29:01.995333,26.133333333333333,4.7
-2479,2,Major,24x7 4Hrs Response Time,Storage,NetApp,Incident,Hard Disk Drive Failure,2023-03-21 18:29:01.995333,128.98333333333332,0.38333333333333336
-2476,2,Major,24x7 4Hrs Resolution Time,Hardware,Oracle,Incident,Hard Disk Drive Failure,2023-03-21 18:29:01.995333,29.0,23.25
-2477,2,Major,24x7 4Hrs Resolution Time,Software,VMWare,Incident,Software,2023-03-21 18:29:01.995333,3.35,3.216666666666667
-2496,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,2023-03-21 18:29:01.995333,3.5,3.4833333333333334
-2493,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,2023-03-21 18:29:01.995333,9.0,8.983333333333333
-2492,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,2023-03-21 18:29:01.995333,9.0,8.983333333333333
-2489,4,Cosmatic,24x7 4Hrs Resolution Time,Storage,HPE,Request,Upgrade Software,2023-03-21 18:29:01.995333,7.0,6.983333333333333
-2502,3,Minor,24x7 6Hrs Resolution Time,Software,SAPB1,Request,General Incident,2023-03-21 18:29:01.995333,313.0,313.0
-2341,2,Major,24x7 4Hrs Resolution Time,Software,Veeam,Incident,Software,2023-03-21 18:29:01.995333,627.7833333333333,627.5666666666667
-2507,4,Cosmatic,24x7 4Hrs Response Time,Software,VMWare,Request,General Incident,2023-03-21 18:29:01.995333,3.5833333333333335,2.35
-2500,3,Minor,24x7 4Hrs Response Time,Storage,NetApp,Incident,General Incident,2023-03-21 18:29:01.995333,12.066666666666666,1.65
-2434,2,Major,24x7 4Hrs Resolution Time,Hardware,Oracle,Incident,Hard Disk Drive Failure,2023-03-21 18:29:01.995333,125.0,119.25
-2433,2,Major,24x7 4Hrs Resolution Time,Hardware,Oracle,Incident,Hard Disk Drive Failure,2023-03-21 18:29:01.995333,125.0,119.25
-2452,2,Major,24x7 4Hrs Response Time,Server,HPE,Incident,Software,2023-03-21 18:29:01.995333,4.5,4.0
-2491,3,Minor,24x7 4Hrs Resolution Time,Storage,NetApp,Request,Hard Disk Drive Failure,2023-03-21 18:29:01.995333,7.666666666666667,7.666666666666667
-2495,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,2023-03-21 18:29:01.995333,11.0,10.983333333333333
-2488,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,2023-03-21 18:29:01.995333,0.2,0.18333333333333332
-2486,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,2023-03-21 18:29:01.995333,0.23333333333333334,0.21666666666666667
-2487,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,2023-03-21 18:29:01.995333,0.08333333333333333,0.06666666666666667
-2480,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,2023-03-21 18:29:01.995333,0.15,0.13333333333333333
-2504,3,Minor,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,2023-03-21 18:29:01.995333,5.916666666666667,5.916666666666667
-2505,3,Minor,24x7 6Hrs Resolution Time,Software,eUnite,Incident,Software,2023-03-21 18:29:01.995333,4.316666666666666,4.3
-2494,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,2023-03-21 18:29:01.995333,20.0,19.983333333333334
-2506,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,2023-03-21 18:29:01.995333,80.03333333333333,80.01666666666667
-2509,3,Minor,24x7 6Hrs Resolution Time,Software,CIMCO-CMMS,Incident,Software,2023-03-22 21:00:07.048396,750.25,73.28333333333333
-2508,3,Minor,24x7 6Hrs Resolution Time,Software,eUnite,Incident,Software,2023-03-22 21:00:07.048396,1.75,1.7333333333333334
-2498,3,Minor,24x7 4Hrs Resolution Time,Storage,NetApp,Incident,Hard Disk Drive Failure,2023-03-22 21:00:07.048396,13.666666666666666,13.666666666666666
-2514,4,Cosmatic,24x7 4Hrs Response Time,Storage,NetApp,Request,Software,2023-03-23 21:00:06.601040,0.5,0.5
-2511,3,Minor,24x7 6Hrs Resolution Time,Storage,YIP,Incident,General Incident,2023-03-23 21:00:06.601040,22.266666666666666,22.133333333333333
-2519,2,Major,24x7 4Hrs Resolution Time,Server,HPE,Incident,Hard Disk Drive Failure,2023-03-24 21:00:06.268301,7.166666666666667,7.0
-2518,2,Major,24x7 4Hrs Resolution Time,Server,HPE,Incident,Hard Disk Drive Failure,2023-03-24 21:00:06.268301,7.166666666666667,7.0
-2520,2,Major,24x7 4Hrs Resolution Time,Server,HPE,Incident,Hard Disk Drive Failure,2023-03-24 21:00:06.268301,7.166666666666667,7.0
-2516,3,Minor,24x7 4Hrs Resolution Time,Firewall,CheckPoint,Request,General Incident,2023-03-24 21:00:06.268301,24.483333333333334,24.016666666666666
-2472,2,Major,24x7 6Hrs Response Time,Software,Veritas,Incident,Backup Failure,2023-03-24 21:00:06.268301,141.46666666666667,141.31666666666666
-2517,2,Major,24x7 4Hrs Resolution Time,Server,HPE,Incident,Memory Failure,2023-03-24 21:00:06.268301,6.166666666666667,6.0
+id,severity_id,severity_name,sla,product_type,brand,service_type,incident_type,open_to_close_hour,response_to_resolved_hour,imported_at
+2452,1,Critical,24x7 4Hrs Response Time,Server,HPE,Incident,Software,4.5,4,27:09.0
+2517,2,Major,24x7 4Hrs Resolution Time,Server,HPE,Incident,Memory Failure,6.166666667,6,27:09.0
+2519,2,Major,24x7 4Hrs Resolution Time,Server,HPE,Incident,Hard Disk Drive Failure,7.166666667,7,27:09.0
+2518,2,Major,24x7 4Hrs Resolution Time,Server,HPE,Incident,Hard Disk Drive Failure,7.166666667,7,27:09.0
+2520,2,Major,24x7 4Hrs Resolution Time,Server,HPE,Incident,Hard Disk Drive Failure,7.166666667,7,27:09.0
+2168,2,Major,24x7 4Hrs Response Time,Server,Cisco,Incident,Fan Failure,2137.5,2016.883333,27:09.0
+2490,2,Major,24x7 4Hrs Resolution Time,Storage,HPE,Incident,Hard Disk Drive Failure,26.13333333,4.7,27:09.0
+2479,2,Major,24x7 4Hrs Response Time,Storage,NetApp,Incident,Hard Disk Drive Failure,128.9833333,0.383333333,27:09.0
+2523,2,Major,24x7 4Hrs Response Time,Storage,NetApp,Incident,Hard Disk Drive Failure,8.916666667,8.716666667,27:09.0
+2500,3,Minor,24x7 4Hrs Response Time,Storage,NetApp,Incident,General Incident,12.06666667,1.65,27:09.0
+2491,3,Minor,24x7 4Hrs Resolution Time,Storage,NetApp,Request,Hard Disk Drive Failure,7.666666667,7.666666667,27:09.0
+2498,3,Minor,24x7 4Hrs Resolution Time,Storage,NetApp,Incident,Hard Disk Drive Failure,13.66666667,13.66666667,27:09.0
+2511,1,Critical,24x7 6Hrs Resolution Time,Storage,YIP,Incident,General Incident,22.26666667,22.13333333,27:09.0
+2489,4,Cosmatic,24x7 4Hrs Resolution Time,Storage,HPE,Request,Upgrade Software,7,6.983333333,27:09.0
+2514,4,Cosmatic,24x7 4Hrs Response Time,Storage,NetApp,Request,Software,0.5,0.5,27:09.0
+2516,3,Minor,24x7 4Hrs Resolution Time,Firewall,CheckPoint,Request,General Incident,24.48333333,24.01666667,27:09.0
+2476,2,Major,24x7 4Hrs Resolution Time,Hardware,Oracle,Incident,Hard Disk Drive Failure,29,23.25,27:09.0
+2434,2,Major,24x7 4Hrs Resolution Time,Hardware,Oracle,Incident,Hard Disk Drive Failure,125,119.25,27:09.0
+2433,2,Major,24x7 4Hrs Resolution Time,Hardware,Oracle,Incident,Hard Disk Drive Failure,125,119.25,27:09.0
+2501,2,Major,24x7 4Hrs Resolution Time,Software,VMWare,Incident,Software,5.333333333,4.933333333,27:09.0
+2477,2,Major,24x7 4Hrs Resolution Time,Software,VMWare,Incident,Software,3.35,3.216666667,27:09.0
+2341,2,Major,24x7 4Hrs Resolution Time,Software,Veeam,Incident,Software,627.7833333,627.5666667,27:09.0
+2506,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,80.03333333,80.01666667,27:09.0
+2488,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,0.2,0.183333333,27:09.0
+2486,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,0.233333333,0.216666667,27:09.0
+2487,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,0.083333333,0.066666667,27:09.0
+2480,2,Major,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,0.15,0.133333333,27:09.0
+2472,2,Major,24x7 6Hrs Response Time,Software,Veritas,Incident,Backup Failure,141.4666667,141.3166667,27:09.0
+2524,2,Major,8x5 4Hrs Response Time,Software,Microsoft,Incident,General Incident,16,12.5,27:09.0
+2465,3,Minor,24x7 4Hrs Response Time,Software,NetApp,Incident,General Incident,24.76666667,24.55,27:09.0
+2502,3,Minor,24x7 6Hrs Resolution Time,Software,SAPB1,Request,General Incident,313,313,27:09.0
+2504,3,Minor,24x7 6Hrs Resolution Time,Software,SAPB1,Incident,Software,5.916666667,5.916666667,27:09.0
+2505,3,Minor,24x7 6Hrs Resolution Time,Software,eUnite,Incident,Software,4.316666667,4.3,27:09.0
+2509,3,Minor,24x7 6Hrs Resolution Time,Software,CIMCO-CMMS,Incident,Software,750.25,73.28333333,27:09.0
+2508,3,Minor,24x7 6Hrs Resolution Time,Software,eUnite,Incident,Software,1.75,1.733333333,27:09.0
+2474,4,Cosmatic,24x7 4Hrs Response Time,Software,VMWare,Request,General Incident,1.183333333,0.916666667,27:09.0
+2496,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,3.5,3.483333333,27:09.0
+2493,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,9,8.983333333,27:09.0
+2492,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,9,8.983333333,27:09.0
+2507,4,Cosmatic,24x7 4Hrs Response Time,Software,VMWare,Request,General Incident,3.583333333,2.35,27:09.0
+2495,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,11,10.98333333,27:09.0
+2494,4,Cosmatic,24x7 4Hrs Resolution Time,Software,VMWare,Request,Upgrade Software,20,19.98333333,27:09.0
+2522,2,Major,8x5 4Hrs Response Time,Tape Library,HPE,Incident,Controller/Node Failure,12.38333333,12.15,27:09.0
