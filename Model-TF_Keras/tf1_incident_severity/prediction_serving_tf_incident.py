@@ -44,7 +44,10 @@ today = date.today()
 # Yesterday date
 yesterday = today - timedelta(days = 1)
 str_today=today.strftime('%Y-%m-%d')
+
 str_yesterday=yesterday.strftime('%Y-%m-%d')
+#str_yesterday='2000-01-01'
+
 print(f"Get data between {str_yesterday} to {str_today} to predict sevirity level")
 
 
