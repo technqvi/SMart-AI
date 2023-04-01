@@ -1,0 +1,266 @@
+﻿id,incident_id,task_start,task_end,case_id,employee_id,service_team_name,engineer_name
+18,15,3/3/2022 23:09,3/3/2022 23:35,,49,Onsite,Pimonkit Pimonkittikul
+19,16,3/3/2022 17:35,3/3/2022 23:42,,49,Onsite,Pimonkit Pimonkittikul
+20,17,3/3/2022 13:05,3/3/2022 16:42,,49,Onsite,Pimonkit Pimonkittikul
+21,18,4/3/2022 11:21,4/3/2022 18:58,,49,Onsite,Pimonkit Pimonkittikul
+22,19,8/3/2022 12:25,8/3/2022 17:08,,49,Onsite,Pimonkit Pimonkittikul
+23,20,10/3/2022 8:30,10/3/2022 22:17,,49,Onsite,Pimonkit Pimonkittikul
+24,21,11/3/2022 10:50,11/3/2022 14:29,,49,Onsite,Pimonkit Pimonkittikul
+25,22,22/3/2022 0:32,22/3/2022 1:34,,49,Onsite,Pimonkit Pimonkittikul
+39,31,20/3/2022 23:45,22/3/2022 11:24,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+40,32,17/3/2022 23:56,21/3/2022 14:28,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+41,33,3/3/2022 17:37,4/3/2022 11:11,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+42,34,11/3/2022 12:20,,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+304,34,29/3/2022 20:17,,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+43,35,23/3/2022 9:29,23/3/2022 11:57,,49,Onsite,Pimonkit Pimonkittikul
+300,38,30/3/2022 21:00,31/3/2022 0:00,135908499,50,Onsite,Anukool Sabram
+299,39,30/3/2022 21:00,31/3/2022 0:00,135908499,50,Onsite,Anukool Sabram
+47,40,22/3/2022 15:16,22/3/2022 18:25,,49,Onsite,Pimonkit Pimonkittikul
+48,40,23/3/2022 12:00,23/3/2022 17:48,,49,Onsite,Pimonkit Pimonkittikul
+49,41,24/3/2022 10:50,24/3/2022 13:31,,49,Onsite,Pimonkit Pimonkittikul
+50,42,5/1/2022 0:01,5/1/2022 4:00,,49,Onsite,Pimonkit Pimonkittikul
+51,43,5/1/2022 16:41,6/1/2022 14:49,,49,Onsite,Pimonkit Pimonkittikul
+52,44,11/1/2022 15:25,11/1/2022 18:35,,49,Onsite,Pimonkit Pimonkittikul
+53,45,14/3/2022 17:30,14/3/2022 19:45,Yip-ID11016,50,Onsite,Anukool Sabram
+54,46,10/1/2022 14:50,10/1/2022 16:34,,49,Onsite,Pimonkit Pimonkittikul
+55,46,11/1/2022 11:00,11/1/2022 11:34,,49,Onsite,Pimonkit Pimonkittikul
+56,47,13/1/2022 15:37,13/1/2022 18:44,,49,Onsite,Pimonkit Pimonkittikul
+57,48,28/1/2022 11:39,28/1/2022 13:29,,49,Onsite,Pimonkit Pimonkittikul
+58,49,31/1/2022 10:22,31/1/2022 16:40,,49,Onsite,Pimonkit Pimonkittikul
+59,50,18/3/2022 18:00,18/3/2022 22:00,YIT Request ID : 11922,35,Onsite,Tananun Rattanapongumpai
+60,50,21/3/2022 9:00,21/3/2022 11:00,YIT Request ID : 11922,84,Onsite,Tura Klinmala
+61,51,31/1/2022 13:18,31/1/2022 15:17,,49,Onsite,Pimonkit Pimonkittikul
+62,51,31/1/2022 15:17,31/1/2022 16:18,,49,Onsite,Pimonkit Pimonkittikul
+65,56,17/3/2022 18:00,17/3/2022 21:00,136811442,50,Onsite,Anukool Sabram
+67,58,1/2/2022 9:19,1/2/2022 12:12,,49,Onsite,Pimonkit Pimonkittikul
+68,59,17/3/2022 18:00,17/3/2022 21:00,,50,Onsite,Anukool Sabram
+69,60,17/3/2022 18:00,17/3/2022 21:00,136811442,50,Onsite,Anukool Sabram
+70,61,17/3/2022 18:00,17/3/2022 21:00,136811442,50,Onsite,Anukool Sabram
+71,62,17/3/2022 21:00,17/3/2022 21:00,136811442,50,Onsite,Anukool Sabram
+73,63,2/2/2022 11:15,2/2/2022 14:18,,49,Onsite,Pimonkit Pimonkittikul
+74,64,10/2/2022 15:59,10/2/2022 18:54,,49,Onsite,Pimonkit Pimonkittikul
+75,64,10/2/2022 18:59,11/2/2022 19:21,,49,Onsite,Pimonkit Pimonkittikul
+76,65,14/2/2022 9:35,14/2/2022 15:24,,49,Onsite,Pimonkit Pimonkittikul
+77,66,15/2/2022 16:33,15/2/2022 18:30,,49,Onsite,Pimonkit Pimonkittikul
+78,67,18/2/2022 14:35,18/2/2022 17:35,,49,Onsite,Pimonkit Pimonkittikul
+79,68,21/2/2022 16:30,21/2/2022 20:29,,49,Onsite,Pimonkit Pimonkittikul
+80,69,25/2/2022 21:00,25/2/2022 21:54,,49,Onsite,Pimonkit Pimonkittikul
+81,70,25/2/2022 16:21,25/2/2022 17:47,,49,Onsite,Pimonkit Pimonkittikul
+82,71,28/2/2022 9:48,28/2/2022 13:38,,49,Onsite,Pimonkit Pimonkittikul
+257,247,18/3/2022 19:32,21/4/2022 14:03,,84,Server and Storage (Non NetApp),Tura Klinmala
+258,248,30/3/2022 1:33,30/3/2022 3:32,,102,Server and Storage (Non NetApp),Sitthikorn Prakorngjitman
+259,249,2/4/2022 10:06,3/4/2022 15:00,,83,Server and Storage (Non NetApp),Siripong Chalermrojkuldech
+260,249,2/4/2022 12:05,3/4/2022 15:00,,84,Server and Storage (Non NetApp),Tura Klinmala
+261,250,7/2/2022 18:51,13/2/2022 3:03,,84,Server and Storage (Non NetApp),Tura Klinmala
+262,251,11/1/2022 14:33,11/1/2022 21:23,,81,Server and Storage (Non NetApp),Nutthawut Kanjanamuang
+263,251,11/1/2022 16:42,11/1/2022 21:23,,84,Server and Storage (Non NetApp),Tura Klinmala
+264,252,22/2/2022 20:08,23/2/2022 12:42,,101,NetApp Storage and All NetApp Solution,Paradon Srimode
+265,253,27/2/2022 2:55,27/2/2022 18:02,,101,NetApp Storage and All NetApp Solution,Paradon Srimode
+266,254,23/3/2022 10:50,23/3/2022 22:14,,95,NetApp Storage and All NetApp Solution,Boonlert Kawta
+267,255,14/3/2022 11:26,14/3/2022 19:59,,101,Server and Storage (Non NetApp),Paradon Srimode
+268,256,29/3/2022 10:10,29/3/2022 15:50,,102,NetApp Storage and All NetApp Solution,Sitthikorn Prakorngjitman
+269,257,29/3/2022 9:44,29/3/2022 15:50,,102,NetApp Storage and All NetApp Solution,Sitthikorn Prakorngjitman
+270,258,29/3/2022 6:23,29/3/2022 7:35,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+271,259,20/3/2022 11:45,21/3/2022 12:07,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+272,259,22/3/2022 9:30,22/3/2022 11:24,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+273,260,17/3/2022 11:56,21/3/2022 14:28,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+275,262,31/3/2022 8:00,31/3/2022 10:12,,49,Onsite,Pimonkit Pimonkittikul
+508,262,25/4/2022 9:28,25/4/2022 9:28,,49,Onsite,Pimonkit Pimonkittikul
+276,263,31/3/2022 10:38,31/3/2022 12:03,,49,Onsite,Pimonkit Pimonkittikul
+1002,263,18/5/2022 10:51,18/5/2022 10:51,,49,Onsite,Pimonkit Pimonkittikul
+277,264,31/3/2022 9:47,31/3/2022 14:12,,49,Onsite,Pimonkit Pimonkittikul
+278,265,31/3/2022 10:24,31/3/2022 23:13,,114,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Phraiwan Charoenhirunwong
+279,266,22/3/2022 9:03,23/3/2022 15:53,,114,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Phraiwan Charoenhirunwong
+280,267,14/1/2022 16:21,14/1/2022 17:04,,114,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Phraiwan Charoenhirunwong
+281,268,12/1/2022 8:30,12/1/2022 11:33,,65,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Kritsanath Rungjarus
+282,268,31/1/2022 8:30,31/1/2022 11:31,,65,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Kritsanath Rungjarus
+284,269,28/1/2022 11:50,2/2/2022 14:40,,65,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Kritsanath Rungjarus
+286,270,17/2/2022 8:30,17/2/2022 11:27,,64,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Prom Munyuthithum
+287,270,18/2/2022 8:30,18/2/2022 17:08,,64,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Prom Munyuthithum
+290,271,26/2/2022 17:45,26/2/2022 19:20,,65,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Kritsanath Rungjarus
+296,275,1/4/2022 15:00,1/4/2022 17:31,,49,Onsite,Pimonkit Pimonkittikul
+305,294,13/1/2022 21:09,14/4/2022 2:02,,84,Server and Storage (Non NetApp),Tura Klinmala
+306,295,16/1/2022 23:06,17/1/2022 0:11,,50,Onsite,Anukool Sabram
+307,295,17/1/2022 0:11,17/1/2022 3:02,,50,Onsite,Anukool Sabram
+308,296,17/1/2022 21:00,18/1/2022 3:00,,84,Server and Storage (Non NetApp),Tura Klinmala
+309,297,22/1/2022 21:00,23/1/2022 3:00,,84,Server and Storage (Non NetApp),Tura Klinmala
+310,298,13/1/2022 11:14,13/1/2022 21:09,,50,Onsite,Anukool Sabram
+311,299,25/2/2022 11:34,25/2/2022 16:54,,101,NetApp Storage and All NetApp Solution,Paradon Srimode
+312,300,8/2/2022 18:35,9/2/2022 21:10,,50,Onsite,Anukool Sabram
+313,301,1/2/2022 14:31,1/2/2022 19:39,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+314,302,11/2/2022 9:19,11/3/2022 17:03,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+315,303,24/2/2022 14:39,,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+316,303,24/2/2022 16:33,,,49,NetApp Storage and All NetApp Solution,Pimonkit Pimonkittikul
+614,303,28/4/2022 2:03,28/4/2022 2:03,,49,Onsite,Pimonkit Pimonkittikul
+317,304,28/2/2022 10:12,28/2/2022 10:43,,50,Onsite,Anukool Sabram
+318,305,4/3/2022 5:10,4/3/2022 11:54,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+319,306,3/3/2022 17:37,4/3/2022 11:11,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+320,307,12/3/2022 8:13,12/3/2022 15:31,,50,Onsite,Anukool Sabram
+321,308,5/3/2022 12:43,3/5/2022 4:00,,61,NetApp Storage and All NetApp Solution,Kitti Jaruanpahanava
+322,309,16/3/2022 8:54,16/3/2022 17:45,,50,Onsite,Anukool Sabram
+323,310,17/3/2022 23:56,21/3/2022 14:28,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+324,311,16/3/2022 8:54,16/3/2022 17:48,,50,Onsite,Anukool Sabram
+325,312,16/3/2022 8:54,16/3/2022 17:48,,50,Onsite,Anukool Sabram
+326,313,21/3/2022 3:43,21/3/2022 13:17,,50,Onsite,Anukool Sabram
+327,314,23/3/2022 19:57,24/3/2022 12:19,,50,Onsite,Anukool Sabram
+328,315,20/3/2022 23:45,22/3/2022 11:24,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+329,315,22/3/2022 9:00,22/3/2022 11:24,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+330,316,23/3/2022 8:15,24/3/2022 11:41,,50,Onsite,Anukool Sabram
+331,317,23/3/2022 20:15,23/3/2022 22:14,,50,Onsite,Anukool Sabram
+332,318,23/3/2022 11:59,23/3/2022 22:00,,50,Onsite,Anukool Sabram
+333,319,29/3/2022 6:23,29/3/2022 7:35,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+334,320,29/3/2022 9:55,29/3/2022 15:50,,102,NetApp Storage and All NetApp Solution,Sitthikorn Prakorngjitman
+335,321,29/3/2022 9:35,29/3/2022 15:50,,102,NetApp Storage and All NetApp Solution,Sitthikorn Prakorngjitman
+337,322,8/4/2022 10:00,8/4/2022 16:30,,50,Server and Storage (Non NetApp),Anukool Sabram
+342,327,5/4/2022 12:42,5/4/2022 13:46,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+345,330,5/4/2022 17:21,5/4/2022 21:32,,49,Onsite,Pimonkit Pimonkittikul
+349,334,5/4/2022 13:05,5/4/2022 19:49,,49,Onsite,Pimonkit Pimonkittikul
+370,358,12/4/2022 12:10,12/4/2022 12:50,,49,Onsite,Pimonkit Pimonkittikul
+424,358,18/4/2022 12:00,18/4/2022 14:00,,49,Onsite,Pimonkit Pimonkittikul
+428,358,20/4/2022 12:00,20/4/2022 12:02,,49,Onsite,Pimonkit Pimonkittikul
+608,358,27/4/2022 8:30,27/4/2022 11:55,,49,Onsite,Pimonkit Pimonkittikul
+403,390,13/4/2022 18:54,13/4/2022 19:24,,50,Server and Storage (Non NetApp),Anukool Sabram
+404,390,13/4/2022 19:24,14/4/2022 12:45,,84,Server and Storage (Non NetApp),Tura Klinmala
+507,473,19/4/2022 13:10,19/4/2022 17:10,,49,Onsite,Pimonkit Pimonkittikul
+509,474,25/4/2022 11:39,26/4/2022 10:22,138897650,35,Onsite,Tananun Rattanapongumpai
+616,474,26/4/2022 22:00,27/4/2022 2:00,138897650,50,Onsite,Anukool Sabram
+510,475,25/4/2022 11:39,26/4/2022 10:22,138897650,35,Onsite,Tananun Rattanapongumpai
+615,475,28/4/2022 21:00,29/4/2022 3:00,138897650,50,Onsite,Anukool Sabram
+515,479,20/4/2022 16:07,,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+970,479,19/5/2022 13:30,19/5/2022 14:04,,50,Onsite,Anukool Sabram
+612,538,30/4/2022 12:00,30/4/2022 15:43,,49,Onsite,Pimonkit Pimonkittikul
+613,539,28/4/2022 10:07,28/4/2022 10:07,,116,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Suradech   Thongkeaw
+844,539,28/4/2022 10:43,10/5/2022 13:22,,116,CC,Suradech   Thongkeaw
+639,551,5/4/2022 12:43,5/4/2022 13:46,,59,NetApp Storage and All NetApp Solution,Tinnakorn Chaiviboonpol
+640,552,29/4/2022 12:03,29/4/2022 19:26,,84,Server and Storage (Non NetApp),Tura Klinmala
+644,555,3/4/2022 15:05,3/5/2022 14:53,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+811,658,6/5/2022 1:29,6/5/2022 8:28,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+812,660,3/5/2022 13:13,3/5/2022 13:33,,50,NetApp Storage and All NetApp Solution,Anukool Sabram
+814,662,5/5/2022 10:26,5/5/2022 10:26,,49,Onsite,Pimonkit Pimonkittikul
+815,663,5/5/2022 11:19,5/5/2022 23:19,,75,VMWare,Surachet Kumrai
+846,680,27/4/2022 20:54,13/5/2022 16:00,,58,NetApp Storage and All NetApp Solution,Jessadang Panjakhan
+962,680,13/5/2022 12:24,13/5/2022 22:25,,58,NetApp Storage and All NetApp Solution,Jessadang Panjakhan
+1020,680,19/5/2022 15:00,19/5/2022 17:00,,31,Onsite,Songpon Yonpan
+1021,680,20/5/2022 16:00,30/5/2022 11:42,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1247,680,6/6/2022 17:53,6/6/2022 17:53,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1362,680,13/6/2022 19:54,16/6/2022 15:24,,58,NetApp Storage and All NetApp Solution,Jessadang Panjakhan
+854,685,10/5/2022 14:19,10/5/2022 14:26,,35,Service Delivery Manager (SM),Tananun Rattanapongumpai
+947,685,17/5/2022 22:00,18/5/2022 3:00,,50,Onsite,Anukool Sabram
+918,685,12/5/2022 13:45,12/5/2022 14:05,,35,Service Delivery Manager (SM),Tananun Rattanapongumpai
+938,685,13/5/2022 14:30,17/5/2022 8:33,,35,Service Delivery Manager (SM),Tananun Rattanapongumpai
+928,740,10/5/2022 17:41,10/5/2022 22:03,,101,NetApp Storage and All NetApp Solution,Paradon Srimode
+931,742,12/5/2022 15:38,12/5/2022 22:02,,102,NetApp Storage and All NetApp Solution,Sitthikorn Prakorngjitman
+939,747,10/5/2022 18:04,10/5/2022 18:04,,49,Onsite,Pimonkit Pimonkittikul
+956,758,17/5/2022 20:00,17/5/2022 23:01,,6,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Kriangsak Pornpantiva
+955,758,30/3/2022 15:54,30/3/2022 15:54,,49,Onsite,Pimonkit Pimonkittikul
+961,765,18/5/2022 13:16,19/5/2022 9:36,,35,Service Delivery Manager (SM),Tananun Rattanapongumpai
+972,765,20/5/2022 10:12,20/5/2022 14:30,,35,Service Delivery Manager (SM),Tananun Rattanapongumpai
+960,765,18/5/2022 9:38,18/5/2022 10:44,,50,Onsite,Anukool Sabram
+985,765,23/5/2022 10:04,23/5/2022 10:26,,35,Service Delivery Manager (SM),Tananun Rattanapongumpai
+1027,765,24/5/2022 22:00,25/5/2022 3:00,,50,Onsite,Anukool Sabram
+1035,765,26/5/2022 10:30,26/5/2022 10:38,,35,Service Delivery Manager (SM),Tananun Rattanapongumpai
+963,769,22/4/2022 11:10,22/4/2022 11:11,,50,Onsite,Anukool Sabram
+964,769,22/4/2022 11:18,25/5/2022 13:07,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+1100,769,25/5/2022 13:55,25/5/2022 13:55,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+992,779,21/5/2022 21:00,22/5/2022 4:00,,75,VMWare,Surachet Kumrai
+993,779,22/5/2022 21:00,23/5/2022 3:00,,75,VMWare,Surachet Kumrai
+994,780,20/5/2022 22:22,21/5/2022 3:37,,50,Onsite,Anukool Sabram
+1003,789,20/5/2022 14:25,20/5/2022 14:25,,49,Onsite,Pimonkit Pimonkittikul
+1004,790,22/5/2022 13:00,22/5/2022 13:00,,116,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Suradech   Thongkeaw
+1006,791,23/5/2022 14:04,23/5/2022 14:04,,49,Onsite,Pimonkit Pimonkittikul
+1018,800,20/5/2022 15:39,20/5/2022 15:39,,49,Onsite,Pimonkit Pimonkittikul
+1139,800,31/5/2022 8:00,31/5/2022 8:01,,49,Onsite,Pimonkit Pimonkittikul
+1246,800,13/6/2022 14:58,13/6/2022 14:58,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1394,800,21/6/2022 13:37,21/6/2022 13:37,,5,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Jitchanok Nakeiam
+1087,828,27/5/2022 20:07,27/5/2022 21:14,,61,Onsite,Kitti Jaruanpahanava
+1089,829,30/5/2022 15:53,30/5/2022 15:53,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1088,829,30/5/2022 14:04,30/5/2022 14:04,,57,Onsite,Narit Klinchan
+1233,829,8/6/2022 17:34,8/6/2022 17:34,,50,Onsite,Anukool Sabram
+1234,829,9/6/2022 12:00,9/6/2022 20:47,,50,Onsite,Anukool Sabram
+1253,829,14/6/2022 7:26,14/6/2022 7:26,,50,Onsite,Anukool Sabram
+1091,830,27/5/2022 9:23,27/5/2022 9:23,,49,Onsite,Pimonkit Pimonkittikul
+1092,831,27/5/2022 16:36,27/5/2022 16:36,,49,Onsite,Pimonkit Pimonkittikul
+1094,832,30/5/2022 16:19,30/5/2022 16:19,,49,Oracle Cloud H/W,Pimonkit Pimonkittikul
+1093,832,24/5/2022 17:12,24/5/2022 17:12,,49,Onsite,Pimonkit Pimonkittikul
+1095,833,30/5/2022 15:58,30/5/2022 15:58,,49,Onsite,Pimonkit Pimonkittikul
+1129,845,26/5/2022 15:04,26/5/2022 15:04,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+1239,845,10/6/2022 8:57,10/6/2022 8:57,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+1130,845,26/5/2022 16:52,9/6/2022 14:46,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1136,846,30/5/2022 15:14,30/5/2022 17:54,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1169,846,1/6/2022 8:46,1/6/2022 8:46,,65,"Redhat,Linux,CentOS,SUSE,Ubuntu,Oracle Solaris, HP-UX",Kritsanath Rungjarus
+1137,846,30/5/2022 21:52,31/5/2022 14:21,,65,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Kritsanath Rungjarus
+1197,846,9/6/2022 16:15,13/6/2022 14:27,,65,"Redhat,Linux,CentOS,SUSE,Ubuntu,Oracle Solaris, HP-UX",Kritsanath Rungjarus
+1170,846,6/6/2022 15:12,8/6/2022 15:06,,65,"Redhat,Linux,CentOS,SUSE,Ubuntu,Oracle Solaris, HP-UX",Kritsanath Rungjarus
+1319,846,14/6/2022 19:01,16/6/2022 15:50,,65,"Redhat,Linux,CentOS,SUSE,Ubuntu,Oracle Solaris, HP-UX",Kritsanath Rungjarus
+1184,875,7/6/2022 17:58,7/6/2022 17:58,,49,Onsite,Pimonkit Pimonkittikul
+1190,876,1/6/2022 9:01,1/6/2022 9:01,,49,Onsite,Pimonkit Pimonkittikul
+1191,876,1/6/2022 18:18,1/6/2022 18:18,,49,Onsite,Pimonkit Pimonkittikul
+1192,877,1/6/2022 9:04,1/6/2022 9:04,,49,Onsite,Pimonkit Pimonkittikul
+1193,877,1/6/2022 18:27,1/6/2022 18:27,,49,Onsite,Pimonkit Pimonkittikul
+1194,878,1/6/2022 8:46,1/6/2022 8:46,,49,Onsite,Pimonkit Pimonkittikul
+1195,879,1/6/2022 10:05,1/6/2022 10:05,,49,Onsite,Pimonkit Pimonkittikul
+1196,880,7/6/2022 13:45,7/6/2022 13:45,,49,Onsite,Pimonkit Pimonkittikul
+1200,881,5/6/2022 17:28,5/6/2022 17:32,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+1201,881,5/6/2022 18:27,5/6/2022 18:27,,50,Onsite,Anukool Sabram
+1202,881,7/6/2022 13:21,,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1203,881,8/6/2022 19:38,,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1304,881,14/6/2022 20:06,14/6/2022 20:06,,50,Onsite,Anukool Sabram
+1235,882,10/6/2022 11:50,10/6/2022 13:00,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+1236,882,10/6/2022 20:02,11/6/2022 3:36,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+1237,882,11/6/2022 16:01,11/6/2022 19:09,,48,Service Delivery Manager (SM),Thaphakkapong Tannukoolthananan
+1204,882,8/6/2022 14:59,8/6/2022 14:59,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+1238,883,14/6/2022 15:25,14/6/2022 15:29,,50,Onsite,Anukool Sabram
+1303,883,14/6/2022 20:06,14/6/2022 20:06,,50,Onsite,Anukool Sabram
+1216,889,7/6/2022 11:07,7/6/2022 11:07,,116,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Suradech   Thongkeaw
+1217,890,2/6/2022 13:48,2/6/2022 13:48,,49,Onsite,Pimonkit Pimonkittikul
+1218,890,2/6/2022 14:59,2/6/2022 16:45,,49,Onsite,Pimonkit Pimonkittikul
+1219,890,6/6/2022 9:47,6/6/2022 9:47,,49,Onsite,Pimonkit Pimonkittikul
+1222,892,8/6/2022 16:53,8/6/2022 16:53,,49,Onsite,Pimonkit Pimonkittikul
+1227,894,10/6/2022 19:51,10/6/2022 19:51,,84,"Hyperconverged (Nutanix,HPE Simplivity), VDI",Tura Klinmala
+1228,894,11/6/2022 14:13,11/6/2022 14:13,,84,"Hyperconverged (Nutanix,HPE Simplivity), VDI",Tura Klinmala
+1231,895,10/6/2022 16:37,10/6/2022 16:37,,49,Onsite,Pimonkit Pimonkittikul
+1242,897,10/6/2022 11:54,10/6/2022 11:54,,49,Onsite,Pimonkit Pimonkittikul
+1243,898,10/6/2022 11:02,10/6/2022 11:02,,49,Onsite,Pimonkit Pimonkittikul
+1244,899,8/6/2022 18:49,8/6/2022 18:49,,49,Onsite,Pimonkit Pimonkittikul
+1245,899,9/6/2022 16:53,9/6/2022 16:53,,49,Onsite,Pimonkit Pimonkittikul
+1315,902,14/6/2022 14:45,14/6/2022 20:01,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1296,903,13/6/2022 21:45,,,50,Onsite,Anukool Sabram
+1314,903,13/6/2022 21:45,13/6/2022 23:00,,82,"Installation, CM, PM, SparePart",Wanchai Srinorin
+1360,929,17/6/2022 13:00,17/6/2022 20:00,,85,"Hyperconverged (Nutanix,HPE Simplivity), VDI",Kiettipon Dechpreecha
+1361,929,17/6/2022 22:23,18/6/2022 15:23,,88,"Hyperconverged (Nutanix,HPE Simplivity), VDI",Anunvit Chanchiew
+1403,929,20/6/2022 11:00,20/6/2022 16:00,,85,"Hyperconverged (Nutanix,HPE Simplivity), VDI",Kiettipon Dechpreecha
+1292,931,10/6/2022 11:50,13/6/2022 9:15,,59,NetApp Storage and All NetApp Solution,Tinnakorn Chaiviboonpol
+1291,931,9/6/2022 16:35,9/6/2022 16:35,,59,NetApp Storage and All NetApp Solution,Tinnakorn Chaiviboonpol
+1293,931,13/6/2022 9:53,13/6/2022 15:14,,59,NetApp Storage and All NetApp Solution,Tinnakorn Chaiviboonpol
+1359,931,14/6/2022 21:23,14/6/2022 21:23,,59,NetApp Storage and All NetApp Solution,Tinnakorn Chaiviboonpol
+1390,931,22/6/2022 17:50,23/6/2022 11:12,,59,NetApp Storage and All NetApp Solution,Tinnakorn Chaiviboonpol
+1391,931,23/6/2022 16:40,23/6/2022 16:40,,59,NetApp Storage and All NetApp Solution,Tinnakorn Chaiviboonpol
+1294,932,10/6/2022 17:03,10/6/2022 17:03,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1382,932,22/6/2022 15:19,22/6/2022 15:19,,77,VMWare,Werapong Panpin
+1295,932,14/6/2022 12:48,22/6/2022 13:00,,128,Service Delivery Manager (SM),Thawatchai Amnuaysuk
+1395,937,21/6/2022 13:37,21/6/2022 13:37,,5,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Jitchanok Nakeiam
+1336,949,17/6/2022 21:00,17/6/2022 21:00,,97,"Installation, CM, PM, SparePart",Panomsak Wareelung
+1337,950,17/6/2022 18:02,17/6/2022 18:02,,50,Onsite,Anukool Sabram
+1338,951,16/6/2022 21:50,16/6/2022 21:50,,84,"Installation, CM, PM, SparePart",Tura Klinmala
+1350,957,17/6/2022 9:28,,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1355,960,17/6/2022 15:10,17/6/2022 15:10,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1356,961,16/6/2022 21:52,16/6/2022 21:52,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1357,962,13/6/2022 14:24,13/6/2022 14:24,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1392,963,23/6/2022 16:44,23/6/2022 16:44,,50,Onsite,Anukool Sabram
+1381,974,22/6/2022 13:26,22/6/2022 18:10,,89,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Taned Sangowingul
+1380,974,21/6/2022 13:52,21/6/2022 13:52,,94,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Rachan Kongsilathong
+1384,976,22/6/2022 14:35,22/6/2022 14:35,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1385,977,21/6/2022 15:55,21/6/2022 15:55,,77,VMWare,Werapong Panpin
+1386,978,21/6/2022 10:45,,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1388,979,21/6/2022 17:37,21/6/2022 17:37,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1389,980,21/6/2022 13:38,21/6/2022 13:38,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1393,981,20/6/2022 15:34,20/6/2022 15:34,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1398,982,21/6/2022 15:29,21/6/2022 15:29,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1399,982,22/6/2022 16:00,23/6/2022 9:43,,58,NetApp Storage and All NetApp Solution,Jessadang Panjakhan
+1400,982,23/6/2022 16:17,23/6/2022 16:17,,49,"Software Solution (VMWare-vRA/Tanzu, RedHat-OpenShift/JBOSS, Oracle LDAP, IBM Identity Manager)",Pimonkit Pimonkittikul
+1397,982,16/6/2022 20:12,16/6/2022 20:12,,30,NetApp Storage and All NetApp Solution,Arnon Kansit
+1401,983,17/6/2022 16:21,17/6/2022 18:13,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+1402,983,20/6/2022 9:41,23/6/2022 10:06,,57,NetApp Storage and All NetApp Solution,Narit Klinchan
+1404,984,9/6/2022 16:47,9/6/2022 16:47,,85,"Hyperconverged (Nutanix,HPE Simplivity), VDI",Kiettipon Dechpreecha
+1405,984,20/6/2022 13:43,20/6/2022 13:43,,88,"Hyperconverged (Nutanix,HPE Simplivity), VDI",Anunvit Chanchiew
+1409,988,1/7/2022 11:40,1/7/2022 11:40,YN1,30,CC,Arnon Kansit

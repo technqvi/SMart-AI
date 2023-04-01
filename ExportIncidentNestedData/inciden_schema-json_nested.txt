@@ -1,0 +1,237 @@
+dataframe
+RangeIndex: 266 entries, 0 to 265
+Data columns (total 28 columns):
+ #   Column                   Non-Null Count  Dtype 
+---  ------                   --------------  ----- 
+ 1   company                  266 non-null    object
+ 2   incident_no              266 non-null    object
+ 3   productype_name          266 non-null    object
+ 4   brand_name               266 non-null    object
+ 5   model_name               266 non-null    object
+ 6   serial_number            266 non-null    object
+ 7   datacenter_name          266 non-null    object
+ 8   branch_name              266 non-null    object
+ 9   severity_id              266 non-null    int64 
+ 10  severity_name            266 non-null    object
+ 11  status_id                266 non-null    int64 
+ 12  status_name              266 non-null    object
+ 13  service_type_id          266 non-null    int64 
+ 14  service_type_name        266 non-null    object
+ 15  incident_type_id         266 non-null    int64 
+ 16  incident_type_name       266 non-null    object
+ 17  failure_type             2 non-null      object
+ 18  open_datetime            266 non-null    object
+ 19  close_datetime           266 non-null    object
+ 20  response_datetime        266 non-null    object
+ 21  resolved_datetime        266 non-null    object
+ 22  updated_at               266 non-null    object
+ 23  install_date             109 non-null    object
+ 24  eos_date                 176 non-null    object
+ 25  customer_warranty_start  266 non-null    object
+ 26  customer_warranty_end    266 non-null    object
+ 27  imported_at              266 non-null    object
+
+
+bigquery schemat
+
+[
+  {
+    "name": "company",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "incident_no",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "productype_name",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "brand_name",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "model_name",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "serial_number",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "datacenter_name",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "branch_name",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "severity_id",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "severity_name",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "status_id",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "status_name",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "service_type_id",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "service_type_name",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "incident_type_id",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "incident_type_name",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "failure_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "open_datetime",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "close_datetime",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "response_datetime",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "resolved_datetime",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "updated_at",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "install_date",
+    "mode": "NULLABLE",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "eos_date",
+    "mode": "NULLABLE",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "customer_warranty_start",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "customer_warranty_end",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "imported_at",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "fields": []
+  },
+  {
+    "name": "incident_detail",
+    "mode": "REPEATED",
+    "type": "RECORD",
+    "fields": [
+      {
+        "name": "task_start",
+        "mode": "REQUIRED",
+        "type": "DATETIME",
+        "fields": []
+      },
+      {
+        "name": "task_end",
+        "mode": "REQUIRED",
+        "type": "DATETIME",
+        "fields": []
+      },
+      {
+        "name": "service_team_name",
+        "mode": "REQUIRED",
+        "type": "STRING",
+        "fields": []
+      },
+      {
+        "name": "engineer_name",
+        "mode": "REQUIRED",
+        "type": "STRING",
+        "fields": []
+      },
+      {
+        "name": "updated_at",
+        "mode": "REQUIRED",
+        "type": "DATETIME",
+        "fields": []
+      }
+    ]
+  }
+]

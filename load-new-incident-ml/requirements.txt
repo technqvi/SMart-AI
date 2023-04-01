@@ -3,4 +3,4 @@ db-dtypes
 pandas
 numpy
 google-cloud-bigquery
-tensorflow
+

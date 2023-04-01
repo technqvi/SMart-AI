@@ -3,8 +3,8 @@ import tensorflow as tf
 
 import pandas as pd
 
-import os
 import json
+import os
 from datetime import date,datetime,timedelta
 
 import functions_framework
@@ -12,52 +12,56 @@ import functions_framework
 from google.cloud.exceptions import NotFound
 from google.api_core.exceptions import BadRequest
 
+
+# In[2]:
+
+
 @functions_framework.http
 def predict_incident_severity_by_tf(request):
 
 
-# In[49]:
+# In[10]:
+    print(tf.__version__)
 
+    PROJECT_ID='smart-data-ml'
+    PATH_FOLDER_ARTIFACTS="gs://tf1-incident-smart-ml-yip/model"
+    # PATH_FOLDER_ARTIFACTS="../model" 
 
-    load_model_option=os.environ.get('load_model_option', '2')
     predict_from_date=os.environ.get('predict_from_date', '')
-    
-    # load_model_option='1'
-    # predict_from_date=''
+    # predict_from_date='2023-03-01'
 
-    if load_model_option=='1':
-      PATH_FOLDER_ARTIFACTS="model"  
-    elif load_model_option=='2':
-      PATH_FOLDER_ARTIFACTS="gs://tf1-incident-pongthorn/model"
-    else:
-      raise Exception("Allow you to set 1 for local and 2 for google storage")
-
-    print(f"Load data from {PATH_FOLDER_ARTIFACTS}")
+    # map_sevirity_to_class={'Cosmatic': 0, 'Minor': 1, 'Major': 2, 'Critical': 3}
 
 
-    # In[50]:
+    # load_model_option=os.environ.get('load_model_option', '1')
+    # if load_model_option=='1':
+    #   PATH_FOLDER_ARTIFACTS=Model_Local_Path  
+    # elif load_model_option=='2':
+    #   PATH_FOLDER_ARTIFACTS=Model_GS_Path
+    # else:
+    #   raise Exception("Allow you to set 1 for local and 2 for google storage")
+    # print(f"Load data from {PATH_FOLDER_ARTIFACTS}")
 
 
-    table_id = "pongthorn.SMartML.new_incident"
-    predictResult_table_id="pongthorn.SMartML.new_result_prediction_incident"
+    # In[4]:
 
 
+    table_id = f"{PROJECT_ID}.SMartML.new_incident"
+    predictResult_table_id=f"{PROJECT_ID}.SMartML.new_result_prediction_incident"
     unUsedColtoPredict=['severity','id','severity_id','severity_name','imported_at']
 
 
-    # In[51]:
+    # In[5]:
 
 
     mapping_file="incident_sevirity_to_class.json"
-    # with open(mapping_file, 'r') as json_file:
-    #      map_sevirity_to_class= json.load(json_file)
-    # print(map_sevirity_to_class)
+    with open(mapping_file, 'r') as json_file:
+         map_sevirity_to_class= json.load(json_file)
 
-    map_sevirity_to_class={'Cosmatic': 0, 'Minor': 1, 'Major': 2, 'Critical': 3}
     print(map_sevirity_to_class)
 
 
-    # In[52]:
+    # In[6]:
 
 
     # Get today's date
@@ -77,25 +81,29 @@ def predict_incident_severity_by_tf(request):
     print(f"Get data between {str_yesterday} to {str_today} to predict sevirity level")
 
 
-    # In[53]:
+    # In[7]:
 
 
+    client = bigquery.Client(PROJECT_ID)
     def load_data_bq(sql:str):
-     client_bq = bigquery.Client()
-     query_result=client_bq.query(sql)
+
+     query_result=client.query(sql)
      df=query_result.to_dataframe()
      return df
 
 
-    # In[54]:
+    # In[8]:
 
 
     sql=f"""
     SELECT *  FROM `{table_id}` 
-    WHERE DATE(imported_at) >= '{str_yesterday}' and DATE(imported_at) < '{str_today}' 
-
+    WHERE DATE(imported_at) >= '{str_yesterday}' and DATE(imported_at) < '{str_today}'
+     
     """
-    #LIMIT 2
+
+
+    print(sql)
+    
     dfNewData=load_data_bq(sql)
     dfNewData=dfNewData.drop_duplicates(subset=['id'],keep='first')
 
@@ -105,20 +113,24 @@ def predict_incident_severity_by_tf(request):
     print(dfNewData.info())
     print(dfNewData)
 
+    if len(dfNewData)==0:
+        print("No Data To predict")
+        return "No Data To predict"
 
-    # In[55]:
+    # In[11]:
 
 
     try:
         model = tf.keras.models.load_model(PATH_FOLDER_ARTIFACTS)    
         print(f"Load from {PATH_FOLDER_ARTIFACTS}")
-        print(model.summary())
+        # print(model.summary())
     except Exception as error:
+
       print(str(error))
       raise error
 
 
-    # In[56]:
+    # In[12]:
 
 
     pdPrediction=pd.DataFrame(columns=['_id','predict_severity','prob_severity'])
@@ -151,24 +163,23 @@ def predict_incident_severity_by_tf(request):
     dfPredictData=dfPredictData.drop(columns=['_id'])
     dfPredictData['predict_severity']=dfPredictData['predict_severity'].astype('int')
     dfPredictData=dfPredictData[['id','prob_severity','predict_severity','severity']]
-    dfPredictData['prediction_item_date']= datetime.strptime(str(yesterday), '%Y-%m-%d')
+    dfPredictData['prediction_item_date']= datetime.strptime(str_yesterday, '%Y-%m-%d')
     dfPredictData['prediction_datetime']=prediction_datetime
 
 
-    # In[57]:
+    # In[13]:
 
 
     print(dfPredictData.info())
     print(dfPredictData)
 
 
-    # In[58]:
+    # In[14]:
 
 
     #https://cloud.google.com/bigquery/docs/samples/bigquery-create-table#bigquery_create_table-python
 
     try:
-        client = bigquery.Client()
         client.get_table(predictResult_table_id)  # Make an API request.
         print("Predict Result Table {} already exists.".format(predictResult_table_id))
     except Exception as ex:
@@ -192,7 +203,7 @@ def predict_incident_severity_by_tf(request):
         )
 
 
-    # In[59]:
+    # In[15]:
 
 
     def loadDataFrameToBQ():

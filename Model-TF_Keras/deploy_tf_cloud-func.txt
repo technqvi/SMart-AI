@@ -1,2 +1,0 @@
-gcloud functions deploy predict-incident-severity-by-tf  --gen2  --region=asia-southeast1  --runtime=python39   --memory=1024 --source=.      --env-vars-file .env.yaml  --trigger-http   --entry-point  predict_incident_severity_by_tf
-

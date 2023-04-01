@@ -1,0 +1,7 @@
+functions-framework==3.*
+db-dtypes
+pandas
+numpy
+google-cloud-bigquery
+tensorflow==2.11.0
+
