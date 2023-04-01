@@ -4,9 +4,17 @@ gcloud auth list
 gcloud config set project [your project to deploy]  (option if you need to switch to other projects)
 gcloud config list project
 
+functions-framework --target=load-new-incident-ml-to-bq
+
 
 gcloud functions deploy predict-incident-severity-by-tf  --gen2  --region=asia-southeast1  --runtime=python39   --memory=1024 --source=.      --env-vars-file .env.yaml  --trigger-http   --entry-point  predict_incident_severity_by_tf  --timeout 1200s 
 
 
-gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southeast1  --runtime=python39  --memory=256 --source=.  --env-vars-file .env.yaml  --trigger-http   --entry-point  load_new_incident_ml_to_bq --project smart-data-ml
+gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southeast1  --runtime=python39  --memory=512 --source=.  --env-vars-file .env.yaml  --trigger-http   --entry-point  load_new_incident_ml_to_bq --project smart-data-ml
 
+trig-predict-incident-severity-by-tf
+0 2 * * *
+
+
+
+SELECT * FROM `smart-data-ml.SMartML.new_incident` WHERE DATE(imported_at) >= '2023-03-31' and DATE(imported_at) < '2023-04-01'

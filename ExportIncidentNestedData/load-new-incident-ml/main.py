@@ -42,6 +42,9 @@ def load_new_incident_ml_to_bq(request):
 
     file_name="New_Incident.csv"
 
+
+
+
     try:
         client.get_table(table_ml_id)  # Make an API request.
         print("Table {} already exists.".format(table_ml_id))
@@ -70,13 +73,14 @@ def load_new_incident_ml_to_bq(request):
             "Created table {}.{}.{}".format(table.project, table.dataset_id, table.table_id)
         )
 
+
+
     dt_imported=datetime.now()
     str_imported=dt_imported.strftime('%Y-%m-%d %H:%M:%S')
     print(f"Imported DateTime: {str_imported}" )
 
     sql_lastImport=f"SELECT max(imported_at) as last_imported from `{table_ml_id}` "
     print(sql_lastImport)
-
     job_lastImported=client.query(sql_lastImport)
     str_lastImported=None
     for row in job_lastImported:    
@@ -105,14 +109,12 @@ def load_new_incident_ml_to_bq(request):
     FROM `{table_dw_id}` 
     WHERE imported_at>'{start_date_query}'
     order by imported_at
-
     """
     #WHERE imported_at>='{start_date_query}' and imported_at<='2023-03-24'
     #WHERE imported_at>='{start_date_query}'
-    print(sql) 
+
     query_result=client.query(sql)
     df_all=query_result.to_dataframe()
-    df_all=df_all.drop_duplicates(subset=['id'],keep='last')
     print(df_all.info())
     df_all.head()
 
@@ -121,7 +123,6 @@ def load_new_incident_ml_to_bq(request):
 
 
     if len(df_all)==0:
-     print("No record to load") 
      return "No record to load"   
      
 
