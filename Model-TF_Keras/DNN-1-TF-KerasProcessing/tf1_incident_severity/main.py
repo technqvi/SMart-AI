@@ -216,7 +216,7 @@ def predict_incident_severity_by_tf(request):
                 dfPredictData, predictResult_table_id, job_config=job_config
             )
             job.result()  # Wait for the job to complete.
-            print("Total Prediction ML ", len(dfPredictData), "Imported igquery successfully")
+            print("Total Prediction ML ", len(dfPredictData), "Imported bigquery successfully")
 
         except BadRequest as e:
             print("Bigquery Error\n")
