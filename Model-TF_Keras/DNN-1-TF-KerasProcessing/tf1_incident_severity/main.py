@@ -98,14 +98,14 @@ def predict_incident_severity_by_tf(request):
     sql=f"""
     SELECT *  FROM `{table_id}` 
     WHERE DATE(imported_at) >= '{str_yesterday}' and DATE(imported_at) < '{str_today}'
-     
+    order by imported_at 
     """
 
 
     print(sql)
     
     dfNewData=load_data_bq(sql)
-    dfNewData=dfNewData.drop_duplicates(subset=['id'],keep='first')
+    dfNewData=dfNewData.drop_duplicates(subset=['id'],keep='last')
 
     dfNewData.insert(2, 'severity', dfNewData['severity_name'].map(map_sevirity_to_class),True)
 
