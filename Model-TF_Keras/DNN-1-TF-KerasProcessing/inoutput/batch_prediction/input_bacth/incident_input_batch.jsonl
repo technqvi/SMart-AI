@@ -1,0 +1,3 @@
+"{\"sla\": [\"24x7 4Hrs Resolution Time\"], \"product_type\": [\"Software\"], \"brand\": [\"VMWare\"], \"service_type\": [\"Incident\"], \"incident_type\": [\"Software\"], \"open_to_close_hour\": [3.35], \"response_to_resolved_hour\": [3.216666667]}"
+"{\"sla\": [\"24x7 4Hrs Response Time\"], \"product_type\": [\"Software\"], \"brand\": [\"NetApp\"], \"service_type\": [\"Incident\"], \"incident_type\": [\"General Incident\"], \"open_to_close_hour\": [24.76666667], \"response_to_resolved_hour\": [24.55]}"
+"{\"sla\": [\"24x7 4Hrs Resolution Time\"], \"product_type\": [\"Server\"], \"brand\": [\"HPE\"], \"service_type\": [\"Incident\"], \"incident_type\": [\"Hard Disk Drive Failure\"], \"open_to_close_hour\": [7.166666667], \"response_to_resolved_hour\": [7.0]}"
