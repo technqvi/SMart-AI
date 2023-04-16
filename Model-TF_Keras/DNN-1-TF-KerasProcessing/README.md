@@ -1,5 +1,5 @@
 # About
-Build multiclass classification and binary classification deep learning model  with Tensorflow-Keras to predict severity level on Incident data on BigQuery, there are server step since building model to serving model to get new data to make prediction.
+Build multiclass classification and binary classification deep learning model  with Tensorflow-Keras to predict severity level on Incident data on BigQuery, there are serveral steps since building model to serving model to get new data to make prediction.
 
 ## Tools, Services and Framework
 - Keras, Keras Tuner and Tensorflow
