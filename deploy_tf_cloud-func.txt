@@ -17,6 +17,3 @@ gcloud functions deploy predict-incident-severity-by-tf  --gen2  --region=asia-s
 trig-predict-incident-severity-by-tf
 0 2 * * *
 
-
-
-SELECT * FROM `smart-data-ml.SMartML.new_incident` WHERE DATE(imported_at) >= '2023-03-31' and DATE(imported_at) < '2023-04-01'
