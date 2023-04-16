@@ -26,7 +26,7 @@ How to retrive from BigQuery by using Python Client for Google BigQuery
 - Split Data into Train , Validation and Test Data DataSet and  Ingest them into BigQuery.
 
 
-## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras)
+## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras) (DNN-1-TF-KerasProcessing)
 This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, most file apply  , this active folder is DNN-1-TF-KerasProcessing, the others are option. you can go to to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
 
 - [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (Main Development) : Apply tf.data and  Keras-API and Keras preprocessing layer to tranform data before feeding into  Model. 
