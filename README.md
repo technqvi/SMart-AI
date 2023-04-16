@@ -9,6 +9,10 @@ We use incident system to perform data analysis and machine learning on a google
 - [machine_learning_in_the_enterprise](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/machine_learning_in_the_enterprise/solutions)
 - [production_ml/](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/production_ml/solutions)
 
+## [Tutorial on GitHub](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
+## [Tutorial on Youtube] (https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
+
+
 
 ## [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
 - Export incident system data stored on Postgres Database to BigQuery using Bigquery Python.Client Library.
@@ -27,7 +31,7 @@ How to retrive from BigQuery by using Python Client for Google BigQuery
 
 
 ## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras) (DNN-1-TF-KerasProcessing)
-This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, most file apply  , this active folder is DNN-1-TF-KerasProcessing, the others are option. you can go to to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
+This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, this active folder is DNN-1-TF-KerasProcessing, the others are option. you can go to to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
 
 - [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (Main Development) : Apply tf.data and  Keras-API and Keras preprocessing layer to tranform data before feeding into  Model. 
 - [DNN-2-ScikitLearn](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-2-ScikitLearn)  : tranform data like StandardScaler and OneHot-endcoding with  ScikitLearn.
