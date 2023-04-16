@@ -27,13 +27,11 @@ How to retrive from BigQuery by using Python Client for Google BigQuery
 
 
 ## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras)
-This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, most file apply  , this active folder is DNN-1-TF-KerasProcessing, the others are option. you can go to to  [DNN-1-TF-KerasProcessing] (https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review project
+This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, most file apply  , this active folder is DNN-1-TF-KerasProcessing, the others are option. you can go to to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
 
-
-
-- [DNN-1-TF-KerasProcessing] (https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)  
-implement 
--
+- [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)  
+- [DNN-2-ScikitLearn](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-2-ScikitLearn) 
+- [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train)
 
 
 ## Tutorial#2-4 - [t4-tuning_train_model.ipynb](https://github.com/technqvi/MyYoutube-Demo/blob/main/google_data_ai/t4-tuning_train_model.ipynb )
