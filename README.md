@@ -1,9 +1,15 @@
 # About
 We use incident system to perform data analysis and machine learning on a google cloud platform, the main purpose of this project is to analyze data on the incident system in order to develop a machine learning model to predict the severity of each incident with various machine learning algorithms.
 
+
 ## [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
 - Export incident system data stored on Postgres Database to BigQuery using Bigquery Python.Client Library
 - [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt)  , it refer to bigquery table schema and dataframe schema
+- Get started with - [Python Client for Google BigQuery](https://cloud.google.com/python/docs/reference/bigquery/latest)
+
+## [QueryIncidentOnBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/QueryIncidentOnBQ.ipynb)
+How to retrive from BigQuery by using Python Client for Google BigQuery
+
 
 ## Tutorial#2-2 - [t2-explore_to_create_train_data_ml.ipynb](https://github.com/technqvi/MyYoutube-Demo/blob/main/google_data_ai/t2-explore_to_create_train_data_ml.ipynb "t2-explore_to_create_train_data_ml.ipynb")
 - Retrieve data from BigQuery to prepare data for building Machine Learning.
