@@ -1,1 +1,0 @@
-('Post request fails. Cannot get predictions. Error: Exceeded retries: Non-OK result 400 ({\n    "error": "instances is a plain list, but expecting list of objects as multiple input tensors required as per tensorinfo_map"\n}) from server, retry=10, ellapsed=0.01s.', 3)

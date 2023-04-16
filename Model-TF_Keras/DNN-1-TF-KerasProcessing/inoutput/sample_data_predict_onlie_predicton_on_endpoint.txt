@@ -1,0 +1,7 @@
+{
+ "instances":
+ [
+  {"sla": ["24x7 6Hrs Resolution Time"], "product_type": ["Storage"], "brand": ["NetApp"], "service_type": ["Incident"], "incident_type": ["General Incident"], "open_to_close_hour": [1268.9333333333334], "response_to_resolved_hour": [1268.8]},
+ {"sla": ["24x7 4Hrs Resolution Time"], "product_type": ["Software"], "brand": ["Veeam"], "service_type": ["Incident"], "incident_type": ["Software"], "open_to_close_hour": [16.766666666666666], "response_to_resolved_hour": [16.666666666666668]}
+ ]
+ }
