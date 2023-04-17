@@ -4,7 +4,9 @@ gcloud auth list
 gcloud config set project [your project to deploy]  (option if you need to switch to other projects)
 gcloud config list project
 
-functions-framework --target=load-new-incident-ml-to-bq
+functions-framework --target=load_new_incident_ml_to_bq
+
+gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southeast1  --runtime=python39  --memory=512 --source=.  --env-vars-file .env.yaml  --trigger-http   --entry-point  load_new_incident_ml_to_bq
 
 gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southeast1  --runtime=python39  --memory=512 --source=.  --env-vars-file .env.yaml  --trigger-http   --entry-point  load_new_incident_ml_to_bq --project smart-data-ml
 

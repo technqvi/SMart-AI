@@ -1,8 +1,14 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[22]:
+
+
 from google.cloud import bigquery
 import pandas as pd
 import numpy as np
 from datetime import datetime 
-# from google.oauth2 import service_account
+from google.oauth2 import service_account
 
 import functions_framework
 
@@ -11,25 +17,35 @@ from google.api_core.exceptions import BadRequest
 import os
 
 
+# In[23]:
+
 
 @functions_framework.http
 def load_new_incident_ml_to_bq(request):
 
 
-    projectId='smart-data-ml'
-    start_date_query=os.environ.get('start_date_query', '2023-03-13')
-    # start_date_query='2023-03-13'
+    # In[24]:
 
 
-    table_ml_id = f"{projectId}.SMartML.new_incident"
-    table_dw_id=f"{projectId}.SMartDW.incident"
+    projectId='pongthorn'
+    dataset_id='DemoSMartDW'
+    start_date_query=os.environ.get('start_date_query', '2023-04-17')
+    start_date_query='2023-04-17'
+
+
+    # In[25]:
+
+
+    table_ml_id = f"{projectId}.{dataset_id}.new_incident"
+    table_dw_id=f"{projectId}.{dataset_id}.incident"
 
     # credentials = service_account.Credentials.from_service_account_file(r'C:\Windows\smart-data-ml-91b6f6204773.json')
     # client = bigquery.Client(credentials=credentials, project=projectId)
 
-    client = bigquery.Client( project=projectId  )
+    client = bigquery.Client(project=projectId)
 
 
+    # In[26]:
 
 
     # Get Last Upldate from BQ update data
@@ -41,6 +57,12 @@ def load_new_incident_ml_to_bq(request):
     cateCols=['sla','product_type','brand','service_type','incident_type']
 
     file_name="New_Incident.csv"
+
+
+    # In[27]:
+
+
+    #https://cloud.google.com/bigquery/docs/samples/bigquery-create-table#bigquery_create_table-python
 
     try:
         client.get_table(table_ml_id)  # Make an API request.
@@ -70,11 +92,16 @@ def load_new_incident_ml_to_bq(request):
             "Created table {}.{}.{}".format(table.project, table.dataset_id, table.table_id)
         )
 
+
+    # In[28]:
+
+
     dt_imported=datetime.now()
     str_imported=dt_imported.strftime('%Y-%m-%d %H:%M:%S')
     print(f"Imported DateTime: {str_imported}" )
 
     sql_lastImport=f"SELECT max(imported_at) as last_imported from `{table_ml_id}` "
+
     print(sql_lastImport)
 
     job_lastImported=client.query(sql_lastImport)
@@ -94,7 +121,7 @@ def load_new_incident_ml_to_bq(request):
     print(f"Start Import on update_at of last imported date : {start_date_query}" )
 
 
-    # In[75]:
+    # In[29]:
 
 
     sql=f"""
@@ -105,11 +132,12 @@ def load_new_incident_ml_to_bq(request):
     FROM `{table_dw_id}` 
     WHERE imported_at>'{start_date_query}'
     order by imported_at
-
     """
     #WHERE imported_at>='{start_date_query}' and imported_at<='2023-03-24'
     #WHERE imported_at>='{start_date_query}'
-    print(sql) 
+
+    print(sql)
+
     query_result=client.query(sql)
     df_all=query_result.to_dataframe()
     df_all=df_all.drop_duplicates(subset=['id'],keep='last')
@@ -117,16 +145,15 @@ def load_new_incident_ml_to_bq(request):
     df_all.head()
 
 
-    # In[76]:
+    # In[30]:
 
 
     if len(df_all)==0:
-     print("No record to load") 
-     return "No record to load"   
-     
+     print("No record to load")   
+     # return "No record to load"  
 
 
-    # In[77]:
+    # In[31]:
 
 
     start_end_list=[ ['open_datetime','close_datetime'],['response_datetime','resolved_datetime']]
@@ -143,12 +170,13 @@ def load_new_incident_ml_to_bq(request):
        df_all[diff_hour] = df_all[diff_str].apply(lambda x:  x.total_seconds() / (60*60) if x is not np.nan else np.nan  )
 
 
-    # In[82]:
+    # In[32]:
 
 
     for col in numbericCols:
      df_all=df_all.query(f'{col}!=0')
 
+    # get only last update of id
     df_all=df_all.drop_duplicates(subset=['id'],keep='first')
     df_all=df_all.drop(columns=removeCols)
 
@@ -160,13 +188,13 @@ def load_new_incident_ml_to_bq(request):
     print(df_all.tail())
 
 
-    # In[79]:
+    # In[19]:
 
 
     # print(df_all[numbericCols].describe(percentiles=[.9,.75,.50,.25,.10]))
 
 
-    # In[80]:
+    # In[20]:
 
 
     # df_all.to_csv("data/New_Incident.csv",index=False)
@@ -178,7 +206,7 @@ def load_new_incident_ml_to_bq(request):
 
 
 
-    # In[81]:
+    # In[21]:
 
 
     def loadDataFrameToBQ():
@@ -209,6 +237,11 @@ def load_new_incident_ml_to_bq(request):
 
     return 'ok'
 
+
+# In[ ]:
+
+
 # if __name__ == "__main__":
 #  result=load_new_incident_ml_to_bq(None)
 #  print(result)
+
