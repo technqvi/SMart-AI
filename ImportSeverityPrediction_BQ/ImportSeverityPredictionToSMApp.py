@@ -25,11 +25,10 @@ print(f"Get prediction as of {predict_datetime}")
 # In[6]:
 
 
-projectId='smart-data-ml'
-table_id = f"{projectId}.SMartML.new_result_prediction_incident"
+projectId='pongthorn'
+dataset_id='DemoSMartDW'
+table_id = f"{projectId}.{dataset_id}.new_result_prediction_incident"
 
-#credentials = service_account.Credentials.from_service_account_file(r'C:\Windows\smart-data-ml-91b6f6204773.json')
-#client = bigquery.Client(credentials= credentials,project=projectId)
 client = bigquery.Client(project=projectId)
 
 

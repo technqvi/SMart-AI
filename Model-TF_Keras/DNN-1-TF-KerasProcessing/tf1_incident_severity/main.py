@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[11]:
+
+
 from google.cloud import bigquery
 import tensorflow as tf
 
@@ -12,46 +18,45 @@ import functions_framework
 from google.cloud.exceptions import NotFound
 from google.api_core.exceptions import BadRequest
 
+print(tf.__version__)
 
-# In[2]:
+
+# In[12]:
 
 
 @functions_framework.http
 def predict_incident_severity_by_tf(request):
 
 
-# In[10]:
-    print(tf.__version__)
+# In[13]:
 
-    PROJECT_ID='smart-data-ml'
-    PATH_FOLDER_ARTIFACTS="gs://tf1-incident-smart-ml-yip/model"
-    # PATH_FOLDER_ARTIFACTS="../model" 
+
+    PROJECT_ID='pongthorn'
+    dataset_id='DemoSMartDW'
+    PATH_FOLDER_ARTIFACTS="gs://demo-tuned-tf-incident-pongthorn/model_tuned"
+    # PATH_FOLDER_ARTIFACTS="demo_model" 
 
     predict_from_date=os.environ.get('predict_from_date', '')
+    all_prediction=os.environ.get('all_prediction', '0')  # 1 is all , 0 is 1 day
+    # all_prediction=1
+
+    print(f"Prediction From = {predict_from_date}")
+    print(f"All prediction = {all_prediction}")
+
     # predict_from_date='2023-03-01'
 
     # map_sevirity_to_class={'Cosmatic': 0, 'Minor': 1, 'Major': 2, 'Critical': 3}
 
 
-    # load_model_option=os.environ.get('load_model_option', '1')
-    # if load_model_option=='1':
-    #   PATH_FOLDER_ARTIFACTS=Model_Local_Path  
-    # elif load_model_option=='2':
-    #   PATH_FOLDER_ARTIFACTS=Model_GS_Path
-    # else:
-    #   raise Exception("Allow you to set 1 for local and 2 for google storage")
-    # print(f"Load data from {PATH_FOLDER_ARTIFACTS}")
+    # In[14]:
 
 
-    # In[4]:
-
-
-    table_id = f"{PROJECT_ID}.SMartML.new_incident"
-    predictResult_table_id=f"{PROJECT_ID}.SMartML.new_result_prediction_incident"
+    table_id = f"{PROJECT_ID}.{dataset_id}.new_incident"
+    predictResult_table_id=f"{PROJECT_ID}.{dataset_id}.new_result_prediction_incident"
     unUsedColtoPredict=['severity','id','severity_id','severity_name','imported_at']
 
 
-    # In[5]:
+    # In[15]:
 
 
     mapping_file="incident_sevirity_to_class.json"
@@ -61,7 +66,7 @@ def predict_incident_severity_by_tf(request):
     print(map_sevirity_to_class)
 
 
-    # In[6]:
+    # In[16]:
 
 
     # Get today's date
@@ -81,7 +86,7 @@ def predict_incident_severity_by_tf(request):
     print(f"Get data between {str_yesterday} to {str_today} to predict sevirity level")
 
 
-    # In[7]:
+    # In[17]:
 
 
     client = bigquery.Client(PROJECT_ID)
@@ -92,18 +97,28 @@ def predict_incident_severity_by_tf(request):
      return df
 
 
-    # In[8]:
+    # In[18]:
 
 
-    sql=f"""
-    SELECT *  FROM `{table_id}` 
-    WHERE DATE(imported_at) >= '{str_yesterday}' and DATE(imported_at) < '{str_today}'
-    order by imported_at 
-    """
-
+    if int(all_prediction)==0:
+        sql=f"""
+        SELECT *  FROM `{table_id}` 
+         WHERE DATE(imported_at) >= '{str_yesterday}' and DATE(imported_at) < '{str_today}' 
+         order by imported_at
+        """
+    else:
+        sql=f"""
+        SELECT *  FROM `{table_id}` 
+         order by imported_at
+        """
 
     print(sql)
-    
+
+
+    # In[19]:
+
+
+    #LIMIT 2
     dfNewData=load_data_bq(sql)
     dfNewData=dfNewData.drop_duplicates(subset=['id'],keep='last')
 
@@ -111,13 +126,16 @@ def predict_incident_severity_by_tf(request):
 
 
     print(dfNewData.info())
-    print(dfNewData)
+    # print(dfNewData)
 
     if len(dfNewData)==0:
         print("No Data To predict")
-        return "No Data To predict"
+        quit()
+        #return "No Data To predict"
 
-    # In[11]:
+
+
+    # In[20]:
 
 
     try:
@@ -130,7 +148,7 @@ def predict_incident_severity_by_tf(request):
       raise error
 
 
-    # In[12]:
+    # In[21]:
 
 
     pdPrediction=pd.DataFrame(columns=['_id','predict_severity','prob_severity'])
@@ -167,14 +185,14 @@ def predict_incident_severity_by_tf(request):
     dfPredictData['prediction_datetime']=prediction_datetime
 
 
-    # In[13]:
+    # In[22]:
 
 
     print(dfPredictData.info())
     print(dfPredictData)
 
 
-    # In[14]:
+    # In[23]:
 
 
     #https://cloud.google.com/bigquery/docs/samples/bigquery-create-table#bigquery_create_table-python
@@ -203,7 +221,7 @@ def predict_incident_severity_by_tf(request):
         )
 
 
-    # In[15]:
+    # In[24]:
 
 
     def loadDataFrameToBQ():
@@ -227,6 +245,18 @@ def predict_incident_severity_by_tf(request):
         loadDataFrameToBQ()
     except Exception as ex:
         raise ex
+
+
+    # In[ ]:
+
+
+
+
+
+    # In[ ]:
+
+
+
 
 
     # In[ ]:
