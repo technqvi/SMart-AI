@@ -37,6 +37,12 @@ This folder contain folder and file to buid machine learning wiht Tensorflow-Ker
 - [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (Main Development) : Apply tf.data and  Keras-API and Keras preprocessing layer to tranform data before feeding into  Model. 
 - [DNN-2-ScikitLearn](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-2-ScikitLearn)  : tranform data like StandardScaler and OneHot-endcoding with  ScikitLearn.
 - [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train)
+## [NestedDataOnBigQuery](https://github.com/technqvi/SMart-AI/tree/main/ExportIncidentNestedData)
+How to load  nested structure data from PostgresToBQ to BigQuery , the main dsata is incident and nested part is incident detail.
+
+## [ImportSeverityPrediction_BQ](https://github.com/technqvi/SMart-AI/tree/main/ImportSeverityPrediction_BQ) | [ImportSeverityPredictionToSMApp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ImportSeverityPredictionToSMApp.ipynb)
+- To  import prediction result from new_result_prediction_incident table on Bigquery to Incident System Database, we use Python BigQuery client to do it on the incident application server.
+- Prediction Result is shown on Incident Web Site to compare to an actual value determined by Site Manager.
 
 
 ## Tutorial#2-4 - [t4-tuning_train_model.ipynb](https://github.com/technqvi/MyYoutube-Demo/blob/main/google_data_ai/t4-tuning_train_model.ipynb )
