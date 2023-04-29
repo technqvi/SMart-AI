@@ -61,7 +61,7 @@ How to apply sklearn.preprocessing to perform normalization for numerical data a
 
 ### [ExportNestedDataOnBigQuery](https://github.com/technqvi/SMart-AI/tree/main/ExportIncidentNestedData)
 How to load  nested structure data from PostgresToBQ to BigQuery , the main dsata is incident and nested part is incident detail.
-### [Model-BQML] 
+### [Model-BQML](https://github.com/technqvi/SMart-AI/tree/main/Model-BQML)
 - Script to build ,evaluate and predict severity incidetnt by BigQueryML
 ### [Model-XGB-RF](https://github.com/technqvi/SMart-AI/tree/main/Model-XGB-RF)
 Demo how to build model with XGBoost and  RandomForest
