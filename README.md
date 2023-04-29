@@ -39,7 +39,7 @@ This folder contain folder and file to buid machine learning wiht Tensorflow-Ker
 
 - [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (Main Development) : Apply tf.data and  Keras-API and Keras preprocessing layer to tranform data before feeding into  Model. 
 - [DNN-2-ScikitLearn](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-2-ScikitLearn)  : tranform data like StandardScaler and OneHot-endcoding with  ScikitLearn.
-- [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train)
+- [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train) : transform data manualy on tensforflow dataset.
 
 ### [LoadNewIncidentML.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadNewIncidentML.ipynb) | [load-new-incident-ml](https://github.com/technqvi/SMart-AI/tree/main/load-new-incident-ml)
 - Script is used to load data from incident table as serving data to get prepared (Excluding all data in training/evaluation/test data) for making prediction.
