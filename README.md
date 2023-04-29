@@ -9,50 +9,54 @@ We use incident system to perform data analysis and machine learning on a google
 - [machine_learning_in_the_enterprise](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/machine_learning_in_the_enterprise/solutions)
 - [production_ml/](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/production_ml/solutions)
 
+## Main Repo 
+
 ### Tutorial
 - [Tutorial on GitHub](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
 - [Tutorial on Youtube](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
 
 
 
-## [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
+### [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
 - Export incident system data stored on Postgres Database to BigQuery using Bigquery Python.Client Library.
 - [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt)  , it refer to bigquery table schema and dataframe schema.
 - Get started with - [Python Client for Google BigQuery](https://cloud.google.com/python/docs/reference/bigquery/latest).
+- Table Schema : [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt) 
 
-## [QueryIncidentOnBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/QueryIncidentOnBQ.ipynb)
+### [QueryIncidentOnBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/QueryIncidentOnBQ.ipynb)
 How to retrive from BigQuery by using Python Client for Google BigQuery
 
 
-## [ExploreToBuildTrainingMLData.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ExploreToBuildTrainingMLData.ipynb)
+### [ExploreToBuildTrainingMLData.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ExploreToBuildTrainingMLData.ipynb)
 - Retrieve data from BigQuery to prepare data for building Machine Learning.
 - Explore & Analyse data with basic statictical method.
 - Transform raws data as engineered featured for buiding ML .
 - Split Data into Train , Validation and Test Data DataSet and  Ingest them into BigQuery.
 
 
-## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras) (DNN-1-TF-KerasProcessing)
+### [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras) (DNN-1-TF-KerasProcessing)
 This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, this active folder is DNN-1-TF-KerasProcessing, the others are option. you can go to to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
 
 - [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (Main Development) : Apply tf.data and  Keras-API and Keras preprocessing layer to tranform data before feeding into  Model. 
 - [DNN-2-ScikitLearn](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-2-ScikitLearn)  : tranform data like StandardScaler and OneHot-endcoding with  ScikitLearn.
 - [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train)
-## [NestedDataOnBigQuery](https://github.com/technqvi/SMart-AI/tree/main/ExportIncidentNestedData)
-How to load  nested structure data from PostgresToBQ to BigQuery , the main dsata is incident and nested part is incident detail.
 
-## [ImportSeverityPrediction_BQ](https://github.com/technqvi/SMart-AI/tree/main/ImportSeverityPrediction_BQ) | [ImportSeverityPredictionToSMApp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ImportSeverityPredictionToSMApp.ipynb)
+### [LoadNewIncidentML.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadNewIncidentML.ipynb) | [load-new-incident-ml](https://github.com/technqvi/SMart-AI/tree/main/load-new-incident-ml)
+- Script is used to load data from incident table as serving data to get prepared (Excluding all data in training/evaluation/test data) for making prediction.
+-  load-new-incident-ml folder is cloud function folder to be ready to deploy.
+
+
+### [ImportSeverityPrediction_BQ](https://github.com/technqvi/SMart-AI/tree/main/ImportSeverityPrediction_BQ) | [ImportSeverityPredictionToSMApp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ImportSeverityPredictionToSMApp.ipynb)
 - To  import prediction result from new_result_prediction_incident table on Bigquery to Incident System Database, we use Python BigQuery client to do it on the incident application server.
 - Prediction Result is shown on Incident Web Site to compare to an actual value determined by Site Manager.
 
 
-## Tutorial#2-4 - [t4-tuning_train_model.ipynb](https://github.com/technqvi/MyYoutube-Demo/blob/main/google_data_ai/t4-tuning_train_model.ipynb )
-Use keras-tuner to find optimal hypter paramter to get best mode ( we improve model performamce from [t3-build_train_model.ipynb](https://github.com/technqvi/MyYoutube-Demo/blob/main/google_data_ai/t3-build_train_model.ipynb) ).
-- [YouTube Tutorial : 4 Tuning Model With Keras Tuner](https://www.youtube.com/watch?v=uDwrhbMMPxw)
 
+## Addtional Repo 
 
-## Tutorial#2-5 -[t5-binary_train.ipynb](https://github.com/technqvi/MyYoutube-Demo/blob/main/google_data_ai/t5-binary_train.ipynb) | [t5-binary_evaluation.ipynb](https://github.com/technqvi/MyYoutube-Demo/blob/main/google_data_ai/t5-binary_evaluation.ipynb) | [t5-evaluate-model-prediction-on-test-data.ipynb](https://github.com/technqvi/MyYoutube-Demo/blob/main/google_data_ai/t5-evaluate-model-prediction-on-test-data.ipynb)
-- Exlain metrics to evaluatte model focusing on Accuracy.
-- Demo how to to evaluate model by getting started with binary classification.
-- Demo how to to evaluate model on muticlass classification.
-- Describe how balanced data and imbalaned data lead to model's performance
-- [YouTube Tutorial : 5 Evaluate Model with Accuracy Metric](https://www.youtube.com/watch?v=itfTFz4e7tg)
+### [ExportNestedDataOnBigQuery](https://github.com/technqvi/SMart-AI/tree/main/ExportIncidentNestedData)
+How to load  nested structure data from PostgresToBQ to BigQuery , the main dsata is incident and nested part is incident detail.
+
+### [Model-BQML] 
+- Script to build ,evaluate and predict severity incidetnt by BigQueryML.
+
