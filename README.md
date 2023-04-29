@@ -49,6 +49,11 @@ This folder contain folder and file to buid machine learning wiht Tensorflow-Ker
 ### [ImportSeverityPrediction_BQ](https://github.com/technqvi/SMart-AI/tree/main/ImportSeverityPrediction_BQ) | [ImportSeverityPredictionToSMApp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ImportSeverityPredictionToSMApp.ipynb)
 - To  import prediction result from new_result_prediction_incident table on Bigquery to Incident System Database, we use Python BigQuery client to do it on the incident application server.
 - Prediction Result is shown on Incident Web Site to compare to an actual value determined by Site Manager.
+###  [deploy_tf_cloud-func.txt](https://github.com/technqvi/SMart-AI/blob/main/deploy_tf_cloud-func.txt)
+Sample shell command to deploy cloud function.
+### [DemoDataTransform.ipynb](https://github.com/technqvi/SMart-AI/blob/main/DemoDataTransform.ipynb)
+How to apply sklearn.preprocessing to perform normalization for numerical data and one-hot encoding for categorical data.  it is recommended to use 2 ways to get data prepared for training on various machine learning algorithms.
+
 
 
 
@@ -56,7 +61,12 @@ This folder contain folder and file to buid machine learning wiht Tensorflow-Ker
 
 ### [ExportNestedDataOnBigQuery](https://github.com/technqvi/SMart-AI/tree/main/ExportIncidentNestedData)
 How to load  nested structure data from PostgresToBQ to BigQuery , the main dsata is incident and nested part is incident detail.
-
 ### [Model-BQML] 
-- Script to build ,evaluate and predict severity incidetnt by BigQueryML.
+- Script to build ,evaluate and predict severity incidetnt by BigQueryML
+### [Model-XGB-RF](https://github.com/technqvi/SMart-AI/tree/main/Model-XGB-RF)
+Demo how to build model with XGBoost and  RandomForest
+### [PredictNoIncidentWeekly.ipynb](https://github.com/technqvi/SMart-AI/blob/main/PredictNoIncidentWeekly.ipynb)
+Demo how to create time series data to train  time series model.
+
+
 

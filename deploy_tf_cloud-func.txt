@@ -10,7 +10,7 @@ gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southe
 
 functions-framework --target=predict_incident_severity_by_tf
 gcloud functions deploy predict-incident-severity-by-tf  --gen2  --region=asia-southeast1  --runtime=python39   --memory=1024 --source=.      --env-vars-file .env.yaml  --trigger-http   --entry-point  predict_incident_severity_by_tf  --timeout 1200s 
-gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southeast1  --runtime=python39  --memory=512 --source=.  --env-vars-file .env.yaml  --trigger-http   --entry-point  load_new_incident_ml_to_bq --project smart-data-ml
+gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southeast1  --runtime=python39  --memory=512 --source=.  --env-vars-file .env.yaml  --trigger-http   --entry-point  load_new_incident_ml_to_bq --project xxxx
 
 
 
