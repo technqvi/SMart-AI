@@ -39,7 +39,7 @@ Perform the same things as   [multi_train_dnn1_incident.ipynb](https://github.co
 
 
 
-## Other Repo
+## Addtional Repo
 
 ### [incident_sevirity_to_class.json](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/incident_sevirity_to_class.json) | [incident_sevirity_to_binary.json](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/incident_sevirity_to_binary.json)
 these json files are refers to how to map severity name to label code.
@@ -49,7 +49,7 @@ Sample to show how to use SDK to create batch predction job to make prediction o
 ### demo_model |  demo_model_with_meta | model | model_binary
 These directories store model from training.
 
-##  inoutput 
+###  inoutput 
 there are many input instanced format.
 
 
