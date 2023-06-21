@@ -45,7 +45,6 @@ def predict_incident_severity_by_tf(request):
 
     # predict_from_date='2023-03-01'
 
-    # map_sevirity_to_class={'Cosmatic': 0, 'Minor': 1, 'Major': 2, 'Critical': 3}
 
 
     # In[14]:
@@ -59,7 +58,7 @@ def predict_incident_severity_by_tf(request):
     # In[15]:
 
 
-    mapping_file="incident_sevirity_to_class.json"
+    mapping_file="incident_severity_to_class.json"
     with open(mapping_file, 'r') as json_file:
          map_sevirity_to_class= json.load(json_file)
 
