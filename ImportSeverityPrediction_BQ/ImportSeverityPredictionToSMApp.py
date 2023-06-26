@@ -25,10 +25,11 @@ print(f"Get prediction as of {predict_datetime}")
 # In[6]:
 
 
-projectId='pongthorn'
-dataset_id='DemoSMartDW'
-table_id = f"{projectId}.{dataset_id}.new_result_prediction_incident"
+projectId='smart-data-ml'
+table_id = f"{projectId}.SMartML.new_result_prediction_incident"
 
+#credentials = service_account.Credentials.from_service_account_file(r'C:\Windows\smart-data-ml-91b6f6204773.json')
+#client = bigquery.Client(credentials= credentials,project=projectId)
 client = bigquery.Client(project=projectId)
 
 
@@ -61,7 +62,7 @@ else:
 
 
 # load json file
-map_sevirity_to_class={'Cosmatic':0,'Minor': 1, "Major": 2, "Critical": 3}
+map_sevirity_to_class={'Cosmetic':0,'Minor': 1, "Major": 2, "Critical": 3}
 revert_class_to_severity = {v: k for k, v in map_sevirity_to_class.items()}
 
 print(f"Map severity Name to LabelCode: {str(revert_class_to_severity)}")

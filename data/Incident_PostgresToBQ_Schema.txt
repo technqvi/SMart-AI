@@ -27,7 +27,6 @@ cluster =severity_name,service_type,company
 
 bigquery schema
 
-
 [
   {
     "name": "id",

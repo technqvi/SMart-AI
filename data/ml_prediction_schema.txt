@@ -1,0 +1,44 @@
+[
+  {
+    "name": "id",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "prob_severity",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "predict_severity",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "severity",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "prediction_item_date",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "prediction_datetime",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
+    "description": null,
+    "fields": []
+  }
+]

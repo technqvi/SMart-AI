@@ -1,78 +1,78 @@
 [
   {
     "name": "id",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "INTEGER",
     "description": null,
     "fields": []
   },
   {
     "name": "severity_id",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "INTEGER",
     "description": null,
     "fields": []
   },
   {
     "name": "severity_name",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "STRING",
     "description": null,
     "fields": []
   },
   {
     "name": "sla",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "STRING",
     "description": null,
     "fields": []
   },
   {
     "name": "product_type",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "STRING",
     "description": null,
     "fields": []
   },
   {
     "name": "brand",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "STRING",
     "description": null,
     "fields": []
   },
   {
     "name": "service_type",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "STRING",
     "description": null,
     "fields": []
   },
   {
     "name": "incident_type",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "STRING",
     "description": null,
     "fields": []
   },
   {
-    "name": "imported_at",
-    "mode": "NULLABLE",
-    "type": "DATETIME",
-    "description": null,
-    "fields": []
-  },
-  {
     "name": "open_to_close_hour",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "FLOAT",
     "description": null,
     "fields": []
   },
   {
     "name": "response_to_resolved_hour",
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "type": "FLOAT",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "imported_at",
+    "mode": "REQUIRED",
+    "type": "DATETIME",
     "description": null,
     "fields": []
   }
