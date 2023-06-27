@@ -23,6 +23,9 @@ We use incident system to perform data analysis and machine learning on a google
 - Get started with - [Python Client for Google BigQuery](https://cloud.google.com/python/docs/reference/bigquery/latest).
 - Table Schema : [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt) 
 
+### [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF)
+develop [TensorFlow Decision Forests](https://www.tensorflow.org/decision_forests/tutorials) model to predict severity.
+
 ### [QueryIncidentOnBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/QueryIncidentOnBQ.ipynb)
 How to retrive from BigQuery by using Python Client for Google BigQuery
 
