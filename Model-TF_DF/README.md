@@ -1,3 +1,9 @@
 # About
-This is pilot project to build model to make serverity level prediction after close incident issue.
+This is a pilot project to build a model to make severity-level predictions of incident issues.
+
+# Reference
+* [decision forests on tensorflow tutorial](https://www.tensorflow.org/decision_forests/tutorials)
+* [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
+
+# Main
 
