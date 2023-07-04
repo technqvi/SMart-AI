@@ -1,6 +1,9 @@
 .ipynb_checkpoints
 .ipynb_checkpoints/
+__pycache__
+__pycache__/
 ScriptJob
 ScriptJob/
+.env
 *.lnk
 Model-TF_DF/Model_TF-DF_slide.pptx

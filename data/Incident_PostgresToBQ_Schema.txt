@@ -20,8 +20,8 @@
 
 pongthorn.SMartDW.incident
 
-partion =open_datetime
-cluster =severity_name,service_type,company
+partion = imported_at
+cluster =severity_id,open_datetime,service_type
 
 
 
