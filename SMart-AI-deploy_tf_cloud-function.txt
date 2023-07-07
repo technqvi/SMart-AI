@@ -14,7 +14,7 @@ gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southe
 
 
 
-gcloud functions deploy xgb-tf-predict-incident-severity  --gen2  --region=asia-southeast1  --runtime=python39   --memory=1024 --source=.       --trigger-http   --entry-point  xgb_tf_predict_incident_severity --timeout 1200s 
+gcloud functions deploy xgb-tf-predict-incident-severity  --gen2  --region=asia-southeast1  --runtime=python39   --memory=512 --source=.       --trigger-http   --entry-point  xgb_tf_predict_incident_severity --timeout 1200s 
 
 
 

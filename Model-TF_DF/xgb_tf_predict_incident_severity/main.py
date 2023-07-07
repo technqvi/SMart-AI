@@ -3,8 +3,6 @@
 
 # In[25]:
 
-
-from google.cloud import aiplatform
 from google.cloud import bigquery
 
 import pandas as pd
