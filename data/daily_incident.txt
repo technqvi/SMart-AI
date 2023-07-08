@@ -1,0 +1,16 @@
+[
+  {
+    "name": "date",
+    "mode": "REQUIRED",
+    "type": "DATE",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "count_incident",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  }
+]
