@@ -1,3 +1,5 @@
+Index: 554 entries, 2022-01-01 to 2023-07-08
+
 input_sequence_length =60  #30 90 
 output_sequence_length =5  # 7
 train_ratio=0.8
@@ -8,6 +10,7 @@ n_batch_size = 32  # 16/32/64
 n_early=15
 
 
+
 Keras Tuning Parameter Setting
 Train Row : 379
 60(backward step) x 1(features) = 60, it is total no.NN  to predict future 5 with Hidden Node Unit from 60 to 180
@@ -16,5 +19,10 @@ all combination : 3 x 3 = 9
 MAx run : 27 each trail run to essemble  3
 
 Best mean_absolute_error So Far: 0.15429635345935822
+
 {'input_unit': 60, 'Dropout_rate': 0.0}
+
+epoch 100+1
+test loss, test acc: [0.1613255888223648, 0.1613255888223648]
+
 Mean Absolute Error (MAE): 2.42
