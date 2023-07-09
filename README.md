@@ -60,7 +60,7 @@ How to apply sklearn.preprocessing to perform normalization for numerical data a
 ### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast)
 * Import the number of daily incident from SMartApp  to BigQuery on daily basis
 * Buil LSTM  Time-Serice Model in order to  retrieve the number of daily incident over the past x days to make prediction for the next y days by LSTM Time-Serice Model
-* We store serving data and prediction result on BigQuery
+* Marke Prediction  onserving data and store prediction result on BigQuery
 * To visulaize prediction the number of incident  a head of time , you can apply PowerBI as dashboard tools.
 
 
