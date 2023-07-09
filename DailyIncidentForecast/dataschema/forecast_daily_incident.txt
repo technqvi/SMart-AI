@@ -1,0 +1,59 @@
+forecast_daily_incident
+asia-southeast1
+
+prediction_date
+model_id
+
+
+[
+  {
+    "name": "prediction_result",
+    "mode": "REPEATED",
+    "type": "RECORD",
+    "description": null,
+    "fields": [
+      {
+        "name": "type",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+      },
+      {
+        "name": "count_incident",
+        "mode": "NULLABLE",
+        "type": "FLOAT",
+        "description": null,
+        "fields": []
+      },
+      {
+        "name": "date",
+        "mode": "NULLABLE",
+        "type": "DATE",
+        "description": null,
+        "fields": []
+      }
+    ]
+  },
+  {
+    "name": "pred_timestamp",
+    "mode": "NULLABLE",
+    "type": "TIMESTAMP",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "model_id",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "prediction_date",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": null,
+    "fields": []
+  }
+]

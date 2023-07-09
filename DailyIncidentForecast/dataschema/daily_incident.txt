@@ -1,0 +1,24 @@
+pongthorn.SMartDW.daily_incident
+[
+  {
+    "name": "date",
+    "mode": "NULLABLE",
+    "type": "DATETIME",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "count_incident",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "datetime_imported",
+    "mode": "NULLABLE",
+    "type": "DATETIME",
+    "description": null,
+    "fields": []
+  }
+]
