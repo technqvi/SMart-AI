@@ -1,17 +1,10 @@
 # About
 We use incident system to perform data analysis and machine learning on a google cloud platform, the main purpose of this project is to analyze data on the incident system in order to develop a machine learning model to predict the severity of each incident with various machine learning algorithms.
 
-### Main reference : 
-- [Train a model using Vertex AI and the Python SDK](https://cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction)
-- [vertex-ai-samples](https://github.com/GoogleCloudPlatform/vertex-ai-samples/tree/main/notebooks/official) (All of them can by applied to real world project)
-- [codelabs.developers](https://codelabs.developers.google.com/)
-- [introduction_to_tensorflow](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/introduction_to_tensorflow)
-- [machine_learning_in_the_enterprise](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/machine_learning_in_the_enterprise/solutions)
-- [production_ml/](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/production_ml/solutions)
 
 ## Main Repo 
 
-### Tutorial
+### My Tutorial
 - [Tutorial on GitHub](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
 - [Tutorial on Youtube](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
 
@@ -29,7 +22,7 @@ We use incident system to perform data analysis and machine learning on a google
 - Table Schema : [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt) 
 
 ### [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF)
-develop [TensorFlow Decision Forests](https://www.tensorflow.org/decision_forests/tutorials) model to predict severity.
+Apply [TensorFlow Decision Forests](https://www.tensorflow.org/decision_forests/tutorials) to build decision treen model(XGBoost & RandomForest) to predict severity with binary classification (Critical and Noraml Case).
 
 ### [QueryIncidentOnBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/QueryIncidentOnBQ.ipynb)
 How to retrive from BigQuery by using Python Client for Google BigQuery
@@ -72,8 +65,13 @@ How to load  nested structure data from PostgresToBQ to BigQuery , the main dsat
 Script to build ,evaluate and predict severity incidetnt by BigQueryML
 ### [Model-XGB-RF](https://github.com/technqvi/SMart-AI/tree/main/Model-XGB-RF)
 Demo how to build model with XGBoost and  RandomForest
-### [PredictNoIncidentWeekly.ipynb](https://github.com/technqvi/SMart-AI/blob/main/PredictNoIncidentWeekly.ipynb)
-Demo how to create time series data to train  time series model.
 
 
 
+### Tutorial reference : 
+- [Train a model using Vertex AI and the Python SDK](https://cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction)
+- [vertex-ai-samples](https://github.com/GoogleCloudPlatform/vertex-ai-samples/tree/main/notebooks/official) (All of them can by applied to real world project)
+- [codelabs.developers](https://codelabs.developers.google.com/)
+- [introduction_to_tensorflow](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/introduction_to_tensorflow)
+- [machine_learning_in_the_enterprise](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/machine_learning_in_the_enterprise/solutions)
+- [production_ml](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/production_ml/solutions)
