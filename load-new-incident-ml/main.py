@@ -7,7 +7,7 @@
 from google.cloud import bigquery
 import pandas as pd
 import numpy as np
-from datetime import datetime 
+from datetime import datetime ,timezone
 from google.oauth2 import service_account
 
 import functions_framework
@@ -27,10 +27,10 @@ def load_new_incident_ml_to_bq(request):
     # In[24]:
 
 
-    projectId='pongthorn'
+    projectId='smart-data-ml'
 
-    start_date_query=os.environ.get('start_date_query', '2023-04-17')
-    start_date_query='2023-04-17'
+    start_date_query=os.environ.get('start_date_query', '2023-07-16')
+    start_date_query='2023-07-16'
 
 
     # In[25]:
@@ -55,8 +55,6 @@ def load_new_incident_ml_to_bq(request):
 
     numbericCols=['open_to_close_hour','response_to_resolved_hour']
     cateCols=['sla','product_type','brand','service_type','incident_type']
-
-    file_name="New_Incident.csv"
 
 
     # In[27]:
@@ -96,7 +94,7 @@ def load_new_incident_ml_to_bq(request):
     # In[28]:
 
 
-    dt_imported=datetime.now()
+    dt_imported=datetime.now(timezone.utc)
     str_imported=dt_imported.strftime('%Y-%m-%d %H:%M:%S')
     print(f"Imported DateTime: {str_imported}" )
 

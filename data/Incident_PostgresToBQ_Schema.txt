@@ -21,7 +21,7 @@
 pongthorn.SMartDW.incident
 
 partion = imported_at
-cluster =severity_id,open_datetime,service_type
+cluster =imported_at,updated_at,open_datetime,severity_id
 
 
 

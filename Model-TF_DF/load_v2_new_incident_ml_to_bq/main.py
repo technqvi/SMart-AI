@@ -10,7 +10,7 @@ from google.oauth2 import service_account
 import pandas as pd
 import numpy as np
 import math
-from datetime import datetime
+from datetime import datetime,timezone
 
 from scipy import stats
 
@@ -29,7 +29,7 @@ def load_v2_new_incident_ml_to_bq(request):
     # In[51]:
 
 
-    dt_imported=datetime.now()
+    dt_imported=datetime.now(timezone.utc)
 
     str_imported=dt_imported.strftime('%Y-%m-%d %H:%M:%S')
     print(f"Imported DateTime: {str_imported}" )
