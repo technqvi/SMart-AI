@@ -8,8 +8,8 @@ We use incident system to perform data analysis and machine learning on a google
 - [Tutorial on GitHub](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
 - [Tutorial on Youtube](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
 
-### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast)
-Click link to detail.
+### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
+
 
 
 ### [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)

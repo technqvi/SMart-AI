@@ -57,6 +57,8 @@ def load_v2_new_incident_ml_to_bq(request):
 
     dw_table_id = f"{projectId}.{dw_dataset_id}.incident"
 
+    # credentials = service_account.Credentials.from_service_account_file(r'C:\Windows\smart-data-ml-91b6f6204773.json')
+    # client = bigquery.Client(credentials=credentials, project=projectId)
 
     client = bigquery.Client(project=projectId)
 
@@ -239,14 +241,14 @@ def load_v2_new_incident_ml_to_bq(request):
 
     print("Load data from Bigquery")
     df_all=load_data_bq(sql_all)
-    df_all=df_all.drop_duplicates(subset=['id'],keep='last')
-
     no_original_rows=len(df_all)
 
-    if len(df_all)==0:
+    if no_original_rows==0:
      print("No records from bigquery")  
-     quit()
+     # quit()
+     return "No new data imported to bigquery"   
     else:
+     df_all=df_all.drop_duplicates(subset=['id'],keep='last')   
      print(f"Import at :{df_all['imported_at'].min()} - {df_all['imported_at'].max()}")
      print(f"Open Date : {df_all['open_datetime'].min()} - {df_all['open_datetime'].max()}")   
      print(df_all.shape)  
@@ -254,7 +256,28 @@ def load_v2_new_incident_ml_to_bq(request):
     print(df_all[["severity_id","severity_name","updated_at","imported_at"]].head())
 
 
+    # # Manage Numberic Cols
+    # ### 1-Find Time Inverval
+    # ### 2-Remove outlier on Time Interval to service
+    # ### 3-Find any rows  contain zero time period
+    # ### 4-Create range from time-interval (best,good,moderate,bad,worst)
 
+    # # Bining Range
+    # 
+    # function is used to separate the array elements into many different ranges . 
+    # The cut function is mainly used to perform statistical analysis on scalar data. 
+    # 
+    # we can convert hour to range   
+    # * (0, 24] =by 1 day =best
+    # * (24, 168] =  1day -1 week  =good
+    # * (168, 360]=  1week- 15 days(half a month) =fair
+    # * (360, 720]= 15 dasy-1 month =bad
+    # * (720, 2349]=1 month-1 Q =worst
+    # 
+    # open_to_close_hour ,response_to_resolved_hour , Mostly  we can complate by 1 day (0, 24]
+    # there are few cases that take long to close incident (360, 720]   15 day to  1month
+
+    # In[59]:
 
 
     print("Manage Numberic Cols")
@@ -353,6 +376,25 @@ def load_v2_new_incident_ml_to_bq(request):
 
     # In[63]:
 
+
+    # # https://www.geeksforgeeks.org/pandas-cut-method-in-python/
+    # def explore_ranges_numberic_val(col,rangeList):
+    #     print(col)
+    #     rangeList.sort()
+    #     return pd.cut(df_all[col],rangeList, right=True).value_counts()
+    # range1= [0,24, 168, 360, 720,math.floor(df_all['open_to_close_hour'].max())]
+    # print(explore_ranges_numberic_val('open_to_close_hour',range1))
+    # print("=======================================================")
+
+    # range2= [0,24, 168, 360, 720,math.floor(df_all['response_to_resolved_hour'].max())]
+    # print(explore_ranges_numberic_val('response_to_resolved_hour',range2))
+    # print("=======================================================")
+
+
+
+    # # Plot Numeric  and Category columns
+
+    # In[64]:
 
 
     # comment on google cloud
