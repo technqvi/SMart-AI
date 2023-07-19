@@ -9,10 +9,7 @@ We use incident system to perform data analysis and machine learning on a google
 - [Tutorial on Youtube](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
 
 ### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast)
-* Import the number of daily incident from SMartApp  to BigQuery on daily basis
-* Buil LSTM  Time-Serice Model in order to  retrieve the number of daily incident over the past x days to make prediction for the next y days by LSTM Time-Serice Model
-* Marke Prediction  on the last the number of incident and store prediction result on BigQuery
-* To visulaize prediction the number of incident  a head of time , you can apply PowerBI as dashboard tools.
+Click link to detail.
 
 
 ### [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)

@@ -28,7 +28,7 @@ def load_new_incident_ml_to_bq(request):
 
 
     projectId='pongthorn'
-    dataset_id='DemoSMartDW'
+
     start_date_query=os.environ.get('start_date_query', '2023-04-17')
     start_date_query='2023-04-17'
 
@@ -36,8 +36,8 @@ def load_new_incident_ml_to_bq(request):
     # In[25]:
 
 
-    table_ml_id = f"{projectId}.{dataset_id}.new_incident"
-    table_dw_id=f"{projectId}.{dataset_id}.incident"
+    table_ml_id = f"{projectId}.SMartML.new_incident"
+    table_dw_id=f"{projectId}.SMartDW.incident"
 
     # credentials = service_account.Credentials.from_service_account_file(r'C:\Windows\smart-data-ml-91b6f6204773.json')
     # client = bigquery.Client(credentials=credentials, project=projectId)
@@ -130,7 +130,7 @@ def load_new_incident_ml_to_bq(request):
     product_type,brand,service_type,incident_type,
     open_datetime,  close_datetime, response_datetime,resolved_datetime
     FROM `{table_dw_id}` 
-    WHERE imported_at>'{start_date_query}'
+    WHERE imported_at>='{start_date_query}'
     order by imported_at
     """
     #WHERE imported_at>='{start_date_query}' and imported_at<='2023-03-24'
