@@ -191,7 +191,6 @@ def load_v2_new_incident_ml_to_bq(request):
 
     # In[57]:
 
-
     sql_all=f"""
     SELECT  id,severity_id,severity_name
     ,sla,product_type,brand,service_type,incident_type
@@ -199,7 +198,7 @@ def load_v2_new_incident_ml_to_bq(request):
     ,updated_at,imported_at
     FROM `{dw_table_id}` """
 
-    if isTrainData:
+    if isTrainData: # get from imported_to specified by you
         print(f"Build train/test data by imported date < {datetime.strptime(imported_to,'%Y-%m-%d')}")
 
         train_name='train2_incident'
@@ -214,8 +213,7 @@ def load_v2_new_incident_ml_to_bq(request):
 
         """
 
-    else:
-        print(f"Load new data by imported date >= {datetime.strptime(imported_to,'%Y-%m-%d')}")
+    else: # get from max update
         new_incident_name='new2_incident'    
         new_incident_table_id=f"{projectId}.{dataset_id}.{new_incident_name}"
         print(f"{new_incident_table_id}")
@@ -223,7 +221,8 @@ def load_v2_new_incident_ml_to_bq(request):
         # 1.get table and its schema
         schema_for_new_data=get_table_schema(new_incident_table_id)
         # print(schema_for_new_data)
-        imported_to=get_last_imported_at(new_incident_table_id)
+        imported_to=get_last_imported_at(new_incident_table_id)  # get  start_date_query  from this method
+        print(f"Load the most up-to-date new data from imported date >= {imported_to}")
         print(imported_to)
 
 
@@ -255,29 +254,6 @@ def load_v2_new_incident_ml_to_bq(request):
     print(df_all.info())
     print(df_all[["severity_id","severity_name","updated_at","imported_at"]].head())
 
-
-    # # Manage Numberic Cols
-    # ### 1-Find Time Inverval
-    # ### 2-Remove outlier on Time Interval to service
-    # ### 3-Find any rows  contain zero time period
-    # ### 4-Create range from time-interval (best,good,moderate,bad,worst)
-
-    # # Bining Range
-    # 
-    # function is used to separate the array elements into many different ranges . 
-    # The cut function is mainly used to perform statistical analysis on scalar data. 
-    # 
-    # we can convert hour to range   
-    # * (0, 24] =by 1 day =best
-    # * (24, 168] =  1day -1 week  =good
-    # * (168, 360]=  1week- 15 days(half a month) =fair
-    # * (360, 720]= 15 dasy-1 month =bad
-    # * (720, 2349]=1 month-1 Q =worst
-    # 
-    # open_to_close_hour ,response_to_resolved_hour , Mostly  we can complate by 1 day (0, 24]
-    # there are few cases that take long to close incident (360, 720]   15 day to  1month
-
-    # In[59]:
 
 
     print("Manage Numberic Cols")
@@ -374,27 +350,7 @@ def load_v2_new_incident_ml_to_bq(request):
     df_all.tail(30)
 
 
-    # In[63]:
 
-
-    # # https://www.geeksforgeeks.org/pandas-cut-method-in-python/
-    # def explore_ranges_numberic_val(col,rangeList):
-    #     print(col)
-    #     rangeList.sort()
-    #     return pd.cut(df_all[col],rangeList, right=True).value_counts()
-    # range1= [0,24, 168, 360, 720,math.floor(df_all['open_to_close_hour'].max())]
-    # print(explore_ranges_numberic_val('open_to_close_hour',range1))
-    # print("=======================================================")
-
-    # range2= [0,24, 168, 360, 720,math.floor(df_all['response_to_resolved_hour'].max())]
-    # print(explore_ranges_numberic_val('response_to_resolved_hour',range2))
-    # print("=======================================================")
-
-
-
-    # # Plot Numeric  and Category columns
-
-    # In[64]:
 
 
     # comment on google cloud
