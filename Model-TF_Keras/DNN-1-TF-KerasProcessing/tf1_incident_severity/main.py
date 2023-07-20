@@ -1,53 +1,52 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[11]:
+# In[257]:
 
 
-from google.cloud import bigquery
 import tensorflow as tf
 
 import pandas as pd
 
 import json
 import os
-from datetime import date,datetime,timedelta
+from datetime import date,datetime,timedelta,timezone
 
-import functions_framework
-
+from google.cloud import bigquery
+from google.oauth2 import service_account
 from google.cloud.exceptions import NotFound
 from google.api_core.exceptions import BadRequest
 
 print(tf.__version__)
 
 
-# In[12]:
 
-
+import functions_framework
 @functions_framework.http
 def predict_incident_severity_by_tf(request):
 
 
-# In[13]:
+    PATH_FOLDER_ARTIFACTS="gs://tf1-incident-smart-ml-yip/model"
+
+    model_version='model_v2_t150723'
+
+    PROJECT_ID='smart-data-ml'
+    dataset_id='SMartML'
+
+    client = bigquery.Client(PROJECT_ID)
 
 
-    PROJECT_ID='pongthorn'
-    dataset_id='DemoSMartDW'
-    PATH_FOLDER_ARTIFACTS="gs://demo-tuned-tf-incident-pongthorn/model_tuned"
-    # PATH_FOLDER_ARTIFACTS="demo_model" 
 
     predict_from_date=os.environ.get('predict_from_date', '')
-    all_prediction=os.environ.get('all_prediction', '0')  # 1 is all , 0 is 1 day
-    # all_prediction=1
+    all_prediction=os.environ.get('all_prediction', '0') # 1 is all , 0 is 1 day
 
     print(f"Prediction From = {predict_from_date}")
     print(f"All prediction = {all_prediction}")
 
-    # predict_from_date='2023-03-01'
+    # map_sevirity_to_class={'Cosmatic': 0, 'Minor': 1, 'Major': 2, 'Critical': 3}
 
 
-
-    # In[14]:
+    # In[260]:
 
 
     table_id = f"{PROJECT_ID}.{dataset_id}.new_incident"
@@ -55,9 +54,10 @@ def predict_incident_severity_by_tf(request):
     unUsedColtoPredict=['severity','id','severity_id','severity_name','imported_at']
 
 
-    # In[15]:
+    # In[261]:
 
 
+    print("Load label target multiclasses")
     mapping_file="incident_severity_to_class.json"
     with open(mapping_file, 'r') as json_file:
          map_sevirity_to_class= json.load(json_file)
@@ -65,13 +65,18 @@ def predict_incident_severity_by_tf(request):
     print(map_sevirity_to_class)
 
 
-    # In[16]:
+    # In[262]:
 
 
     # Get today's date
-    prediction_datetime=datetime.now()
+    prediction_datetime=datetime.now(timezone.utc)
+    today_str=prediction_datetime.strftime("%Y-%m-%d")
+    today=datetime.strptime(today_str,"%Y-%m-%d")
+    print(prediction_datetime)
 
-    today = date.today()
+
+    # In[263]:
+
 
     # Yesterday date
     if predict_from_date=='':
@@ -85,10 +90,9 @@ def predict_incident_severity_by_tf(request):
     print(f"Get data between {str_yesterday} to {str_today} to predict sevirity level")
 
 
-    # In[17]:
+    # In[264]:
 
 
-    client = bigquery.Client(PROJECT_ID)
     def load_data_bq(sql:str):
 
      query_result=client.query(sql)
@@ -96,7 +100,7 @@ def predict_incident_severity_by_tf(request):
      return df
 
 
-    # In[18]:
+    # In[265]:
 
 
     if int(all_prediction)==0:
@@ -114,7 +118,7 @@ def predict_incident_severity_by_tf(request):
     print(sql)
 
 
-    # In[19]:
+    # In[266]:
 
 
     #LIMIT 2
@@ -128,13 +132,13 @@ def predict_incident_severity_by_tf(request):
     # print(dfNewData)
 
     if len(dfNewData)==0:
-        print("No Data To predict")
-        quit()
-        #return "No Data To predict"
+        # print("No Data To predict")
+        # quit()
+        return "No Data To predict"
 
 
 
-    # In[20]:
+    # In[267]:
 
 
     try:
@@ -147,7 +151,7 @@ def predict_incident_severity_by_tf(request):
       raise error
 
 
-    # In[21]:
+    # In[ ]:
 
 
     pdPrediction=pd.DataFrame(columns=['_id','predict_severity','prob_severity'])
@@ -182,16 +186,19 @@ def predict_incident_severity_by_tf(request):
     dfPredictData=dfPredictData[['id','prob_severity','predict_severity','severity']]
     dfPredictData['prediction_item_date']= datetime.strptime(str_yesterday, '%Y-%m-%d')
     dfPredictData['prediction_datetime']=prediction_datetime
+    dfPredictData['model_version']=model_version
 
 
-    # In[22]:
+    # In[ ]:
 
 
     print(dfPredictData.info())
-    print(dfPredictData)
+    dfPredictData[['id','prediction_item_date','predict_severity','severity']]
 
 
-    # In[23]:
+    # # Save predictoin resutl to Bigquery
+
+    # In[94]:
 
 
     #https://cloud.google.com/bigquery/docs/samples/bigquery-create-table#bigquery_create_table-python
@@ -206,7 +213,8 @@ def predict_incident_severity_by_tf(request):
         bigquery.SchemaField("predict_severity", "INTEGER", mode="REQUIRED"),
         bigquery.SchemaField("severity", "INTEGER", mode="REQUIRED"),    
         bigquery.SchemaField("prediction_item_date", "DATETIME", mode="REQUIRED"),    
-        bigquery.SchemaField("prediction_datetime", "DATETIME", mode="REQUIRED") 
+        bigquery.SchemaField("prediction_datetime", "DATETIME", mode="REQUIRED"), 
+        bigquery.SchemaField("model_version",  "STRING", mode="REQUIRED")     
         ]
 
         table = bigquery.Table(predictResult_table_id,schema=schema)
@@ -220,7 +228,7 @@ def predict_incident_severity_by_tf(request):
         )
 
 
-    # In[24]:
+    # In[201]:
 
 
     def loadDataFrameToBQ():
@@ -262,23 +270,6 @@ def predict_incident_severity_by_tf(request):
 
 
     return 'ok'
-
-
-# In[ ]:
-
-
-# if __name__ == "__main__":
-#  result=predict_incident_severity_by_tf(None)
-#  print(result)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
