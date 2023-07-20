@@ -23,7 +23,7 @@ Build multiclass classification and binary classification deep learning model  w
 - Take best tuned model to retrain to get the N-max epochs.
 - Build final model with best model and best  N-max epochs.
 - Save Model to local path and export it to GCS.
-### [multi_test_evaluation_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/multi_test_evaluation_dnn1_incident.ipynb)
+### [multi_evaluation_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/multi_evaluation_dnn1_incident.ipynb)
 - Explore how balanced the data is on train/evaluation/test.
 - Load model from local path to make predction.
 - Load Test/Validatoin data and Convert dataframe to tensor format to make predctoin and save result into dataframe.
