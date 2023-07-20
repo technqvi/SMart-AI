@@ -34,7 +34,7 @@ Build multiclass classification and binary classification deep learning model  w
 - Store prediction result into new_result_prediction_incident table.
 - [tf1_incident_severity](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/tf1_incident_severity) is cloud function ready to deploy to google cloud converted from [prediction_serving_tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/prediction_serving_tf_incident.ipynb) 
 
-### [bi_train_dnn1_bq_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/bi_train_dnn1_bq_incident.ipynb) | [bi_test_evaluation_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/bi_test_evaluation_dnn1_incident.ipynb)
+### [bi_train_dnn1_bq_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/bi_train_dnn1_bq_incident.ipynb) | [bi_evaluation_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/bi_evaluation_dnn1_incident.ipynb)
 Perform the same things as   [multi_train_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/multi_train_dnn1_incident.ipynb) and  [multi_test_evaluation_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/multi_test_evaluation_dnn1_incident.ipynb) respectively. But Use binary classification instead. 
 
 
