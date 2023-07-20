@@ -41,7 +41,7 @@ Perform the same things as   [multi_train_dnn1_incident.ipynb](https://github.co
 
 ## Addtional Repo
 
-### [incident_sevirity_to_class.json](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/incident_sevirity_to_class.json) | [incident_sevirity_to_binary.json](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/incident_sevirity_to_binary.json)
+### [incident_sevirity_to_class.json](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/incident_severity_to_class.json) | [incident_sevirity_to_binary.json](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/incident_severity_to_binary.json)
 these json files are refers to how to map severity name to label code.
 ### [batch_predicton_on_vertex.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/batch_predicton_on_vertex.ipynb)
 Sample to show how to use SDK to create batch predction job to make prediction on Vertex-AI.
