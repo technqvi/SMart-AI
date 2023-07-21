@@ -1,50 +1,46 @@
+model_daily_pred_perf_stat
+
+
 [
   {
-    "name": "id",
+    "name": "date_created",
     "mode": "REQUIRED",
-    "type": "INTEGER",
+    "type": "DATE",
     "description": null,
     "fields": []
   },
   {
-    "name": "prob_severity",
+    "name": "model_name",
     "mode": "REQUIRED",
     "type": "STRING",
     "description": null,
     "fields": []
   },
   {
-    "name": "predict_severity",
+    "name": "pred_right",
     "mode": "REQUIRED",
     "type": "INTEGER",
     "description": null,
     "fields": []
   },
   {
-    "name": "severity",
+    "name": "pred_wrong",
     "mode": "REQUIRED",
     "type": "INTEGER",
     "description": null,
     "fields": []
   },
   {
-    "name": "prediction_item_date",
+    "name": "pred_all",
     "mode": "REQUIRED",
-    "type": "DATETIME",
+    "type": "INTEGER",
     "description": null,
     "fields": []
   },
   {
-    "name": "prediction_datetime",
+    "name": "pct_acc",
     "mode": "REQUIRED",
-    "type": "DATETIME",
-    "description": null,
-    "fields": []
-  },
-  {
-    "name": "model_version",
-    "mode": "REQUIRED",
-    "type": "STRING",
+    "type": "FLOAT",
     "description": null,
     "fields": []
   }
