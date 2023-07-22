@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[257]:
+# In[6]:
 
 
 import tensorflow as tf
@@ -20,6 +20,8 @@ from google.api_core.exceptions import BadRequest
 print(tf.__version__)
 
 
+# In[7]:
+
 
 import functions_framework
 @functions_framework.http
@@ -27,18 +29,15 @@ def predict_incident_severity_by_tf(request):
 
 
     PATH_FOLDER_ARTIFACTS="gs://tf1-incident-smart-ml-yip/model"
-
     model_version='model_v2_t150723'
-
     PROJECT_ID='smart-data-ml'
     dataset_id='SMartML'
 
     client = bigquery.Client(PROJECT_ID)
 
 
-
     predict_from_date=os.environ.get('predict_from_date', '')
-    all_prediction=os.environ.get('all_prediction', '0') # 1 is all , 0 is 1 day
+    all_prediction=os.environ.get('all_prediction', '0')  # 1 is all , 0 is 1 day
 
     print(f"Prediction From = {predict_from_date}")
     print(f"All prediction = {all_prediction}")
@@ -46,7 +45,7 @@ def predict_incident_severity_by_tf(request):
     # map_sevirity_to_class={'Cosmatic': 0, 'Minor': 1, 'Major': 2, 'Critical': 3}
 
 
-    # In[260]:
+    # In[10]:
 
 
     table_id = f"{PROJECT_ID}.{dataset_id}.new_incident"
@@ -54,7 +53,7 @@ def predict_incident_severity_by_tf(request):
     unUsedColtoPredict=['severity','id','severity_id','severity_name','imported_at']
 
 
-    # In[261]:
+    # In[11]:
 
 
     print("Load label target multiclasses")
@@ -65,7 +64,7 @@ def predict_incident_severity_by_tf(request):
     print(map_sevirity_to_class)
 
 
-    # In[262]:
+    # In[12]:
 
 
     # Get today's date
@@ -74,23 +73,10 @@ def predict_incident_severity_by_tf(request):
     today=datetime.strptime(today_str,"%Y-%m-%d")
     print(prediction_datetime)
 
-
-    # In[263]:
-
-
-    # Yesterday date
-    if predict_from_date=='':
-     yesterday = today - timedelta(days = 1)
-     str_yesterday=yesterday.strftime('%Y-%m-%d')
-    else:
-     str_yesterday=predict_from_date
-
-    str_today=today.strftime('%Y-%m-%d')
-
-    print(f"Get data between {str_yesterday} to {str_today} to predict sevirity level")
+    print(f"Prediction at {prediction_datetime} for {today_str} ({today})")
 
 
-    # In[264]:
+    # In[13]:
 
 
     def load_data_bq(sql:str):
@@ -100,13 +86,13 @@ def predict_incident_severity_by_tf(request):
      return df
 
 
-    # In[265]:
+    # In[14]:
 
 
     if int(all_prediction)==0:
         sql=f"""
         SELECT *  FROM `{table_id}` 
-         WHERE DATE(imported_at) >= '{str_yesterday}' and DATE(imported_at) < '{str_today}' 
+         WHERE DATE(imported_at) = '{today_str}' 
          order by imported_at
         """
     else:
@@ -114,32 +100,22 @@ def predict_incident_severity_by_tf(request):
         SELECT *  FROM `{table_id}` 
          order by imported_at
         """
-
     print(sql)
 
 
-    # In[266]:
+    # In[15]:
 
 
-    #LIMIT 2
     dfNewData=load_data_bq(sql)
-    dfNewData=dfNewData.drop_duplicates(subset=['id'],keep='last')
 
-    dfNewData.insert(2, 'severity', dfNewData['severity_name'].map(map_sevirity_to_class),True)
-
-
-    print(dfNewData.info())
-    # print(dfNewData)
-
-    if len(dfNewData)==0:
-        # print("No Data To predict")
-        # quit()
+    if dfNewData.empty==True:
+        print("No Data To predict")
         return "No Data To predict"
-
-
-
-    # In[267]:
-
+    else:
+        dfNewData=dfNewData.drop_duplicates(subset=['id'],keep='last')
+        dfNewData.insert(2, 'severity', dfNewData['severity_name'].map(map_sevirity_to_class),True)
+        print(dfNewData)
+        print(dfNewData.info())
 
     try:
         model = tf.keras.models.load_model(PATH_FOLDER_ARTIFACTS)    
@@ -151,7 +127,7 @@ def predict_incident_severity_by_tf(request):
       raise error
 
 
-    # In[ ]:
+    # In[18]:
 
 
     pdPrediction=pd.DataFrame(columns=['_id','predict_severity','prob_severity'])
@@ -184,12 +160,12 @@ def predict_incident_severity_by_tf(request):
     dfPredictData=dfPredictData.drop(columns=['_id'])
     dfPredictData['predict_severity']=dfPredictData['predict_severity'].astype('int')
     dfPredictData=dfPredictData[['id','prob_severity','predict_severity','severity']]
-    dfPredictData['prediction_item_date']= datetime.strptime(str_yesterday, '%Y-%m-%d')
+    dfPredictData['prediction_item_date']= datetime.strptime(today_str, '%Y-%m-%d')
     dfPredictData['prediction_datetime']=prediction_datetime
     dfPredictData['model_version']=model_version
 
 
-    # In[ ]:
+    # In[19]:
 
 
     print(dfPredictData.info())
@@ -269,7 +245,15 @@ def predict_incident_severity_by_tf(request):
     # In[ ]:
 
 
-    return 'ok'
+    return 'All incidents has been predicted completely.'
+
+
+
+
+
+
+
+# In[ ]:
 
 
 
