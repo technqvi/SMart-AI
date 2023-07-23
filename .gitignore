@@ -7,3 +7,4 @@ ScriptJob/
 .env
 *.lnk
 Model-TF_DF/Model_TF-DF_slide.pptx
+*.pbix
