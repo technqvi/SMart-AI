@@ -9,8 +9,9 @@ We use incident system to perform data analysis and machine learning on a google
 - [Tutorial on Youtube](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
 
 ### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
-
-
+Build LSTM Time Series Model by taking the number of dialy incident cases over the past 60 days to predict the number incident cases over the next 5 days. 
+### [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) Click link to detail.
+Build XGBoost model to predict severity level such as 1=Critical and 0=Normal  Decision Forests on Tensorflow Framework 
 
 ### [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
 - Export incident system data stored on Postgres Database to BigQuery using Bigquery Python.Client Library.
@@ -18,8 +19,7 @@ We use incident system to perform data analysis and machine learning on a google
 - Get started with - [Python Client for Google BigQuery](https://cloud.google.com/python/docs/reference/bigquery/latest).
 - Table Schema : [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt) 
 
-### [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF)
-Apply [TensorFlow Decision Forests](https://www.tensorflow.org/decision_forests/tutorials) to build decision treen model(XGBoost & RandomForest) to predict severity with binary classification (Critical and Noraml Case).
+
 
 ### [QueryIncidentOnBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/QueryIncidentOnBQ.ipynb)
 How to retrive from BigQuery by using Python Client for Google BigQuery
