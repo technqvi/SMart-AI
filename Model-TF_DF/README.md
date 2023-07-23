@@ -1,6 +1,7 @@
 # About
 * This is a pilot project to build a model to make severity-level predictions of incident issues.
-* We apply  XGBoost to build model to predict severity level such as 1=Critical and 0=Normal  Decision Forests on Tensorflow Framework 
+* We apply  XGBoost to build model to predict severity level using Decision Forests on Tensorflow Framework .
+* It is binary classification , There are 2 classed 1=Critical and 0=Normal.
 
 
 # Reference

@@ -11,7 +11,7 @@ We use incident system to perform data analysis and machine learning on a google
 ### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
 Build LSTM Time Series Model by taking the number of dialy incident cases over the past 60 days to predict the number incident cases over the next 5 days. 
 ### [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) Click link to detail.
-Build XGBoost model to predict severity level such as 1=Critical and 0=Normal  Decision Forests on Tensorflow Framework 
+Build XGBoost model to predict severity level such as 1=Critical and 0=Normal  Decision Forests on Tensorflow Framework. 
 
 ### [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
 - Export incident system data stored on Postgres Database to BigQuery using Bigquery Python.Client Library.
@@ -44,8 +44,12 @@ This folder contain folder and file to buid machine learning wiht Tensorflow-Ker
 -  load-new-incident-ml folder is cloud function folder to be ready to deploy.
 
 
-### [ImportSeverityPrediction_BQ](https://github.com/technqvi/SMart-AI/tree/main/ImportSeverityPrediction_BQ) | [ImportSeverityPredictionToSMApp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ImportSeverityPredictionToSMApp.ipynb)
-- To  import prediction result from new_result_prediction_incident table on Bigquery to Incident System Database, we use Python BigQuery client to do it on the incident application server.
+###  [ImportSeverityPredictionToSMApp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ImportSeverityPredictionToSMApp.ipynb)
+- We have 2 models to be used to predict severity such as MLP-DNN Model and XGBoost Model.
+- To  import prediction result of both  models  we need to do the following tasks.
+  - get prediction result from new_result_prediction_incident for multiclassifcation(4 labels such as Cosmetic,Minor,Major and Critical) table on Bigquery
+  - retrieve prediction result from new2_result_binary_prediction_incident for binaryclassification(2 labels critical and normal )to Incident System Database
+- In practical ,we use Python BigQuery client installed on the incident application server to fullfill these tasks.
 - Prediction Result is shown on Incident Web Site to compare to an actual value determined by Site Manager.
 ###  [deploy_tf_cloud-func.txt](https://github.com/technqvi/SMart-AI/blob/main/deploy_tf_cloud-func.txt)
 Sample shell command to deploy cloud function.
