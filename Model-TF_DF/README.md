@@ -8,7 +8,9 @@
 * [Decision Forests on Tensorflow Tutorial](https://www.tensorflow.org/decision_forests/tutorials)
 * [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
 
-### Youtube: Build 
+### Youtube: [Google Data Analystics & MachineLearning(Part 9-12)](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
 
 # Main
-
+## [build_incident_ML_v2.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/build_incident_ML_v2.ipynb)
+* Pull data from Incident DW to create dataset for building model.
+* Take raw data from Incident DW  to create feature
