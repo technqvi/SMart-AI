@@ -46,7 +46,7 @@ This folder contain folder and file to buid machine learning wiht Tensorflow-Ker
 
 ###  [ImportSeverityPredictionToSMApp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ImportSeverityPredictionToSMApp.ipynb)
 - We have 2 models to be used to predict severity such as MLP-DNN Model and XGBoost Model.
-- To  import prediction result of both  models  we need to do the following tasks.
+- To  import prediction result of both  models , we need to do the following tasks.
   - get prediction result from new_result_prediction_incident for multiclassifcation(4 labels such as Cosmetic,Minor,Major and Critical) table on Bigquery
   - retrieve prediction result from new2_result_binary_prediction_incident for binaryclassification(2 labels critical and normal )to Incident System Database
 - In practical ,we use Python BigQuery client installed on the incident application server to fullfill these tasks.
