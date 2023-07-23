@@ -1,6 +1,12 @@
 # About
 We use incident system to perform data analysis and machine learning on a google cloud platform, the main purpose of this project is to analyze data on the incident system in order to develop a machine learning model to predict the severity of each incident with various machine learning algorithms.
 
+![image](https://github.com/technqvi/SMart-AI/assets/38780060/3910c134-142e-4441-a39c-1a689eec6bb6)
+
+### Tool, Framework  Plafform and Services
+ - Python 3.9 : pandas,numpy,tensorflow,tensorflow decision forests, google-cloud-bigquery
+ - Google Cloud Platform : BigQuery,Google Cloud Storage,Google Cloud Function,Google Cloud Schduler, Vertext-AI
+ - Application & Datebase : Django Web Framework  and Postgresql
 
 ## Main Repo 
 
