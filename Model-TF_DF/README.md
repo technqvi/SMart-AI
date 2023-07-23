@@ -13,4 +13,4 @@
 # Main
 ## [build_incident_ML_v2.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/build_incident_ML_v2.ipynb)
 * Pull data from Incident DW to create dataset for building model.
-* Take raw data from Incident DW  to create feature
+* Take raw data from Incident DW to create additional features aside from some initial categorical columns from raw data.
