@@ -20,3 +20,10 @@
 * See more in other tutorial involving this tutorial as links, all of them are almost same steps as this tutorial : [1 Export Data To BigQuery Using Python](https://studio.youtube.com/video/kgEe4Fb1s1U/edit) | [2 Explore Data To Build Training DataSet For ML](https://studio.youtube.com/video/Uzh5Wc4yZSQ/edit) | [7 Load New Incident To Get Prepared For Making a Prediction](https://studio.youtube.com/video/uR23WkS8XjQ/edit)
 * [load_v2_new_incident_ml_to_bq](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/load_v2_new_incident_ml_to_bq)  : This folder is used to deploy this script as google clound function in order to run on Google Cloud Platform. 
   
+## [train_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/train_df-tf_incident.ipynb)
+## [tune_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/tune_df-tf_incident.ipynb)
+## [predict_evaluate_binary_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_binary_df-tf_incident.ipynb)
+
+# Option
+## [predict_evaluate_multi_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_multi_df-tf_incident.ipynb)
+## [data](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/data)
