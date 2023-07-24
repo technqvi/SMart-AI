@@ -13,11 +13,10 @@
 
 # Main
 ## [build_incident_ML_v2.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/build_incident_ML_v2.ipynb)
-* It is used to build the 2 kind of dataset 
-  * Train/Test dataset for buiding model
-  * Unseen dataset(New Data) as inplut for serving model on  production to make prediction 
+* It is used to build the 2 kind of dataset 1.Train/Test dataset for buiding model  2.Unseen dataset(New Data) as inplut for serving model on  production to make prediction 
 * Get data from Incident DW to create dataset for building ML model.
 * Clean ,transform and enrich data such as creating new feature from some other columns, removing outlier data.
 * Import train dataset ,test dataset and unseen dataset into train_incident,test_incident and new_incident tables respectively . 
 * See more in other tutorial involving this tutorial as links, all of them are almost same steps as this tutorial : [1 Export Data To BigQuery Using Python](https://studio.youtube.com/video/kgEe4Fb1s1U/edit) | [2 Explore Data To Build Training DataSet For ML](https://studio.youtube.com/video/Uzh5Wc4yZSQ/edit) | [7 Load New Incident To Get Prepared For Making a Prediction](https://studio.youtube.com/video/uR23WkS8XjQ/edit)
+* [load_v2_new_incident_ml_to_bq](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/load_v2_new_incident_ml_to_bq)  : This folder is used to deploy this script as google clound function in order to run on Google Cloud Platform. 
   
