@@ -11,8 +11,8 @@ We use incident system to perform data analysis and machine learning on a google
 ## Main Repo 
 
 ### My Tutorial: 
-- [Youtube Playlist :Building Tensorflow Deep Learning Model on Google Data Analystics & Vertext-AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
-- [Tutorial on GitHub](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
+- [Tutorial on Youtube:Building Tensorflow Deep Learning Model on Google Data Analystics & Vertext-AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
+- [Tutorial on GitHub : Source Code](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
 
 
 ### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
