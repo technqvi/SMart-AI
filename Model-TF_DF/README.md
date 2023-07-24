@@ -24,6 +24,6 @@
 ## [tune_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/tune_df-tf_incident.ipynb)
 ## [predict_evaluate_binary_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_binary_df-tf_incident.ipynb)
 
-# Option
-## [predict_evaluate_multi_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_multi_df-tf_incident.ipynb)
-## [data](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/data)
+## Option
+### [predict_evaluate_multi_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_multi_df-tf_incident.ipynb)
+### [data](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/data)
