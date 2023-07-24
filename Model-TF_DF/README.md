@@ -24,11 +24,19 @@
   
 ## [train_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/train_df-tf_incident.ipynb)
 * Buiding model steps performed include:
-  * Load train  and test dataset from BigQuery  as dataframe and transform to tensorflow dataset format
+  * Load train  and test dataset from BigQuery  as dataframe.
+  * Select features from data and transform it to tensorflow dataset format.
   * Train model with default hyperparamter on train dataset and Evaluate with test dataset.
   * Inspect and debug model structure and feature importance.
 * Tutorial Reference : [Build, train and evaluate models with TensorFlow Decision Forests](https://www.tensorflow.org/decision_forests/tutorials/beginner_colab) | [Inspect and debug decision forest models](https://www.tensorflow.org/decision_forests/tutorials/advanced_colab)
 ## [tune_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/tune_df-tf_incident.ipynb)
+* Tuning model steps performed include:
+  * Most steps are similar to [train_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/train_df-tf_incident.ipynb)
+  * Tune model with hyper-parameter tuning using TF-DF's tuner and use  automaic optimization by setting use_predefined_hps=True in model contructor.
+* Tutorial Reference : [Automated hyper-parameter tuning](https://www.tensorflow.org/decision_forests/tutorials/automatic_tuning_colab#training_a_model_with_automated_hyper-parameter_tuning_and_automatic_definition_of_the_hyper-parameters_recommended_approach)
+
+
+
 ## [predict_evaluate_binary_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_binary_df-tf_incident.ipynb)
 
 ## Option
