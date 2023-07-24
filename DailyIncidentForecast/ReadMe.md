@@ -1,4 +1,5 @@
 # About
+This project involves in build time series model using LSTM on Tenforflow framework to forecast the number of daily incident.
 
 <img width="689" alt="image" src="https://github.com/technqvi/SMart-AI/assets/38780060/45bdd3db-bbd9-418e-8b1c-036250f0b020">
 

@@ -1,5 +1,5 @@
 # About
-We use incident system to perform data analysis and machine learning on a google cloud platform, the main purpose of this project is to analyze data on the incident system in order to develop a machine learning model to predict the severity of each incident with various machine learning algorithms.
+This project involves in data analysis and machine learning on a google cloud platform, the main purpose of this project is to get data from the incident system and ingest into BigQuery so that we can use data from BigQuery Datawarehose to build a machine learning model to predict the severity level to each incident with various machine learning algorithms like Deep Learning , XGBoost and RandomForest.
 
 ![image](https://github.com/technqvi/SMart-AI/assets/38780060/3910c134-142e-4441-a39c-1a689eec6bb6)
 
