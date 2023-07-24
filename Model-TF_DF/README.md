@@ -25,8 +25,8 @@
 ## [train_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/train_df-tf_incident.ipynb)
 * Buiding model steps performed include:
   * Load train  and test dataset from BigQuery  as dataframe.
-  * Select features from data and transform it to tensorflow dataset format.
-  * Train model with default hyperparamter on train dataset and Evaluate with test dataset.
+  * Select features  and label(binary classification) and transform it to tensorflow dataset format.
+  * Train  model with default hyperparamter on train dataset and Evaluate with test dataset.
   * Inspect and debug model structure and feature importance.
 * Tutorial Reference : [Build, train and evaluate models with TensorFlow Decision Forests](https://www.tensorflow.org/decision_forests/tutorials/beginner_colab) | [Inspect and debug decision forest models](https://www.tensorflow.org/decision_forests/tutorials/advanced_colab)
 ## [tune_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/tune_df-tf_incident.ipynb)
@@ -36,9 +36,17 @@
 * Tutorial Reference : [Automated hyper-parameter tuning](https://www.tensorflow.org/decision_forests/tutorials/automatic_tuning_colab#training_a_model_with_automated_hyper-parameter_tuning_and_automatic_definition_of_the_hyper-parameters_recommended_approach)
 
 
-
 ## [predict_evaluate_binary_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_binary_df-tf_incident.ipynb)
+* Evaluation and Prediction model steps performed include:
+  * Load unseen data from BigQuery as dataframe and Load model from Google clound storage.
+  * Feed unseen data to model to make prediction (1=Critical and 0=Normal).
+  * Evaluate model with accuracy metric and use confusion_matrix and classification_report to report model performance.
+  * Load prediction result into BigQuery.
+* Tutorial Reference : [Making predictions](https://www.tensorflow.org/decision_forests/tutorials/predict_colab)
+  
 
 ## Option
-### [predict_evaluate_multi_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_multi_df-tf_incident.ipynb) :
+### [predict_evaluate_multi_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_multi_df-tf_incident.ipynb)
+This performed the same step as [predict_evaluate_binary_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_binary_df-tf_incident.ipynb). Unless model will classify label as Multiclass classification (3=Critical,2=Major,1=Minor,0=Cosmetic).
 ### [data](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/data)
+Train and test dataset and unseen dataset as csv files.
