@@ -9,7 +9,7 @@
 * [XGBoost With Python By Jason Brownlee](https://machinelearningmastery.com/xgboost-with-python/)
 * [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
 
-### Youtube: [Google Data Analystics & MachineLearning(Part 9-12)](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
+### Youtube: [Building Tensorflow Decision Forests on Google Cloud Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
 
 # Main
 ## [build_incident_ML_v2.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/build_incident_ML_v2.ipynb)
