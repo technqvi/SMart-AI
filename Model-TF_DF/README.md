@@ -13,5 +13,11 @@
 
 # Main
 ## [build_incident_ML_v2.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/build_incident_ML_v2.ipynb)
-* Pull data from Incident DW to create dataset for building model.
-* Take raw data from Incident DW to create additional features aside from some initial categorical columns from raw data.
+* It is used to build the 2 kind of dataset 
+  * Train/Test dataset for buiding model
+  * Unseen dataset(New Data) as inplut for serving model on  production to make prediction 
+* Get data from Incident DW to create dataset for building ML model.
+* Clean ,transform and enrich data such as creating new feature from some other columns, removing outlier data.
+* Import train dataset ,test dataset and unseen dataset into train_incident,test_incident and new_incident tables respectively . 
+* See more in other tutorial involving this tutorial as links, all of them are almost same steps as this tutorial : [1 Export Data To BigQuery Using Python](https://studio.youtube.com/video/kgEe4Fb1s1U/edit) | [2 Explore Data To Build Training DataSet For ML](https://studio.youtube.com/video/Uzh5Wc4yZSQ/edit) | [7 Load New Incident To Get Prepared For Making a Prediction](https://studio.youtube.com/video/uR23WkS8XjQ/edit)
+  
