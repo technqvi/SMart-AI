@@ -23,9 +23,14 @@
 
   
 ## [train_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/train_df-tf_incident.ipynb)
+* Buiding model steps performed include:
+  * Load train  and test dataset from BigQuery  as dataframe and transform to tensorflow dataset format
+  * Train model with default hyperparamter on train dataset and Evaluate with test dataset.
+  * Inspect and debug model structure and feature importance.
+* Tutorial Reference : [Build, train and evaluate models with TensorFlow Decision Forests] (https://www.tensorflow.org/decision_forests/tutorials/beginner_colab) | [Inspect and debug decision forest models](https://www.tensorflow.org/decision_forests/tutorials/advanced_colab)
 ## [tune_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/tune_df-tf_incident.ipynb)
 ## [predict_evaluate_binary_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_binary_df-tf_incident.ipynb)
 
 ## Option
-### [predict_evaluate_multi_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_multi_df-tf_incident.ipynb)
+### [predict_evaluate_multi_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_multi_df-tf_incident.ipynb) :
 ### [data](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/data)
