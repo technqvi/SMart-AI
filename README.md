@@ -1,15 +1,12 @@
 # About
-- This project involves in building model to predict severity level of incident case  on a google cloud platform.
-- Main dataset stored in BigQuery has been imported from SMartApp Incident System.
-- [SMartApp-Incident System Project](https://github.com/technqvi/SMartApp)
-- 
+This project involves in building model to predict severity level of incident case  on a google cloud platform. Mainly, data has been imported from SMartApp Incident System to BigQuery as DataWarehouse. Click to see more [SMartApp-Incident System Project](https://github.com/technqvi/SMartApp)
+
 
 ![image](https://github.com/technqvi/SMart-AI/assets/38780060/3910c134-142e-4441-a39c-1a689eec6bb6)
 Explain how the system works conceptually corresponding to the figure above.
 1. XXX
 2. YYY
 3. ZZZ  [Decision Tree Model](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) and [Deep Learning Model](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
-
 
 ### Tool, Framework , Platform & Services
  - Python 3.9 : pandas,numpy,tensorflow,tensorflow decision forests, google-cloud-bigquery
