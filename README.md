@@ -3,7 +3,7 @@ This project involves in data analysis and machine learning on a google cloud pl
 
 ![image](https://github.com/technqvi/SMart-AI/assets/38780060/3910c134-142e-4441-a39c-1a689eec6bb6)
 
-### Tool, Framework  Plafform and Services
+### Tool, Framework , Platform & Services
  - Python 3.9 : pandas,numpy,tensorflow,tensorflow decision forests, google-cloud-bigquery
  - Google Cloud Platform : BigQuery,Google Cloud Storage,Google Cloud Function,Google Cloud Schduler, Vertext-AI
  - Application & Datebase : Django Web Framework  and Postgresql
