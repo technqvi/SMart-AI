@@ -6,6 +6,6 @@ ScriptJob
 ScriptJob/
 .env
 *.lnk
-Model-TF_DF/Model_TF-DF_slide.pptx
 *.pbix
 *.vsdx
+Model-TF_DF/content_tutorial
