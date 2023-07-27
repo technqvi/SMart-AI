@@ -15,7 +15,8 @@ Explain how the system works conceptually aligned with the figure above.
 5. Load model from GCS to make prediction to data from Unseen table.
 6. Import prediction result  to Prediction Result table.
 7. Collect accuracy metric as model performance measurement so that we can monitor how effeciently model perform over time.
-8. Postgres Database retrive data from Prediction Result table on BigQuery to show prediction value on SMartApp Web Site.
+8. Postgres Database retrive data from Prediction Result table on BigQuery.
+9. Show prediction value on the Incident Update  page in SMartApp Web Site.
 
 ### Tool, Framework , Platform & Services
  - Python 3.9 : pandas,numpy,tensorflow,keras tuner,tensorflow decision forests, google-cloud-bigquery
