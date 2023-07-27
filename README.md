@@ -18,8 +18,8 @@ Explain how the system works conceptually aligned with the figure above.
 8. Postgres Database retrive dasta from Prediction Result table on BigQuery to show prediction value on SMartApp Web Site.
 
 ### Tool, Framework , Platform & Services
- - Python 3.9 : pandas,numpy,tensorflow,tensorflow decision forests, google-cloud-bigquery
- - Google Cloud Platform : BigQuery,Google Cloud Storage,Google Cloud Function,Google Cloud Schduler, Vertext-AI
+ - Python 3.9 : pandas,numpy,tensorflow,keras tuner,tensorflow decision forests, google-cloud-bigquery
+ - Google Cloud Platform: BigQuery,Cloud Storage,Cloud Function,Cloud Schduler, Vertext-AI
  - Application & Datebase : Django Web Framework  and Postgresql
 
 ## Main Repo 
