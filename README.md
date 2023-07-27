@@ -6,9 +6,11 @@ This project involves in building model to predict severity level of incident ca
 Explain how the system works conceptually aligned with the figure above.
 1. Ingest data from Postgres Database that store data of [SMartApp](https://github.com/technqvi/SMartApp) into Incident table on Bigquery
 2. Create dataset for developing ML Model from Indident table
-   - Train&Test table for building model
+   - Train&Test table for building model.
    - Unseen table for serving prediction. 
-3. Build model, there are 2 models  [Decision Tree Model] for Binary classification(https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) and [Deep Learning Model] for Multiclass classification(https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
+3. Build model, there are 2 models  
+   - [Decision Tree Model](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) for Binary classification
+   - [Deep Learning Model](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) for Multiclass classification.
 4. Export trained model to Google Cloud Storage.
 
 ### Tool, Framework , Platform & Services
