@@ -8,7 +8,7 @@ Explain how the system works conceptually aligned with the figure above.
 2. Create dataset for developing ML Model from Indident table
    - Train&Test table for building model.
    - Unseen table for serving prediction. 
-3. Build model, there are 2 models  
+3. Build model on Train & Test dataset, there are 2 models to serve prediction.  
    - [Decision Tree Model](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) for Binary classification
    - [Deep Learning Model](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) for Multiclass classification.
 4. Export trained model to Google Cloud Storage.
