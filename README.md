@@ -12,6 +12,10 @@ Explain how the system works conceptually aligned with the figure above.
    - [Decision Tree Model](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) for Binary classification
    - [Deep Learning Model](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) for Multiclass classification.
 4. Export trained model to Google Cloud Storage.
+5. Load model from GCS to make prediction to data from Unseen table.
+6. Import prediction result  to Prediction Result table.
+7. Collect accuracy metric as model performance so that we can monitor how effeciently model perform over time.
+8. Postgres Database retrive dasta from Prediction Result table on BigQuery to show prediction value on SMartApp Web Site.
 
 ### Tool, Framework , Platform & Services
  - Python 3.9 : pandas,numpy,tensorflow,tensorflow decision forests, google-cloud-bigquery
