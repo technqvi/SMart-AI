@@ -2,14 +2,15 @@
 * This project involves in building a model to make severity-level predictions of incident issues.
 * We apply  XGBoost to build model to predict severity level using Decision Forests on Tensorflow Framework .
 * It is binary classification , There are 2 classed 1=Critical and 0=Normal.
+* [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
 
 
 # Reference
 * [Decision Forests on Tensorflow Tutorial](https://www.tensorflow.org/decision_forests/tutorials)
 * [XGBoost With Python By Jason Brownlee](https://machinelearningmastery.com/xgboost-with-python/)
-* [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
 
-### Youtube: [Building Tensorflow Decision Forests on Google Cloud Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
+
+# Youtube: [Building Tensorflow Decision Forests on Google Cloud Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
 
 # Main
 ## [build_incident_ML_v2.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/build_incident_ML_v2.ipynb)
