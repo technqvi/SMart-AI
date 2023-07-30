@@ -33,6 +33,7 @@
 * Tuning model steps performed include:
   * Most steps are similar to [train_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/train_df-tf_incident.ipynb)
   * Tune model with hyper-parameter tuning using TF-DF's tuner and use  automaic optimization by setting use_predefined_hps=True in model contructor.
+* [xgb_tf_predict_incident_severity](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/xgb_tf_predict_incident_severity) : Google clound function to run this script. 
 * Tutorial Reference : [Automated hyper-parameter tuning](https://www.tensorflow.org/decision_forests/tutorials/automatic_tuning_colab#training_a_model_with_automated_hyper-parameter_tuning_and_automatic_definition_of_the_hyper-parameters_recommended_approach)
 
 
@@ -47,6 +48,6 @@
 
 ## Option
 ### [predict_evaluate_multi_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_multi_df-tf_incident.ipynb)
-This performed the same step as [predict_evaluate_binary_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_binary_df-tf_incident.ipynb). Unless model will classify label as Multiclass classification (3=Critical,2=Major,1=Minor,0=Cosmetic).
+This performed the same step as [predict_evaluate_binary_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_binary_df-tf_incident.ipynb),except target class labels that the model will classify label as Multiclass classification (3=Critical,2=Major,1=Minor,0=Cosmetic).
 ### [data](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/data)
 Train and test dataset and unseen dataset as csv files.
