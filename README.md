@@ -3,7 +3,7 @@ This project involves in building model to predict severity level of incident ca
 
 ![OverviewProcess](https://github.com/technqvi/SMart-AI/assets/38780060/80e2ae4c-b65b-4090-9721-1e45b94912b2)
 
-Explain how the system works conceptually aligned with the figure above.
+Explain how the system works conceptually aligned with the figure above. Primarily, we write a script to schedule it to run Windows scheduler on SMartApp-Server(on-premises) and cloud function/cloud scheduler on google-cloud to execute these tasks.
 1. Ingest data from Postgres Database that store data of [SMartApp](https://github.com/technqvi/SMartApp) into Incident table on Bigquery
 2. Create dataset for developing ML Model from Indident table
    - Train&Test table for building model.
