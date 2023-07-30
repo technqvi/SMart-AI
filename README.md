@@ -1,5 +1,5 @@
 # About
-This project involves in building model to predict severity level of incident case  on a google cloud platform. Mainly, data has been imported from SMartApp Incident System to BigQuery as DataWarehouse. Click to see more [SMartApp-Incident System Project](https://github.com/technqvi/SMartApp)
+This project involves in building model to predict severity level of incident case  on a google cloud platform. Data for building model and feeding into the model to make prediction has been imported from SMartApp Incident System to BigQuery as DataWarehouse. Click this link to see  [SMartApp-Incident System Project](https://github.com/technqvi/SMartApp).
 
 
 The process describes step by step aligned to the figure shown in below. Primarily, we write script for each task and schedule it to run Windows scheduler on SMartApp-Server(on-premises) as well as cloud function/cloud scheduler services on google-cloud to execute these tasks.
