@@ -59,14 +59,14 @@ How to retrive from BigQuery by using Python Client for Google BigQuery
 
 
 ### [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (DNN-1-TF-KerasProcessing)
-This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, this active folder is DNN-1-TF-KerasProcessing, the others are option. you can go to to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
+This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, this active folder is DNN-1-TF-KerasProcessing, the others are option to show different approch  to tranform raw dataset to become proper dataset format for training model. In the part of model design , all of them use the same model,  you can go  to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
 
-- [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (Main Development) : Apply tf.data and  Keras-API and Keras preprocessing layer to tranform data before feeding into  Model. 
+- [DNN-1-TF-KerasProcessing(Main Model)](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (Main Development) : Apply tf.data and  Keras-API and Keras preprocessing layer to tranform data before feeding into  Model. 
 - [DNN-2-ScikitLearn](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-2-ScikitLearn)  : tranform data like StandardScaler and OneHot-endcoding with  ScikitLearn.
-- [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train) : transform data manualy on tensforflow dataset.
+- [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train) : transform data manually on tensforflow dataset.
 
 ### [LoadNewIncidentML.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadNewIncidentML.ipynb) | [load-new-incident-ml](https://github.com/technqvi/SMart-AI/tree/main/load-new-incident-ml)
-- Script is used to load data from incident table as serving data to get prepared (Excluding all data in training/evaluation/test data) for making prediction.
+- Script is used to load data from incident table to build unseen dataset(Excluding all data in training/evaluation/test data)  to feed into  the serving model to  make prediction.
 -  load-new-incident-ml folder is cloud function folder to be ready to deploy.
 
 

@@ -1,7 +1,7 @@
 # About
-* This project involves in building a model to make severity-level predictions of incident issues.
+* This project involves building a model to make predictions of severity-level on incident issues.
 * We apply  XGBoost to build model to predict severity level using Decision Forests on Tensorflow Framework .
-* It is binary classification , There are 2 classed 1=Critical and 0=Normal.
+* It is binary classification model, There are 2 classes such as 1=Critical and 0=Normal.
 * [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
 
 
@@ -15,7 +15,7 @@
 # Main
 ## [build_incident_ML_v2.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/build_incident_ML_v2.ipynb)
 * The steps performed include:
-  * It is used to build the 2 kind of dataset 1.Train/Test dataset for buiding model  2.Unseen dataset(New Data) as inplut for serving model on  production to make prediction 
+  * It is used to build the 2 kind of datasets 1.Train/Test dataset for buiding model  2.Unseen dataset(New Data) as inplut for the  serving model on  production to make prediction 
   * Get data from Incident DW to create dataset for building ML model.
   * Clean ,transform and enrich data such as creating new feature from some other columns, removing outlier data.
   * Import train dataset ,test dataset and unseen dataset into train_incident,test_incident and new_incident tables respectively . 
@@ -26,7 +26,7 @@
 ## [train_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/train_df-tf_incident.ipynb)
 * Buiding model steps performed include:
   * Load train  and test dataset from BigQuery  as dataframe.
-  * Select features  and label(binary classification) and transform it to tensorflow dataset format.
+  * Choose features and label(binary classification) from given colums loaded from previous step and transform both to become tensorflow dataset format.
   * Train  model with default hyperparamter on train dataset and Evaluate with test dataset.
   * Inspect and debug model structure and plot chart to show feature importance and model evaluation.
 * Tutorial Reference : [Build, train and evaluate models with TensorFlow Decision Forests](https://www.tensorflow.org/decision_forests/tutorials/beginner_colab) | [Inspect and debug decision forest models](https://www.tensorflow.org/decision_forests/tutorials/advanced_colab)
