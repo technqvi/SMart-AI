@@ -1,6 +1,6 @@
 # About
 * This project involves building a model to make predictions of severity-level on incident issues.
-* We apply  XGBoost to build model to predict severity level using Decision Forests on Tensorflow Framework .
+* We apply  GradientBoosting(XGBoos) that is boosting method of Ensemble Learning Model  to build model to predict severity level using Decision Forests on Tensorflow Framework.
 * It is binary classification model, There are 2 classes such as 1=Critical and 0=Normal.
 * [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
 
