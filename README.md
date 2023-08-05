@@ -3,6 +3,10 @@
 * Data for building model and feeding into the model to make prediction has been imported from SMartApp Incident System to BigQuery as DataWarehouse. 
 * [SMartApp-System Project](https://github.com/technqvi/SMartApp).Click this link to see
 
+## Tutorial: 
+- [Tutorial on Youtube:Building Tensorflow Deep Learning Model on Google Data Analystics & Vertext-AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
+- [Tutorial on GitHub : Source Code](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
+
 The process describes step by step aligned to the figure shown in below. Primarily, we write script for each task and schedule it to run Windows scheduler on SMartApp-Server(on-premises) as well as cloud function/cloud scheduler services on google-cloud to execute these tasks.
 
 ![OverviewProcess](https://github.com/technqvi/SMart-AI/assets/38780060/80e2ae4c-b65b-4090-9721-1e45b94912b2)
@@ -28,11 +32,6 @@ The process describes step by step aligned to the figure shown in below. Primari
  - Application & Datebase : Django Web Framework  and Postgresql
 
 ## Main Repo 
-
-### My Tutorial: 
-- [Tutorial on Youtube:Building Tensorflow Deep Learning Model on Google Data Analystics & Vertext-AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
-- [Tutorial on GitHub : Source Code](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
-
 
 ### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
 Build LSTM Time Series Model by taking the number of dialy incident cases over the past 60 days to predict the number incident cases over the next 5 days. 
