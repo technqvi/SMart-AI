@@ -2,7 +2,7 @@
 * This project involves in building model to predict severity level of incident case  on a google cloud platform. 
 * Data for building model and feeding into the model to make prediction has been imported from SMartApp Incident System to BigQuery as DataWarehouse. 
 
-## [SMartApp-Web](https://github.com/technqvi/SMartApp)
+## [SMartApp Web (Django Framework)](https://github.com/technqvi/SMartApp)
 Click this link to see
 
 ## Tutorial Youtube&GitHub: 
