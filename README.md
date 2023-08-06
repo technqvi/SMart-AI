@@ -2,11 +2,12 @@
 * This project involves in building model to predict severity level of incident case  on a google cloud platform. 
 * Data for building model and feeding into the model to make prediction has been imported from SMartApp Incident System to BigQuery as DataWarehouse. 
 
-## [SMartApp-Web](https://github.com/technqvi/SMartApp).Click this link to see
+## [SMartApp-Web](https://github.com/technqvi/SMartApp)
+Click this link to see
 
-## Tutorial: 
-- [Tutorial on Youtube:Building Tensorflow Deep Learning Model on Google Data Analystics & Vertext-AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
-- [Tutorial on GitHub : Source Code](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
+## Tutorial Youtube&GitHub: 
+- [Youtube:Building Tensorflow Deep Learning Model on Google Data Analystics & Vertext-AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
+- [GitHub :Source Code](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
 
 The process describes step by step aligned to the figure shown in below. Primarily, we write script for each task and schedule it to run Windows scheduler on SMartApp-Server(on-premises) as well as cloud function/cloud scheduler services on google-cloud to execute these tasks.
 
