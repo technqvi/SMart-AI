@@ -4,14 +4,15 @@
 * It is binary classification model, There are 2 classes such as 1=Critical and 0=Normal.
 * [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
 
+
+## [Overview Process](https://github.com/technqvi/SMart-AI#system-overview)
+Describe how the system work in detail on main repository ,click this link
+ 
+## Youtube: [Building Tensorflow Decision Forests on Google Cloud Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
+
+
 ## [SMartApp Web (Django Framework)](https://github.com/technqvi/SMartApp)
 Click this link
-
-
-# [Overview Process](## [SMartApp Web (Django Framework)](https://github.com/technqvi/SMartApp)
-Describe how the system work in detail ,click this link
- 
-# Youtube: [Building Tensorflow Decision Forests on Google Cloud Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
 
 # Main
 ## [build_incident_ML_v2.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/build_incident_ML_v2.ipynb)
