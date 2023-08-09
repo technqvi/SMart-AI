@@ -5,13 +5,12 @@
 * [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
 
 ## [SMartApp Web (Django Framework)](https://github.com/technqvi/SMartApp)
-Click this link to see
-
-# Reference
-* [Decision Forests on Tensorflow Tutorial](https://www.tensorflow.org/decision_forests/tutorials)
-* [XGBoost With Python By Jason Brownlee](https://machinelearningmastery.com/xgboost-with-python/)
+Click this link
 
 
+# [Overview Process](## [SMartApp Web (Django Framework)](https://github.com/technqvi/SMartApp)
+Describe how the system work in detail ,click this link
+ 
 # Youtube: [Building Tensorflow Decision Forests on Google Cloud Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
 
 # Main
@@ -55,3 +54,7 @@ Click this link to see
 This performed the same step as [predict_evaluate_binary_df-tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_DF/predict_evaluate_binary_df-tf_incident.ipynb),except target class labels that the model will classify label as Multiclass classification (3=Critical,2=Major,1=Minor,0=Cosmetic).
 ### [data](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/data)
 Train and test dataset and unseen dataset as csv files.
+
+# Reference
+* [Decision Forests on Tensorflow Tutorial](https://www.tensorflow.org/decision_forests/tutorials)
+* [XGBoost With Python By Jason Brownlee](https://machinelearningmastery.com/xgboost-with-python/)
