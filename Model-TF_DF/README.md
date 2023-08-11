@@ -8,7 +8,9 @@
 ## [Overview Process](https://github.com/technqvi/SMart-AI#system-overview)
 Describe how the system work in detail on main repository ,click this link
  
-## Youtube: [Building Tensorflow Decision Forests on Google Cloud Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
+#Tutorial & Demo
+## Youtube: [Building Gradient Boost Tensorflow Model  on Google Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
+## Source Code: [demo-tutorial](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/demo-tutorial)
 
 
 ## [SMartApp Web (Django Framework)](https://github.com/technqvi/SMartApp)
