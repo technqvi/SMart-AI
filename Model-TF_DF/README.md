@@ -4,9 +4,9 @@
 * It is binary classification model, There are 2 classes such as 1=Critical and 0=Normal.
 * [Build Severity Incident Model By Keras DNN](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing)
 
-# Tutorial & Demo
-## Youtube: [Building Gradient Boost Tensorflow Model  on Google Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
-## Source Code: [demo-tutorial](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/demo-tutorial)
+## Tutorial & Demo
+### Youtube: [Building Gradient Boost Tensorflow Model  on Google Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
+### Source Code: [demo-tutorial](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF/demo-tutorial)
 
 ## [Overview Process](https://github.com/technqvi/SMart-AI#system-overview)
 Describe how the system work in detail on main repository ,click this link
