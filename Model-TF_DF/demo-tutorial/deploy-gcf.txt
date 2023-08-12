@@ -1,0 +1,10 @@
+cd Model-TF_DF
+cd demo_load_v2_new_incident_ml_to_bq
+clear
+
+gcloud functions deploy demo_load_v2_new_incident_ml_to_bq  --gen2  --region=asia-southeast1  --runtime=python39   --memory=512 --source=.       --trigger-http   --entry-point  demo_load_v2_new_incident_ml_to_bq --timeout 1200s 
+
+
+cd Model-TF_DF
+cd demo_gbt_tf_predict_incident_severity
+gcloud functions deploy demo_gbt_tf_predict_incident_severity  --gen2  --region=asia-southeast1  --runtime=python39   --memory=1024 --source=.       --trigger-http   --entry-point  demo_gbt_tf_predict_incident_severity --timeout 1200s 
