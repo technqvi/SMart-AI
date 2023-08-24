@@ -43,6 +43,7 @@ Build XGBoost model to predict severity level such as 1=Critical and 0=Normal  D
 
 ### [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
 - Export incident system data stored on Postgres Database to BigQuery using Bigquery Python.Client Library.
+- [Getting Data From BQ To Visualize On PowerBI ](https://app.powerbi.com/groups/c2f6ff06-036a-4b3c-ae9a-804d8f11ea58/reports/4d531557-9276-4c03-8271-87322bba05d1/ReportSection?experience=power-bi)
 - [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt)  , it refer to bigquery table schema and dataframe schema.
 - Get started with - [Python Client for Google BigQuery](https://cloud.google.com/python/docs/reference/bigquery/latest).
 - Table Schema : [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt) 
