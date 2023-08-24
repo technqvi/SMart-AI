@@ -6,6 +6,7 @@
 Click this link to see
 
 ## Tutorial Youtube&GitHub: 
+- [Youtube: Building Gradient Boost Tensorflow Model  on Google Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
 - [Youtube:Building Tensorflow Deep Learning Model on Google Data Analystics & Vertext-AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
 - [GitHub :Source Code](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
 
@@ -36,10 +37,12 @@ The process describes step by step aligned to the figure shown in below. Primari
 
 ## Main Repo 
 
-### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
-Build LSTM Time Series Model by taking the number of dialy incident cases over the past 60 days to predict the number incident cases over the next 5 days. 
 ### [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) Click link to detail.
 Build XGBoost model to predict severity level such as 1=Critical and 0=Normal  Decision Forests on Tensorflow Framework. 
+
+### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
+Build LSTM Time Series Model by taking the number of dialy incident cases over the past 60 days to predict the number incident cases over the next 5 days. 
+
 
 ### [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
 - Export incident system data stored on Postgres Database to BigQuery using Bigquery Python.Client Library.
