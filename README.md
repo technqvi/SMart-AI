@@ -38,8 +38,7 @@ The process describes step by step aligned to the figure shown in below. Primari
 ## Main Repo 
 
 ### [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) Click link to detail.
-Build XGBoost model to predict severity level such as 1=Critical and 0=Normal  Decision Forests on Tensorflow Framework. 
-
+Build Gradient Boost Model on Tensorflow Framework to predict severity level such as 1=Critical and 0=Normal.
 ### [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
 Build LSTM Time Series Model by taking the number of dialy incident cases over the past 60 days to predict the number incident cases over the next 5 days. 
 
