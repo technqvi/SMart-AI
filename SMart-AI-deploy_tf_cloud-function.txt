@@ -6,7 +6,7 @@ gcloud config list project
 
 functions-framework --target=load_new_incident_ml_to_bq
 
-
+Check python version 3.9 or 3.10 , run test on jupyter lab firsts
 
 functions-framework --target=predict_incident_severity_by_tf
 gcloud functions deploy predict-incident-severity-by-tf  --gen2  --region=asia-southeast1  --runtime=python39   --memory=1024 --source=.      --env-vars-file .env.yaml  --trigger-http   --entry-point  predict_incident_severity_by_tf  --timeout 1200s --project smart-data-ml 
