@@ -1,9 +1,10 @@
 # About
 This project involves in building time series model using LSTM on Tenforflow framework to forecast the number of daily incident.
+For more detail about how to develop the project, please refer to  [Building LSTM Time Series model to predict future stock price movement](https://github.com/technqvi/TimeSeriesML-FinMarket/tree/main/forecast-asset%20-price-movement-LSTM-TimeSeries)
 
 <img width="689" alt="image" src="https://github.com/technqvi/SMart-AI/assets/38780060/45bdd3db-bbd9-418e-8b1c-036250f0b020">
 
-Reference: [Building LSTM Time Series model to predict future stock price movement](https://github.com/technqvi/TimeSeriesML-FinMarket/tree/main/forecast-asset%20-price-movement-LSTM-TimeSeries)
+
 
 
 * [LoadDailyIncident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/DailyIncidentForecast/LoadDailyIncident.ipynb ) :Import the number of daily incident from SMartApp Database  to BigQuery on daily basis
