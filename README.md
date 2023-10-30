@@ -101,10 +101,11 @@ Demo how to build model with XGBoost and  RandomForest
 ### [_sample_tf_google](https://github.com/technqvi/SMart-AI/tree/main/_sample_tf_google)
 Sample files from [Google Machine Learning Course](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2)
 
-### Tutorial reference : 
+### Tutorial & Sample Reference : 
 - [Train a model using Vertex AI and the Python SDK](https://cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction)
 - [vertex-ai-samples](https://github.com/GoogleCloudPlatform/vertex-ai-samples/tree/main/notebooks/official) (All of them can by applied to real world project)
+- [All Vertex AI code samples](https://cloud.google.com/vertex-ai/docs/samples)
+- [Vertex AI Jupyter Notebook tutorials](https://cloud.google.com/vertex-ai/docs/tutorials/jupyter-notebooks)
+- [Vertex AI Tutorials](https://cloud.google.com/vertex-ai/docs/tutorials)
 - [codelabs.developers](https://codelabs.developers.google.com/)
 - [introduction_to_tensorflow](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/introduction_to_tensorflow)
-- [machine_learning_in_the_enterprise](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/machine_learning_in_the_enterprise/solutions)
-- [production_ml](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2/production_ml/solutions)
