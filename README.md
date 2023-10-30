@@ -93,6 +93,8 @@ How to load  nested structure data from PostgresToBQ to BigQuery , the main dsat
 Script to build ,evaluate and predict severity incidetnt by BigQueryML
 ### [Model-XGB-RF](https://github.com/technqvi/SMart-AI/tree/main/Model-XGB-RF)
 Demo how to build model with XGBoost and  RandomForest
+### [BQStream](https://github.com/technqvi/SMart-AI/tree/main/BQStream)
+Demo BigQuery Storage-API for reading and writing stream data on BigQuery. It is new api that make it more efficient to perform ETL process on big data.
 
 
 
