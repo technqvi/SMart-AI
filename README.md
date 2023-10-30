@@ -88,15 +88,18 @@ Sample shell command to deploy cloud function.
 How to retrive from BigQuery by using Python Client for Google BigQuery
 
 ### [ExportNestedDataOnBigQuery](https://github.com/technqvi/SMart-AI/tree/main/ExportIncidentNestedData)
-How to load  nested structure data from PostgresToBQ to BigQuery , the main dsata is incident and nested part is incident detail.
+How to load  nested structure data as json file from PostgresToBQ to BigQuery , the main data is incident and nested part is incident detail.
 ### [Model-BQML](https://github.com/technqvi/SMart-AI/tree/main/Model-BQML)
 Script to build ,evaluate and predict severity incidetnt by BigQueryML
 ### [Model-XGB-RF](https://github.com/technqvi/SMart-AI/tree/main/Model-XGB-RF)
 Demo how to build model with XGBoost and  RandomForest
 ### [BQStream](https://github.com/technqvi/SMart-AI/tree/main/BQStream)
-Demo BigQuery Storage-API for reading and writing stream data on BigQuery. It is new api that make it more efficient to perform ETL process on big data.
+* Demo BigQuery Storage-API for reading and writing stream data on BigQuery. It is new api that make it more efficient to perform ETL process on big data.
+* [Use the BigQuery Storage Read API to read table data](https://cloud.google.com/bigquery/docs/reference/storage)
+* [Introduction to the BigQuery Storage Write API](https://cloud.google.com/bigquery/docs/write-api)
 
-
+### [_sample_tf_google](https://github.com/technqvi/SMart-AI/tree/main/_sample_tf_google)
+Sample files from [Google Machine Learning Course](https://github.com/GoogleCloudPlatform/training-data-analyst/tree/master/courses/machine_learning/deepdive2)
 
 ### Tutorial reference : 
 - [Train a model using Vertex AI and the Python SDK](https://cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction)
