@@ -46,7 +46,7 @@ these json files are refers to how to map severity name to label code.
 ### [batch_predicton_on_vertex.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/batch_predicton_on_vertex.ipynb)
 Sample to show how to use SDK to create batch predction job to make prediction on Vertex-AI.
 ### [multi_experiment_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/multi_experiment_dnn1_incident.ipynb)
-Apply the experiment feature on Vertex-AI to run the model with different hyperparameter sets in order to keep track of the desired metric as measurements like accuracy, recall, and precision for comparison to find the best model  as a link. [Introduction to Vertex AI Experiments](https://cloud.google.com/vertex-ai/docs/experiments/intro-vertex-ai-experiments?_ga=2.40658402.-1582960972.1676878604&_gac=1.184038228.1698668378.Cj0KCQjwqP2pBhDMARIsAJQ0CzoFDtsSzCtbHy21Ee7W6_rI7-H4_VkOV_sJPuzNUmhPKZpfrDF2EIgaAjAgEALw_wcB).
+Apply the experiment feature on Vertex-AI to run the model with different hyperparameter sets in order to keep track of model's performance by the desired metric like accuracy, recall, and precision for comparison to find the best model  as a link. [Introduction to Vertex AI Experiments](https://cloud.google.com/vertex-ai/docs/experiments/intro-vertex-ai-experiments?_ga=2.40658402.-1582960972.1676878604&_gac=1.184038228.1698668378.Cj0KCQjwqP2pBhDMARIsAJQ0CzoFDtsSzCtbHy21Ee7W6_rI7-H4_VkOV_sJPuzNUmhPKZpfrDF2EIgaAjAgEALw_wcB).
 ### demo_model |  demo_model_with_meta | model | model_binary
 These directories store model from training.
 
