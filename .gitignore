@@ -8,4 +8,5 @@ ScriptJob/
 *.lnk
 *.pbix
 *.vsdx
+*.ndjson
 Model-TF_DF/content_tutorial
