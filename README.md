@@ -35,7 +35,7 @@ The process describes step by step aligned to the figure shown in below. Primari
  - Google Cloud Platform: BigQuery,Cloud Storage,Cloud Function,Cloud Schduler, Vertext-AI
  - Application & Datebase : Django Web Framework  and Postgresql
 
-# Build Model 
+# Build & Tune and Evalute Model 
 
 
 ## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (DNN-1-TF-KerasProcessing)
@@ -50,10 +50,8 @@ Build LSTM Time Series Model by taking the number of dialy incident cases over t
 
 ## [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
 - Export incident system data stored on Postgres Database to BigQuery using Bigquery Python.Client Library.
-- [Getting Data From BQ To Visualize On PowerBI ](https://app.powerbi.com/groups/c2f6ff06-036a-4b3c-ae9a-804d8f11ea58/reports/4d531557-9276-4c03-8271-87322bba05d1/ReportSection?experience=power-bi)
 - [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt)  , it refer to bigquery table schema and dataframe schema.
-- Get started with - [Python Client for Google BigQuery](https://cloud.google.com/python/docs/reference/bigquery/latest).
-- Table Schema : [Incident_PostgresToBQ_Schema.txt](https://github.com/technqvi/SMart-AI/blob/main/Incident_PostgresToBQ_Schema.txt) 
+
 
 ### [DemoDataTransform.ipynb](https://github.com/technqvi/SMart-AI/blob/main/DemoDataTransform.ipynb)
 How to apply sklearn.preprocessing to perform normalization for numerical data and one-hot encoding for categorical data.  it is recommended to use 2 ways to get data prepared for training on various machine learning algorithms.
