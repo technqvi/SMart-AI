@@ -10,4 +10,6 @@ ScriptJob/
 *.pbix
 *.vsdx
 *.ndjson
+tuning
 Model-TF_DF/content_tutorial
+
