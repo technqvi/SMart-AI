@@ -35,13 +35,18 @@ The process describes step by step aligned to the figure shown in below. Primari
  - Google Cloud Platform: BigQuery,Cloud Storage,Cloud Function,Cloud Schduler, Vertext-AI
  - Application & Datebase : Django Web Framework  and Postgresql
 
-# Main Repo 
+# Build Model 
+
+
+## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (DNN-1-TF-KerasProcessing)
+This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, this active folder is DNN-1-TF-KerasProcessing, the others are option to show different approch  to tranform raw dataset to become proper dataset format for training model. In the part of model design , all of them use the same model,  you can go  to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
 
 ## [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) Click link to detail.
 Build Gradient Boost Model on Tensorflow Framework to predict severity level such as 1=Critical and 0=Normal.
 ## [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
 Build LSTM Time Series Model by taking the number of dialy incident cases over the past 60 days to predict the number incident cases over the next 5 days. 
 
+# Ingest ,Explore and Transform data For Building Dataset
 
 ## [LoadIncident_PostgresToBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadIncident_PostgresToBQ.ipynb)
 - Export incident system data stored on Postgres Database to BigQuery using Bigquery Python.Client Library.
@@ -56,16 +61,15 @@ Build LSTM Time Series Model by taking the number of dialy incident cases over t
 - Transform raws data as engineered featured for buiding ML .
 - Split Data into Train , Validation and Test Data DataSet and  Ingest them into BigQuery.
 
-## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (DNN-1-TF-KerasProcessing)
-This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, this active folder is DNN-1-TF-KerasProcessing, the others are option to show different approch  to tranform raw dataset to become proper dataset format for training model. In the part of model design , all of them use the same model,  you can go  to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
-
-- [DNN-1-TF-KerasProcessing(Main Model)](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (Main Development) : Apply tf.data and  Keras-API and Keras preprocessing layer to tranform data before feeding into  Model. 
-- [DNN-2-ScikitLearn](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-2-ScikitLearn)  : tranform data like StandardScaler and OneHot-endcoding with  ScikitLearn.
-- [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train) : transform data manually on tensforflow dataset.
 
 ## [LoadNewIncidentML.ipynb](https://github.com/technqvi/SMart-AI/blob/main/LoadNewIncidentML.ipynb) | [load-new-incident-ml](https://github.com/technqvi/SMart-AI/tree/main/load-new-incident-ml)
 - Script is used to load data from incident table to build unseen dataset(Excluding all data in training/evaluation/test data)  to feed into  the serving model to  make prediction.
 -  load-new-incident-ml folder is cloud function folder to be ready to deploy.
+
+### [BQStream](https://github.com/technqvi/SMart-AI/tree/main/BQStream)
+* Demo BigQuery Storage-API for reading and writing stream data on BigQuery. It is new api that make it more efficient to perform ETL process on big data.
+
+# Integrate to Application
 
 ##  [ImportSeverityPredictionToSMApp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/ImportSeverityPredictionToSMApp.ipynb)
 - We have 2 models to be used to predict severity such as MLP-DNN Model and XGBoost Model.
@@ -74,15 +78,18 @@ This folder contain folder and file to buid machine learning wiht Tensorflow-Ker
   - retrieve prediction result from new2_result_binary_prediction_incident for binaryclassification(2 labels critical and normal )to Incident System Database
 - In practical ,we use Python BigQuery client installed on the incident application server to fullfill these tasks.
 - Prediction Result is shown on Incident Web Site to compare to an actual value determined by Site Manager.
-## [DemoDataTransform.ipynb](https://github.com/technqvi/SMart-AI/blob/main/DemoDataTransform.ipynb)
-How to apply sklearn.preprocessing to perform normalization for numerical data and one-hot encoding for categorical data.  it is recommended to use 2 ways to get data prepared for training on various machine learning algorithms.
-##  [deploy_tf_cloud-func.txt](https://github.com/technqvi/SMart-AI/blob/main/deploy_tf_cloud-func.txt)
-Sample shell command to deploy cloud function.
-
 
 
 # Addtional Repo 
 
+### [DemoDataTransform.ipynb](https://github.com/technqvi/SMart-AI/blob/main/DemoDataTransform.ipynb)
+How to apply sklearn.preprocessing to perform normalization for numerical data and one-hot encoding for categorical data.  it is recommended to use 2 ways to get data prepared for training on various machine learning algorithms.
+###  [deploy_tf_cloud-func.txt](https://github.com/technqvi/SMart-AI/blob/main/deploy_tf_cloud-func.txt)
+Sample shell command to deploy cloud function.
+
+### Build Model (Other approaches)
+-[DNN-2-ScikitLearn](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-2-ScikitLearn)  : tranform data like StandardScaler and OneHot-endcoding with  ScikitLearn.
+- [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train) : transform data manually on tensforflow dataset.
 
 ### [QueryIncidentOnBQ.ipynb](https://github.com/technqvi/SMart-AI/blob/main/QueryIncidentOnBQ.ipynb)
 How to retrive from BigQuery by using Python Client for Google BigQuery
@@ -93,8 +100,6 @@ How to load  nested structure data as json file from PostgresToBQ to BigQuery , 
 Script to build ,evaluate and predict severity incidetnt by BigQueryML
 ### [Model-XGB-RF](https://github.com/technqvi/SMart-AI/tree/main/Model-XGB-RF)
 Demo how to build model with XGBoost and  RandomForest
-### [BQStream](https://github.com/technqvi/SMart-AI/tree/main/BQStream)
-* Demo BigQuery Storage-API for reading and writing stream data on BigQuery. It is new api that make it more efficient to perform ETL process on big data.
 * [Use the BigQuery Storage Read API to read table data](https://cloud.google.com/bigquery/docs/reference/storage)
 * [Introduction to the BigQuery Storage Write API](https://cloud.google.com/bigquery/docs/write-api)
 
