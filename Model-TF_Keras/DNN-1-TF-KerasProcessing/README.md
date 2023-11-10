@@ -35,9 +35,9 @@ Register model and create Endpoint on Vertext-AI and try Vertex Explainable AI f
 - Register model and create Endpoint on Vertext-AI and try making predction.
 - Get a model explanation focusing on feature importance based on feature score that show how much each feature impact to prediction value of both particular sample or whole dataset to gain a better understanding of the model with
 
-### [vizualize_feat_imp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/vizualize_feat_imp.ipynb)
-Aggragate  feature score from validation dataset ,test dataset and unseen data  to quantify the importance of each feature visualize it.
-
+### [agg_vizualize_feat_imp.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/agg_vizualize_feat_imp.ipynb)
+* Aggragate  feature score from validation dataset ,test dataset and unseen data  to quantify the importance of each feature 
+* Visualize feature importance with bar chart.
 
 
 ### [prediction_serving_tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/prediction_serving_tf_incident.ipynb)
