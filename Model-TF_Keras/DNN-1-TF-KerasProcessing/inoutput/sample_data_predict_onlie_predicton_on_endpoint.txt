@@ -13,3 +13,6 @@
 ]
 
 
+
+{'sla': ['8x5 NBD Response Time'], 'product_type': ['Server'], 'brand': ['HPE'], 'service_type': ['Incident'], 'incident_type': ['Network Adapter Failure'], 'open_to_close_hour': [109.33333333333333], 'response_to_resolved_hour': [105.18333333333334]}
+
