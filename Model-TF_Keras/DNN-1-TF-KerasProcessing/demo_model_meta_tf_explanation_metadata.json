@@ -1,0 +1,48 @@
+{
+  "outputs": {
+    "dense_5": {
+      "output_tensor_name": "dense_5"
+    }
+  },
+  "inputs": {
+    "response_to_resolved_hour": {
+      "input_tensor_name": "response_to_resolved_hour",
+      "encoding": "identity",
+      "modality": "numeric"
+    },
+    "brand": {
+      "input_tensor_name": "brand",
+      "encoding": "identity",
+      "modality": "categorical"
+    },
+    "product_type": {
+      "input_tensor_name": "product_type",
+      "encoding": "identity",
+      "modality": "categorical"
+    },
+    "sla": {
+      "input_tensor_name": "sla",
+      "encoding": "identity",
+      "modality": "categorical"
+    },
+    "incident_type": {
+      "input_tensor_name": "incident_type",
+      "encoding": "identity",
+      "modality": "categorical"
+    },
+    "open_to_close_hour": {
+      "input_tensor_name": "open_to_close_hour",
+      "encoding": "identity",
+      "modality": "numeric"
+    },
+    "service_type": {
+      "input_tensor_name": "service_type",
+      "encoding": "identity",
+      "modality": "categorical"
+    }
+  },
+  "framework": "tensorflow2",
+  "tags": [
+    "explainable_ai_sdk"
+  ]
+}
