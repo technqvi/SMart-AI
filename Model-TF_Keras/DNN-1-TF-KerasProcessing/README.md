@@ -23,7 +23,11 @@ This project involves building multiclass classification and binary classificati
 - Take best tuned model to retrain to get the N-max epochs.
 - Build final model with best model and best  N-max epochs.
 - Save Model to local path and export it to GCS.
-### [multi_evaluation_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/multi_evaluation_dnn1_incident.ipynb)
+
+### [register_deploy_to_explain-ai_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/register_deploy_to_explain-ai_dnn1_incident.ipynb)
+Register model and create Endpoint on Vertext-AI and try Vertex Explainable AI feature to gain model explanation to provide better understanding of model prediction result   as like [Introduction to Vertex Explainable AI](https://cloud.google.com/vertex-ai/docs/explainable-ai/overview)
+
+### [evaluate_score_feature_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/evaluate_score_feature_dnn1_incident.ipynb)
 - Explore how balanced the data is on train/evaluation/test.
 - Load model from local path to make predction.
 - Load Test/Validatoin data and Convert dataframe to tensor format to make predctoin and save result into dataframe.
@@ -41,8 +45,6 @@ Aggragate  feature score from validation dataset ,test dataset and unseen data  
 - Store prediction result into new_result_prediction_incident table.
 - [tf1_incident_severity](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/tf1_incident_severity) is cloud function ready to deploy to google cloud converted from [prediction_serving_tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/prediction_serving_tf_incident.ipynb) 
 
-### [multi_explain-ai_dnn1_incident.ipynb](multi_explain-ai_dnn1_incident.ipynb)
-Register model and create Endpoint on Vertext-AI and try Vertex Explainable AI feature to gain model explanation to provide better understanding of model prediction result   as like [Introduction to Vertex Explainable AI](https://cloud.google.com/vertex-ai/docs/explainable-ai/overview)
 
 
 ### [bi_train_dnn1_bq_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/bi_train_dnn1_bq_incident.ipynb) | [bi_evaluation_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/bi_evaluation_dnn1_incident.ipynb)
