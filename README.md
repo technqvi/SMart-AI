@@ -89,7 +89,7 @@ Sample shell command to deploy cloud function.
 # Addtional Repo 
 
 
-### Build Model (Other approaches)
+### [Build Model with Other approaches](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras)
 - [DNN-2-ScikitLearn](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-2-ScikitLearn)  : tranform data like StandardScaler and OneHot-endcoding with  ScikitLearn.
 - [DNN-3-VertextAI-Train](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-3-VertextAI-Train) : transform data manually on tensforflow dataset.
 
