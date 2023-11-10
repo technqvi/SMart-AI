@@ -1,14 +1,6 @@
 # About
 This project involves building multiclass classification and binary classification deep learning models with Tensorflow-Keras to predict severity level on Incident data on BigQuery.
 
-### Tools, Services and Framework
-- Keras, Keras Tuner and Tensorflow
-- Scikit-learn
-- Google BigQuery
-- Google cloud storage
-- Vertext-AI platform
-- Cloud function and Cloud scheduler
-- Python 3.9 on Anaconda Enviroment
 
 ## Main Repo
 
@@ -62,6 +54,15 @@ These directories store model from training.
 
 ###  inoutput 
 there are many input instanced format.
+
+### Tools, Services and Framework
+- Keras, Keras Tuner and Tensorflow
+- Scikit-learn
+- Google BigQuery
+- Google cloud storage
+- Vertext-AI platform
+- Cloud function and Cloud scheduler
+- Python 3.9 on Anaconda Enviroment
 
 
 
