@@ -34,6 +34,10 @@ This project involves building multiclass classification and binary classificati
 - Store prediction result into new_result_prediction_incident table.
 - [tf1_incident_severity](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/tf1_incident_severity) is cloud function ready to deploy to google cloud converted from [prediction_serving_tf_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/prediction_serving_tf_incident.ipynb) 
 
+### [multi_explain-ai_dnn1_incident.ipynb](multi_explain-ai_dnn1_incident.ipynb)
+Register model and create Endpoint on Vertext-AI and try Vertex Explainable AI feature to gain model explanation to provide better understanding of model prediction result   as like [Introduction to Vertex Explainable AI](https://cloud.google.com/vertex-ai/docs/explainable-ai/overview)
+
+
 ### [bi_train_dnn1_bq_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/bi_train_dnn1_bq_incident.ipynb) | [bi_evaluation_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/bi_evaluation_dnn1_incident.ipynb)
 Perform the same things as   [multi_train_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/multi_train_dnn1_incident.ipynb) and  [multi_evaluation_dnn1_incident.ipynb](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/multi_evaluation_dnn1_incident.ipynb) respectively. But Use binary classification instead. 
 
@@ -42,6 +46,7 @@ Perform the same things as   [multi_train_dnn1_incident.ipynb](https://github.co
 ## Addtional Repo
 
 ### [incident_sevirity_to_class.json](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/incident_severity_to_class.json) | [incident_sevirity_to_binary.json](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/incident_severity_to_binary.json)
+### [demo_model_meta_tf_explanation_metadata.json](https://github.com/technqvi/SMart-AI/blob/main/Model-TF_Keras/DNN-1-TF-KerasProcessing/demo_model_meta_tf_explanation_metadata.json)
 
 ### demo_model |  demo_model_with_meta | model | model_binary
 These directories store model from training.
