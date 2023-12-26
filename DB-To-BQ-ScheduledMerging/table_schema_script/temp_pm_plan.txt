@@ -1,3 +1,4 @@
+temp_pm_plan
 partition : imported_at
 cluster : action
 
@@ -40,7 +41,7 @@ cluster : action
   {
     "name": "imported_at",
     "mode": "REQUIRED",
-    "type": "DATETIME",
+    "type": "TIMESTAMP",
     "description": null,
     "fields": []
   },
