@@ -1,3 +1,6 @@
+partition : imported_at
+cluster : action
+
 [
   {
     "name": "pm_id",
@@ -38,6 +41,13 @@
     "name": "imported_at",
     "mode": "REQUIRED",
     "type": "DATETIME",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "action",
+    "mode": "NULLABLE",
+    "type": "STRING",
     "description": null,
     "fields": []
   }

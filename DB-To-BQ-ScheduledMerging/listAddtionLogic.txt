@@ -1,0 +1,8 @@
+check temptable table, if it is empty, all item must be added  except deleted
+
+if no delete row, we can ignore "merge deleteDF process"
+
+
+how to handle error bigquery , if tempa table before inserting is not empty
+
+edir merge script
