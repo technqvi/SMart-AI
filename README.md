@@ -37,6 +37,8 @@ The process describes step by step aligned to the figure shown in below. Primari
 
 # Build & Tune and Evalute Model 
 
+## [DBToBQMerging](https://github.com/technqvi/SMart-AI/tree/main/DBToBQMerging)
+
 
 ## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (DNN-1-TF-KerasProcessing)
 This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, this active folder is DNN-1-TF-KerasProcessing, the others are option to show different approch  to tranform raw dataset to become proper dataset format for training model. In the part of model design , all of them use the same model,  you can go  to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
