@@ -1,31 +1,31 @@
 declare last_import timestamp ;
-declare rows_in_main int64 DEFAULT 0 ;
-declare upate_at_to_main timestamp DEFAULT CURRENT_TIMESTAMP() ;
+declare rows_in int64 DEFAULT 0 ;
+declare upate_at_to timestamp DEFAULT CURRENT_TIMESTAMP() ;
 
 
 
-set last_import =(SELECT imported_at FROM `smart-data-ml.PMReport_Temp.temp_pm_plan` LIMIT 1);
+set last_import =(SELECT imported_at FROM `smart-data-ml.SMartData_Temp.temp_pm_plan` LIMIT 1);
 
 select last_import as last_import;
 
 
 
-MERGE smart-data-ml.PMReport_Main.pm_plan AS m
+MERGE smart-data-ml.SMartDataAnalytics.pm_plan AS m
 -- Most Critical Note: all rows were returned must be unique ,if there are more than 1 row ,you must get lastest row by update_at by
-USING  (SELECT * FROM smart-data-ml.PMReport_Temp.temp_pm_plan WHERE imported_at = last_import)  AS t  
+USING  (SELECT * FROM smart-data-ml.SMartData_Temp.temp_pm_plan WHERE imported_at = last_import)  AS t  
 ON m.pm_id = t.pm_id
  
 
 WHEN MATCHED and t.action = 'deleted' THEN
-    UPDATE SET m.is_deleted =True,m.update_at=upate_at_to_main
+    UPDATE SET m.is_deleted =True,m.update_at=upate_at_to
 
 WHEN MATCHED and t.action = 'changed' THEN
   UPDATE SET m.project_id = t.project_id, m.planned_date = t.planned_date,m.ended_pm_date=t.ended_pm_date
-  ,m.team_lead = t.team_lead ,m.is_deleted =False,m.update_at=upate_at_to_main
+  ,m.pm_period=t.pm_period,m.team_lead = t.team_lead ,m.is_deleted =False,m.update_at=upate_at_to
 
 WHEN NOT MATCHED BY TARGET THEN
-  INSERT (pm_id,project_id, planned_date,ended_pm_date, team_lead,is_deleted,update_at) 
-  VALUES(t.pm_id,t.project_id, t.planned_date,t.ended_pm_date, t.team_lead,False,upate_at_to_main)
+  INSERT (pm_id,project_id, planned_date,ended_pm_date,pm_period, team_lead,is_deleted,update_at) 
+  VALUES(t.pm_id,t.project_id, t.planned_date,t.ended_pm_date,t.pm_period ,t.team_lead,False,upate_at_to)
 ;
 
-truncate table  smart-data-ml.PMReport_Temp.temp_pm_plan;
+truncate table  smart-data-ml.SMartData_Temp.temp_pm_plan;

@@ -1,7 +1,9 @@
-temp_pm_plan
-partition : imported_at
-cluster : action
+it is temp table  so no need partion
+smart-data-ml.SMartDataAnalytics_Temp
 
+temp_pm_plan
+
+cluster =action
 [
   {
     "name": "pm_id",
@@ -28,6 +30,13 @@ cluster : action
     "name": "ended_pm_date",
     "mode": "NULLABLE",
     "type": "DATE",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "pm_period",
+    "mode": "NULLABLE",
+    "type": "STRING",
     "description": null,
     "fields": []
   },

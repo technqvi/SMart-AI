@@ -1,6 +1,6 @@
 pm_plan
-partion: update_at as month
-
+partition: update_at as month
+cluster : planned_date
 [
   {
     "name": "pm_id",
@@ -27,6 +27,13 @@ partion: update_at as month
     "name": "ended_pm_date",
     "mode": "NULLABLE",
     "type": "DATE",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "pm_period",
+    "mode": "NULLABLE",
+    "type": "STRING",
     "description": null,
     "fields": []
   },
