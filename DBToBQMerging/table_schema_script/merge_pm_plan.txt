@@ -4,6 +4,7 @@
 --set last_import =(SELECT imported_at FROM `smart-data-ml.SMartData_Temp.temp_pm_plan` LIMIT 1);
 --select last_import as last_import;
 
+--only change table name 
 
 declare upate_at_to timestamp DEFAULT CURRENT_TIMESTAMP() ;
 MERGE smart-data-ml.SMartDataAnalytics.pm_plan AS m
