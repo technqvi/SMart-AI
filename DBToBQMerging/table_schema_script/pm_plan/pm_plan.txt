@@ -1,6 +1,10 @@
-pm_plan
-partition: update_at as month
-cluster : planned_date
+table name : pm_plan
+partition: planned_date
+partiion type : day
+
+
+Edit as text
+
 [
   {
     "name": "pm_id",

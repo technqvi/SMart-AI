@@ -1,10 +1,9 @@
-temp_pm_item
-
-cluster =action
-schema
+pm_item
+partition: update_at as month
+cluster: pm_id
 
 [
- {
+  {
     "name": "pm_item_id",
     "mode": "NULLABLE",
     "type": "INTEGER",
@@ -28,7 +27,7 @@ schema
   {
     "name": "pm_engineer",
     "mode": "NULLABLE",
-    "type": "INTEGER",
+    "type": "STRING",
     "description": null,
     "fields": []
   },
@@ -42,7 +41,7 @@ schema
   {
     "name": "document_engineer",
     "mode": "NULLABLE",
-    "type": "INTEGER",
+    "type": "STRING",
     "description": null,
     "fields": []
   },
@@ -62,9 +61,24 @@ schema
   }
   ,
   {
-    "name": "action",
+    "name": "is_complete",
     "mode": "NULLABLE",
-    "type": "STRING",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+{
+    "name": "is_deleted",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  }
+  ,
+  {
+    "name": "update_at",
+    "mode": "REQUIRED",
+    "type": "TIMESTAMP",
     "description": null,
     "fields": []
   }

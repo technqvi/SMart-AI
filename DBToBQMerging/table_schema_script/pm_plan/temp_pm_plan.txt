@@ -1,15 +1,12 @@
-pm_item
-partition: update_at as month
-cluster: pm_id
+it is temp table  so no need partion
+smart-data-ml.SMartDataAnalytics_Temp
+
+table : temp_pm_plan
+
+cluster =action
+schema
 
 [
-  {
-    "name": "pm_item_id",
-    "mode": "NULLABLE",
-    "type": "INTEGER",
-    "description": null,
-    "fields": []
-  },
   {
     "name": "pm_id",
     "mode": "NULLABLE",
@@ -18,52 +15,45 @@ cluster: pm_id
     "fields": []
   },
   {
-    "name": "is_pm",
-    "mode": "NULLABLE",
-    "type": "BOOLEAN",
-    "description": null,
-    "fields": []
-  },
-  {
-    "name": "pm_engineer",
+    "name": "project_id",
     "mode": "NULLABLE",
     "type": "INTEGER",
     "description": null,
     "fields": []
   },
   {
-    "name": "actual_date",
+    "name": "planned_date",
     "mode": "NULLABLE",
     "type": "DATE",
     "description": null,
     "fields": []
   },
   {
-    "name": "document_engineer",
-    "mode": "NULLABLE",
-    "type": "INTEGER",
-    "description": null,
-    "fields": []
-  },
-  {
-    "name": "document_date",
+    "name": "ended_pm_date",
     "mode": "NULLABLE",
     "type": "DATE",
     "description": null,
     "fields": []
   },
   {
-    "name": "inventory_id",
+    "name": "pm_period",
     "mode": "NULLABLE",
-    "type": "INTEGER",
+    "type": "STRING",
     "description": null,
     "fields": []
-  }
-  ,
+  },
   {
-    "name": "update_at",
-    "mode": "REQUIRED",
-    "type": "TIMESTAMP",
+    "name": "team_lead",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+
+  {
+    "name": "action",
+    "mode": "NULLABLE",
+    "type": "STRING",
     "description": null,
     "fields": []
   }
