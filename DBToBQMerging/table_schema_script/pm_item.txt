@@ -1,3 +1,7 @@
+pm_item
+partition: update_at as month
+cluster: pm_id
+
 [
   {
     "name": "pm_item_id",
@@ -57,9 +61,9 @@
   }
   ,
   {
-    "name": "imported_at",
+    "name": "update_at",
     "mode": "REQUIRED",
-    "type": "DATETIME",
+    "type": "TIMESTAMP",
     "description": null,
     "fields": []
   }
