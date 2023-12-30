@@ -3,7 +3,7 @@
 
 # # Imported Library
 
-# In[74]:
+# In[500]:
 
 
 import psycopg2
@@ -34,66 +34,75 @@ from google.oauth2 import service_account
 # pmr_inventory  = 2019-01-01 00:00:00
 
 
-# In[75]:
-
-
-is_py=True
-view_name = ""
-isFirstLoad=False
-if is_py:
-    press_Y=''
-    ok=False
-
-    if len(sys.argv) > 1:
-        view_name=sys.argv[1]
-    else:
-        print("Enter the following input: ")
-        view_name = input("View Table Name : ")
-print(f"View name to load to BQ :{view_name}")
-
+# is_py=False
+# view_name = "pmr_pm_plan"
+# isFirstLoad=False
+# if is_py:
+#     press_Y=''
+#     ok=False
+# 
+#     if len(sys.argv) > 1:
+#         view_name=sys.argv[1]
+#     else:
+#         print("Enter the following input: ")
+#         view_name = input("View Table Name : ")
+# print(f"View name to load to BQ :{view_name}")
 
 # # Imported date
 
-# In[76]:
+# In[501]:
 
 
 dt_imported=datetime.now(timezone.utc) # utc
 dt_imported=datetime.strptime(dt_imported.strftime("%Y-%m-%d %H:%M:%S"),"%Y-%m-%d %H:%M:%S")
-print(f"UTC: {dt_imported}")
+print(f"UTC: {dt_imported} For This Import")
 
 
 
-# # Set view
+# # Set view data and log table
 
-# In[77]:
+# In[502]:
 
 
 log = "models_logging_change"
-if view_name == "pmr_pm_plan":
-    content_id = 36
-    view_name_id = "pm_id"
+def get_contentID_keyName(view_name):
 
-elif view_name == "pmr_pm_item":
-    content_id = 37
-    view_name_id = "pm_item_id"
+    if view_name == "pmr_pm_plan":
+        tableContentID = 36
+        key_name = "pm_id"
+        sp="merge_pm_plan"
 
-elif view_name == "pmr_project":
-    content_id = 7
-    view_name_id = "project_id"
+    elif view_name == "pmr_pm_item":
+        tableContentID = 37
+        key_name = "pm_item_id"
+        sp="merge_pm_item"
 
-elif view_name == "pmr_inventory":
-    content_id = 14
-    view_name_id = "inventory_id"
+    elif view_name == "pmr_project":
+        tableContentID = 7
+        key_name = "project_id"
+        sp="merge_project"
 
-else:
-    raise Exception("No specified content type id")
+    elif view_name == "pmr_inventory":
+        tableContentID = 14
+        key_name = "inventory_id"
+        sp="merge_inventory"
+
+    else:
+        raise Exception("No specified content type id")
+        
+    return tableContentID, key_name,sp
+
+
+content_id , view_name_id,sp_name=get_contentID_keyName(view_name)
+print(content_id," - ",view_name_id," - ",sp_name)
 
 
 # # Set data and cofig path
 
-# In[78]:
+# In[503]:
 
 
+# test config,env file and key to be used ,all of them are existing.
 updater = ConfigUpdater()
 updater.read(".cfg")
 
@@ -101,9 +110,10 @@ env_path='.env'
 config = dotenv_values(dotenv_path=env_path)
 
 
-# In[79]:
+# In[504]:
 
 
+# test project exing
 projectId=config['PROJECT_ID']  # smart-data-ml  or kku-intern-dataai or ponthorn
 credential_file=config['PROJECT_CREDENTIAL_FILE']
 # C:\Windows\smart-data-ml-91b6f6204773.json
@@ -115,9 +125,10 @@ dataset_id='SMartData_Temp'  # 'SMartData_Temp'  'PMReport_Temp'
 main_dataset_id='SMartDataAnalytics'  # ='SMartDataAnalytics'  'PMReport_Main'
 
 
-# In[80]:
+# In[505]:
 
 
+# test exsitng dataset and table anme
 credentials = service_account.Credentials.from_service_account_file(credential_file)
 
 table_name=view_name.replace("pmr_","temp_") #can change in ("name") to temp table
@@ -138,11 +149,11 @@ client = bigquery.Client(credentials= credentials,project=projectId)
 
 # Read Configuration File and Initialize BQ Object
 
-# In[81]:
+# In[506]:
 
 
 last_imported=datetime.strptime(updater["metadata"][view_name].value,"%Y-%m-%d %H:%M:%S")
-print(f"UTC:{last_imported}")
+print(f"UTC:{last_imported}  Of Last Import")
 
 # local_zone = tz.tzlocal()
 # last_imported = last_imported.astimezone(local_zone)
@@ -151,7 +162,7 @@ print(f"UTC:{last_imported}")
 
 # # Postgres &BigQuery
 
-# In[82]:
+# In[507]:
 
 
 def get_postgres_conn():
@@ -180,7 +191,7 @@ def list_data(sql,params,connection):
  return df 
 
 
-# In[83]:
+# In[508]:
 
 
 def get_bq_table():
@@ -219,15 +230,26 @@ def insertDataFrameToBQ(df_trasns):
 
 # # Check whether it is the first loading?
 
-# In[84]:
+# In[509]:
 
 
-print("If the main table is empty , so the action of each row  must be 'added' on temp table")
-rows_iter   = client.list_rows(main_table_id, max_results=1) 
-no_main=len(list(rows_iter))
-if no_main==0:
- isFirstLoad=True
- print(f"This is the first loaing , so there is No DATA in {main_table_id}, we load all rows from {view_name} to import into {table_id} action will be 'added' ")
+def checkFirstLoad():
+    print("If the main table is empty , so the action of each row  must be 'added' on temp table")
+    rows_iter   = client.list_rows(main_table_id, max_results=1) 
+    no_main=len(list(rows_iter))
+    if no_main==0:
+     isFirstLoad=True
+     print(f"This is the first loaing , so there is No DATA in {main_table_id}, we load all rows from {view_name} to import into {table_id} action will be 'added' ")
+    else:
+     isFirstLoad=False   
+    return isFirstLoad
+
+
+# In[510]:
+
+
+isFirstLoad=checkFirstLoad()
+print(f"IsFirstLoad={isFirstLoad}")
 
 
 # # For The next Load
@@ -235,7 +257,7 @@ if no_main==0:
 # * Get all actions from log table by selecting unique object_id and setting by doing something as logic
 # * Create  id and action dataframe form filtered rows from log table
 
-# In[85]:
+# In[511]:
 
 
 def list_model_log(x_last_imported,x_content_id):
@@ -254,7 +276,7 @@ def list_model_log(x_last_imported,x_content_id):
     return lf
 
 
-# In[88]:
+# In[512]:
 
 
 def select_actual_action(lf):
@@ -289,7 +311,7 @@ def select_actual_action(lf):
     return dfUpdateData
 
 
-# In[89]:
+# In[513]:
 
 
 if isFirstLoad==False:
@@ -309,7 +331,7 @@ if isFirstLoad==False:
 
 # # Load view and transform
 
-# In[50]:
+# In[489]:
 
 
 def retrive_next_data_from_view(x_view,x_id,x_listModelLogObjectIDs):
@@ -322,7 +344,7 @@ def retrive_next_data_from_view(x_view,x_id,x_listModelLogObjectIDs):
     df=list_data(sql_view,None,get_postgres_conn())
 
     if df.empty==True:
-     return None
+     return df
     df=df.drop(columns='updated_at')
     return df 
 
@@ -332,24 +354,36 @@ def retrive_first_data_from_view(x_view,x_last_imported):
      print(sql_view)
      df=list_data(sql_view,None,get_postgres_conn())
      if df.empty==True:
-            return None
+            return df
      df=df.drop(columns='updated_at')
      df['action']='added'
      return df   
-     
+def retrive_one_row_from_view_to_gen_df_schema(x_view):
+    sql_view=f"select *  from {x_view}  limit 1"
+    print(sql_view)
+    df=list_data(sql_view,None,get_postgres_conn())
+    df=df.drop(columns='updated_at')
+    return df
 
 
 if isFirstLoad:
  df=retrive_first_data_from_view(view_name,last_imported)
-else:
- df=retrive_next_data_from_view(view_name,view_name_id,listModelLogObjectIDs)   
-    
-if df is None:
+ if df.empty==True:
     print("No row to be imported.")
     exit()
+ else:
+    print(df.info())
+else:
+ df=retrive_next_data_from_view(view_name,view_name_id,listModelLogObjectIDs)  
+ if df.empty==True:
+    print("Due to having deleted items, we will Get schema from {} to create empty dataframe with schema.")
+    df=retrive_one_row_from_view_to_gen_df_schema(view_name)
+    # this id has been included in listModelLogObjectIDs which contain deleted action , so we can use it as schema generation
+    print(df)
+
     
-print(df.info())
-df
+    
+    
 
 
 # # Data Transaformation
@@ -357,22 +391,31 @@ df
 # * IF The nextload then Merge LogDF and ViewDF and add deleted row 
 #   * Get Deleted Items  to Create deleted dataframe by using listDeleted
 #   * If there is one deletd row then  we will merge it to master dataframe
+# * IF the next load has only deleted action
 
-# In[51]:
+# In[490]:
 
 
-def add_acutal_action_to_df_at_next(df,dfUpdateData):
+def add_acutal_action_to_df_at_next(df,dfUpdateData,x_view,x_id):
+    # merget model log(id and action) to data view
+    # if  dfUpdateData  contain only deleted action
+    # we will merge to get datafdame shcema, it can perform inner without have actual data fram view
     merged_df = pd.merge(df, dfUpdateData, left_on=view_name_id, right_on='id', how='inner')
     merged_df = merged_df.drop(columns=['id'])
 
-    listSelected = df[view_name_id].tolist()
-    print(listSelected)
-
-    set1 = set(listModelLogObjectIDs)
-    set2 = set(listSelected)
-    listDeleted = list(set1.symmetric_difference(set2))
-
-    print(listDeleted)
+    listAllAction=dfUpdateData['id'].tolist()
+    print(f"List {listAllAction} all action")
+    
+    listSeleted = merged_df[view_name_id].tolist()
+    print(f"List  {x_view}   {listSeleted} from {x_view} exluding deleted action")
+    
+    allActionSet = set(listAllAction)
+    anotherSet = set(listSeleted)
+    
+    listDeleted = list(allActionSet.symmetric_difference(anotherSet))
+    print(f"List deleted {listDeleted}")
+    
+    # Test List  select by view + List deeleted = List All Action
 
     if len(listDeleted)>0:
         print("There are some deleted rows")
@@ -386,13 +429,27 @@ def add_acutal_action_to_df_at_next(df,dfUpdateData):
 
     return merged_df    
 
+
+
+
+# In[491]:
+
+
 if isFirstLoad==False:
- df=add_acutal_action_to_df_at_next(df,dfModelLog)
+ df=add_acutal_action_to_df_at_next(df,dfModelLog,view_name,view_name_id)
+
+print(df)
 
 
-# # Check duplicate ID & reset index
+# In[ ]:
 
-# In[52]:
+
+
+
+
+# # Last Step :Check duplicate ID & reset index
+
+# In[492]:
 
 
 hasDplicateIDs = df[view_name_id].duplicated().any()
@@ -408,15 +465,15 @@ print(df.info())
 print(df)
 
 
-# In[ ]:
+# In[493]:
 
 
-
+df
 
 
 # # Insert data to BQ data frame
 
-# In[18]:
+# In[494]:
 
 
 if get_bq_table():
@@ -426,14 +483,26 @@ if get_bq_table():
         raise ex
 
 
-# In[19]:
+# # Run StoreProcedure To Merge Temp&Main and Truncate Transaction 
+
+# In[499]:
+
+
+# https://cloud.google.com/bigquery/docs/transactions
+sp_id_to_invoke=f""" CALL {projectId}.{main_dataset_id}.{sp_name}() """
+print(sp_id_to_invoke)
+
+sp_job = client.query(sp_id_to_invoke)
+
+
+# In[496]:
 
 
 updater["metadata"][view_name].value=dt_imported.strftime("%Y-%m-%d %H:%M:%S")
 updater.update_file() 
 
 
-# In[20]:
+# In[497]:
 
 
 print(datetime.now(timezone.utc) )
@@ -445,11 +514,7 @@ print(datetime.now(timezone.utc) )
 
 
 
-# In[ ]:
-
-
-
-
+# 
 
 # In[ ]:
 
