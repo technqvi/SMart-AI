@@ -34,19 +34,23 @@ from google.oauth2 import service_account
 # pmr_inventory  = 2019-01-01 00:00:00
 
 
-# is_py=False
-# view_name = "pmr_pm_plan"
-# isFirstLoad=False
-# if is_py:
-#     press_Y=''
-#     ok=False
-# 
-#     if len(sys.argv) > 1:
-#         view_name=sys.argv[1]
-#     else:
-#         print("Enter the following input: ")
-#         view_name = input("View Table Name : ")
-# print(f"View name to load to BQ :{view_name}")
+# In[514]:
+
+
+is_py=True
+view_name = ""
+isFirstLoad=False
+if is_py:
+    press_Y=''
+    ok=False
+
+    if len(sys.argv) > 1:
+        view_name=sys.argv[1]
+    else:
+        print("Enter the following input: ")
+        view_name = input("View Table Name : ")
+print(f"View name to load to BQ :{view_name}")
+
 
 # # Imported date
 

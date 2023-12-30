@@ -1,33 +1,35 @@
--- old code
---declare last_import timestamp ;
---declare rows_in int64 DEFAULT 0 ;
---set last_import =(SELECT imported_at FROM `smart-data-ml.SMartData_Temp.temp_pm_plan` LIMIT 1);
---select last_import as last_import;
-
--- Most Critical Note: all rows were returned must be unique ,if there are more than 1 row ,you must get lastest row by update_at by
---USING  (SELECT * FROM smart-data-ml.SMartData_Temp.temp_pm_plan WHERE imported_at = last_import)  AS t  
-
-
---Change table name 
-
-declare upate_at_to timestamp DEFAULT CURRENT_TIMESTAMP() ;
-MERGE smart-data-ml.SMartDataAnalytics.pm_plan AS m
-
-USING smart-data-ml.SMartData_Temp.temp_pm_plan as t
-ON m.pm_id = t.pm_id
+CREATE OR REPLACE PROCEDURE `smart-data-ml.SMartDataAnalytics.merge_pm_plan`()
+OPTIONS (description="merge solution")
+BEGIN
  
+ Declare upate_at_to timestamp DEFAULT CURRENT_TIMESTAMP() ;
 
-WHEN MATCHED and t.action = 'deleted' THEN
-    UPDATE SET m.is_deleted =True,m.update_at=upate_at_to
+ BEGIN TRANSACTION;
+  
+  MERGE smart-data-ml.SMartDataAnalytics.pm_plan AS m
 
-WHEN MATCHED and t.action = 'changed' THEN
-  UPDATE SET m.project_id = t.project_id, m.planned_date = t.planned_date,m.ended_pm_date=t.ended_pm_date
-  ,m.pm_period=t.pm_period,m.team_lead = t.team_lead 
-  ,m.is_deleted =False,m.update_at=upate_at_to
+  USING smart-data-ml.SMartData_Temp.temp_pm_plan as t
+  ON m.pm_id = t.pm_id
+  
 
-WHEN NOT MATCHED BY TARGET THEN
-  INSERT (pm_id,project_id, planned_date,ended_pm_date,pm_period, team_lead,is_deleted,update_at) 
-  VALUES(t.pm_id,t.project_id, t.planned_date,t.ended_pm_date,t.pm_period ,t.team_lead,False,upate_at_to)
-;
+  WHEN MATCHED and t.action = 'deleted' THEN
+      UPDATE SET m.is_deleted =True,m.update_at=upate_at_to
 
-truncate table  smart-data-ml.SMartData_Temp.temp_pm_plan;
+  WHEN MATCHED and t.action = 'changed' THEN
+    UPDATE SET m.project_id = t.project_id, m.planned_date = t.planned_date,m.ended_pm_date=t.ended_pm_date
+    ,m.pm_period=t.pm_period,m.team_lead = t.team_lead 
+    ,m.is_deleted =False,m.update_at=upate_at_to
+
+  WHEN NOT MATCHED BY TARGET THEN
+    INSERT (pm_id,project_id, planned_date,ended_pm_date,pm_period, team_lead,is_deleted,update_at) 
+    VALUES(t.pm_id,t.project_id, t.planned_date,t.ended_pm_date,t.pm_period ,t.team_lead,False,upate_at_to)
+  ;
+
+  truncate table  smart-data-ml.SMartData_Temp.temp_pm_plan;
+ COMMIT TRANSACTION; 
+
+EXCEPTION WHEN ERROR THEN
+ select @@error.message,@@error.statement_text; 
+ ROLLBACK TRANSACTION;
+
+END;
