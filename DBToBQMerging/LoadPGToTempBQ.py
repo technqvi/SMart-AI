@@ -3,7 +3,7 @@
 
 # # Imported Library
 
-# In[500]:
+# In[516]:
 
 
 import psycopg2
@@ -34,7 +34,7 @@ from google.oauth2 import service_account
 # pmr_inventory  = 2019-01-01 00:00:00
 
 
-# In[514]:
+# In[517]:
 
 
 is_py=True
@@ -54,7 +54,7 @@ print(f"View name to load to BQ :{view_name}")
 
 # # Imported date
 
-# In[501]:
+# In[518]:
 
 
 dt_imported=datetime.now(timezone.utc) # utc
@@ -65,7 +65,7 @@ print(f"UTC: {dt_imported} For This Import")
 
 # # Set view data and log table
 
-# In[502]:
+# In[519]:
 
 
 log = "models_logging_change"
@@ -103,7 +103,7 @@ print(content_id," - ",view_name_id," - ",sp_name)
 
 # # Set data and cofig path
 
-# In[503]:
+# In[520]:
 
 
 # test config,env file and key to be used ,all of them are existing.
@@ -114,7 +114,7 @@ env_path='.env'
 config = dotenv_values(dotenv_path=env_path)
 
 
-# In[504]:
+# In[521]:
 
 
 # test project exing
@@ -129,7 +129,7 @@ dataset_id='SMartData_Temp'  # 'SMartData_Temp'  'PMReport_Temp'
 main_dataset_id='SMartDataAnalytics'  # ='SMartDataAnalytics'  'PMReport_Main'
 
 
-# In[505]:
+# In[522]:
 
 
 # test exsitng dataset and table anme
@@ -153,7 +153,7 @@ client = bigquery.Client(credentials= credentials,project=projectId)
 
 # Read Configuration File and Initialize BQ Object
 
-# In[506]:
+# In[523]:
 
 
 last_imported=datetime.strptime(updater["metadata"][view_name].value,"%Y-%m-%d %H:%M:%S")
@@ -166,7 +166,7 @@ print(f"UTC:{last_imported}  Of Last Import")
 
 # # Postgres &BigQuery
 
-# In[507]:
+# In[524]:
 
 
 def get_postgres_conn():
@@ -195,7 +195,7 @@ def list_data(sql,params,connection):
  return df 
 
 
-# In[508]:
+# In[525]:
 
 
 def get_bq_table():
@@ -234,7 +234,7 @@ def insertDataFrameToBQ(df_trasns):
 
 # # Check whether it is the first loading?
 
-# In[509]:
+# In[526]:
 
 
 def checkFirstLoad():
@@ -249,7 +249,7 @@ def checkFirstLoad():
     return isFirstLoad
 
 
-# In[510]:
+# In[527]:
 
 
 isFirstLoad=checkFirstLoad()
@@ -261,7 +261,7 @@ print(f"IsFirstLoad={isFirstLoad}")
 # * Get all actions from log table by selecting unique object_id and setting by doing something as logic
 # * Create  id and action dataframe form filtered rows from log table
 
-# In[511]:
+# In[528]:
 
 
 def list_model_log(x_last_imported,x_content_id):
@@ -280,7 +280,7 @@ def list_model_log(x_last_imported,x_content_id):
     return lf
 
 
-# In[512]:
+# In[529]:
 
 
 def select_actual_action(lf):
@@ -315,7 +315,7 @@ def select_actual_action(lf):
     return dfUpdateData
 
 
-# In[513]:
+# In[530]:
 
 
 if isFirstLoad==False:
@@ -335,7 +335,7 @@ if isFirstLoad==False:
 
 # # Load view and transform
 
-# In[489]:
+# In[531]:
 
 
 def retrive_next_data_from_view(x_view,x_id,x_listModelLogObjectIDs):
@@ -397,7 +397,7 @@ else:
 #   * If there is one deletd row then  we will merge it to master dataframe
 # * IF the next load has only deleted action
 
-# In[490]:
+# In[532]:
 
 
 def add_acutal_action_to_df_at_next(df,dfUpdateData,x_view,x_id):
@@ -436,7 +436,7 @@ def add_acutal_action_to_df_at_next(df,dfUpdateData,x_view,x_id):
 
 
 
-# In[491]:
+# In[533]:
 
 
 if isFirstLoad==False:
@@ -453,7 +453,7 @@ print(df)
 
 # # Last Step :Check duplicate ID & reset index
 
-# In[492]:
+# In[534]:
 
 
 hasDplicateIDs = df[view_name_id].duplicated().any()
@@ -469,7 +469,7 @@ print(df.info())
 print(df)
 
 
-# In[493]:
+# In[535]:
 
 
 df
@@ -477,7 +477,7 @@ df
 
 # # Insert data to BQ data frame
 
-# In[494]:
+# In[536]:
 
 
 if get_bq_table():
@@ -489,24 +489,25 @@ if get_bq_table():
 
 # # Run StoreProcedure To Merge Temp&Main and Truncate Transaction 
 
-# In[499]:
+# In[537]:
 
 
+print("# Run StoreProcedure To Merge Temp&Main and Truncate Transaction.")
 # https://cloud.google.com/bigquery/docs/transactions
-sp_id_to_invoke=f""" CALL {projectId}.{main_dataset_id}.{sp_name}() """
+sp_id_to_invoke=f""" CALL `{projectId}.{main_dataset_id}.{sp_name}`() """
 print(sp_id_to_invoke)
 
 sp_job = client.query(sp_id_to_invoke)
 
 
-# In[496]:
+# In[538]:
 
 
 updater["metadata"][view_name].value=dt_imported.strftime("%Y-%m-%d %H:%M:%S")
 updater.update_file() 
 
 
-# In[497]:
+# In[539]:
 
 
 print(datetime.now(timezone.utc) )
