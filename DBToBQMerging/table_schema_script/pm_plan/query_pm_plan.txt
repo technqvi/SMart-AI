@@ -1,0 +1,5 @@
+select count(*) from app_preventivemaintenance where updated_at>='2019-01-01 00:00:00'
+
+SELECT count(*) FROM `smart-data-ml.SMartDataAnalytics.pm_plan` WHERE  is_deleted=False
+
+SELECT count(*) FROM `pongthorn.SMartDataAnalytics.pm_plan` WHERE  is_deleted=False

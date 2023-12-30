@@ -3,7 +3,7 @@
 
 # # Imported Library
 
-# In[108]:
+# In[74]:
 
 
 import psycopg2
@@ -27,13 +27,18 @@ from google.cloud.exceptions import NotFound
 from google.api_core.exceptions import BadRequest
 from google.oauth2 import service_account
 
+# [metadata]
+# pmr_pm_plan = 2019-01-01 00:00:00
+# pmr_pm_item = 2019-01-01 00:00:00
+# pmr_project = 2019-01-01 00:00:00
+# pmr_inventory  = 2019-01-01 00:00:00
 
 
-# In[109]:
+# In[75]:
 
 
 is_py=True
-view_name = "pmr_pm_plan"
+view_name = ""
 isFirstLoad=False
 if is_py:
     press_Y=''
@@ -49,7 +54,7 @@ print(f"View name to load to BQ :{view_name}")
 
 # # Imported date
 
-# In[110]:
+# In[76]:
 
 
 dt_imported=datetime.now(timezone.utc) # utc
@@ -60,7 +65,7 @@ print(f"UTC: {dt_imported}")
 
 # # Set view
 
-# In[111]:
+# In[77]:
 
 
 log = "models_logging_change"
@@ -86,20 +91,31 @@ else:
 
 # # Set data and cofig path
 
-# In[112]:
+# In[78]:
 
 
-projectId='smart-data-ml'  # smart-data-ml  or kku-intern-dataai
-dataset_id='SMartData_Temp'  # 'SMartData_Temp'  'PMReport_Temp'
-main_dataset_id='SMartDataAnalytics'  # ='SMartDataAnalytics'  'PMReport_Main'
-credential_file=r"C:\Windows\smart-data-ml-91b6f6204773.json"  
+updater = ConfigUpdater()
+updater.read(".cfg")
+
+env_path='.env'
+config = dotenv_values(dotenv_path=env_path)
+
+
+# In[79]:
+
+
+projectId=config['PROJECT_ID']  # smart-data-ml  or kku-intern-dataai or ponthorn
+credential_file=config['PROJECT_CREDENTIAL_FILE']
 # C:\Windows\smart-data-ml-91b6f6204773.json
 # C:\Windows\kku-intern-dataai-a5449aee8483.json
+# C:\Windows\pongthorn-5decdc5124f5.json
 
 
+dataset_id='SMartData_Temp'  # 'SMartData_Temp'  'PMReport_Temp'
+main_dataset_id='SMartDataAnalytics'  # ='SMartDataAnalytics'  'PMReport_Main'
 
 
-# In[113]:
+# In[80]:
 
 
 credentials = service_account.Credentials.from_service_account_file(credential_file)
@@ -122,17 +138,7 @@ client = bigquery.Client(credentials= credentials,project=projectId)
 
 # Read Configuration File and Initialize BQ Object
 
-# In[114]:
-
-
-updater = ConfigUpdater()
-updater.read(".cfg")
-
-env_path='.env'
-config = dotenv_values(dotenv_path=env_path)
-
-
-# In[115]:
+# In[81]:
 
 
 last_imported=datetime.strptime(updater["metadata"][view_name].value,"%Y-%m-%d %H:%M:%S")
@@ -145,7 +151,7 @@ print(f"UTC:{last_imported}")
 
 # # Postgres &BigQuery
 
-# In[116]:
+# In[82]:
 
 
 def get_postgres_conn():
@@ -174,7 +180,7 @@ def list_data(sql,params,connection):
  return df 
 
 
-# In[117]:
+# In[83]:
 
 
 def get_bq_table():
@@ -213,7 +219,7 @@ def insertDataFrameToBQ(df_trasns):
 
 # # Check whether it is the first loading?
 
-# In[120]:
+# In[84]:
 
 
 print("If the main table is empty , so the action of each row  must be 'added' on temp table")
@@ -229,13 +235,14 @@ if no_main==0:
 # * Get all actions from log table by selecting unique object_id and setting by doing something as logic
 # * Create  id and action dataframe form filtered rows from log table
 
-# In[121]:
+# In[85]:
 
 
 def list_model_log(x_last_imported,x_content_id):
     sql_log = f"""
     SELECT object_id, action,TO_CHAR(date_created,'YYYY-MM-DD HH24:MI:SS') as date_created FROM {log}
-    WHERE date_created  AT time zone 'utc' >= '{x_last_imported}' AND content_type_id = {x_content_id} ORDER BY object_id, date_created
+    WHERE date_created  AT time zone 'utc' >= '{x_last_imported}' AND content_type_id = {x_content_id} 
+    ORDER BY object_id, date_created
     """
     print(sql_log)
 
@@ -247,7 +254,7 @@ def list_model_log(x_last_imported,x_content_id):
     return lf
 
 
-# In[122]:
+# In[88]:
 
 
 def select_actual_action(lf):
@@ -255,8 +262,8 @@ def select_actual_action(lf):
     listUpdateData=[]
     for id in listIDs:
         lfTemp=lf.query("object_id==@id")
-        # print(lfTemp)
-        # print("----------------------------------------------------------------")
+        print(lfTemp)
+        print("----------------------------------------------------------------")
 
 
         first_row = lfTemp.iloc[0]
@@ -282,15 +289,17 @@ def select_actual_action(lf):
     return dfUpdateData
 
 
-# In[93]:
+# In[89]:
 
 
 if isFirstLoad==False:
+    listModelLogObjectIDs=[]
     dfModelLog=list_model_log(last_imported,content_id)
     if dfModelLog.empty==True:
         print("No row to be imported.")
         exit()
     else:
+       print("Get row imported from model log to set action") 
        dfModelLog=select_actual_action( dfModelLog)
        listModelLogObjectIDs=dfModelLog['id'].tolist()
        print(dfModelLog.info())
@@ -300,31 +309,44 @@ if isFirstLoad==False:
 
 # # Load view and transform
 
-# In[94]:
+# In[50]:
 
 
-if isFirstLoad==False:
-    if len(listModelLogObjectIDs)>1:
-     sql_view=f"select *  from {view_name}  where {view_name_id} in {tuple(listModelLogObjectIDs)}"
+def retrive_next_data_from_view(x_view,x_id,x_listModelLogObjectIDs):
+    if len(x_listModelLogObjectIDs)>1:
+     sql_view=f"select *  from {x_view}  where {x_id} in {tuple(x_listModelLogObjectIDs)}"
     else:
-     sql_view=f"select *  from {view_name}  where {view_name_id} ={listModelLogObjectIDs[0]}"
-else:
-     sql_view=f"select *  from {view_name}  where  updated_at AT time zone 'utc' >= '{last_imported}'"
-        
+     sql_view=f"select *  from {x_view}  where {x_id} ={x_listModelLogObjectIDs[0]}"
+    
+    print(sql_view)
+    df=list_data(sql_view,None,get_postgres_conn())
 
-print(sql_view)
-df=list_data(sql_view,None,get_postgres_conn())
+    if df.empty==True:
+     return None
+    df=df.drop(columns='updated_at')
+    return df 
 
 
-if df.empty==True:
-    print("No row to be imported.")
-    exit()
-
-df=df.drop(columns='updated_at')
+def retrive_first_data_from_view(x_view,x_last_imported):
+     sql_view=f"select *  from {x_view}  where  updated_at AT time zone 'utc' >= '{x_last_imported}'"
+     print(sql_view)
+     df=list_data(sql_view,None,get_postgres_conn())
+     if df.empty==True:
+            return None
+     df=df.drop(columns='updated_at')
+     df['action']='added'
+     return df   
+     
 
 
 if isFirstLoad:
-    df['action']='added'
+ df=retrive_first_data_from_view(view_name,last_imported)
+else:
+ df=retrive_next_data_from_view(view_name,view_name_id,listModelLogObjectIDs)   
+    
+if df is None:
+    print("No row to be imported.")
+    exit()
     
 print(df.info())
 df
@@ -336,7 +358,7 @@ df
 #   * Get Deleted Items  to Create deleted dataframe by using listDeleted
 #   * If there is one deletd row then  we will merge it to master dataframe
 
-# In[95]:
+# In[51]:
 
 
 def add_acutal_action_to_df_at_next(df,dfUpdateData):
@@ -364,23 +386,13 @@ def add_acutal_action_to_df_at_next(df,dfUpdateData):
 
     return merged_df    
 
-
-# # Check duplicate ID
-
-# In[96]:
-
-
 if isFirstLoad==False:
  df=add_acutal_action_to_df_at_next(df,dfModelLog)
- 
-
-# merged_df['imported_at']=dt_imported
-df=df.reset_index(drop=True  )
-print(df.info())
-print(df)
 
 
-# In[97]:
+# # Check duplicate ID & reset index
+
+# In[52]:
 
 
 hasDplicateIDs = df[view_name_id].duplicated().any()
@@ -390,9 +402,21 @@ else:
  print(f"There is no duplicate {view_name_id} ID")  
 
 
+# merged_df['imported_at']=dt_imported
+df=df.reset_index(drop=True  )
+print(df.info())
+print(df)
+
+
+# In[ ]:
+
+
+
+
+
 # # Insert data to BQ data frame
 
-# In[98]:
+# In[18]:
 
 
 if get_bq_table():
@@ -402,14 +426,14 @@ if get_bq_table():
         raise ex
 
 
-# In[99]:
+# In[19]:
 
 
 updater["metadata"][view_name].value=dt_imported.strftime("%Y-%m-%d %H:%M:%S")
 updater.update_file() 
 
 
-# In[100]:
+# In[20]:
 
 
 print(datetime.now(timezone.utc) )
