@@ -1,4 +1,11 @@
+CREATE OR REPLACE PROCEDURE `smart-data-ml.SMartDataAnalytics.merge_pm_item`()
+OPTIONS (description="merge solution")
+BEGIN
+
 declare upate_at_to timestamp DEFAULT CURRENT_TIMESTAMP() ;
+
+BEGIN TRANSACTION;
+
 MERGE smart-data-ml.SMartDataAnalytics.pm_item AS m
 
 USING smart-data-ml.SMartData_Temp.temp_pm_item as t
@@ -32,3 +39,11 @@ WHEN NOT MATCHED BY TARGET THEN
 ;
 
 truncate table  smart-data-ml.SMartData_Temp.temp_pm_item;
+
+ COMMIT TRANSACTION; 
+
+EXCEPTION WHEN ERROR THEN
+ select @@error.message,@@error.statement_text; 
+ ROLLBACK TRANSACTION;
+
+END;

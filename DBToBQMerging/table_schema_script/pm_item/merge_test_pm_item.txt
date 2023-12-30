@@ -1,4 +1,11 @@
+CREATE OR REPLACE PROCEDURE `pongthorn.SMartDataAnalytics.merge_pm_item`()
+OPTIONS (description="merge solution")
+BEGIN
+
 declare upate_at_to timestamp DEFAULT CURRENT_TIMESTAMP() ;
+
+BEGIN TRANSACTION;
+
 MERGE pongthorn.SMartDataAnalytics.pm_item AS m
 
 USING pongthorn.SMartData_Temp.temp_pm_item as t
@@ -32,3 +39,11 @@ WHEN NOT MATCHED BY TARGET THEN
 ;
 
 truncate table  pongthorn.SMartData_Temp.temp_pm_item;
+
+ COMMIT TRANSACTION; 
+
+EXCEPTION WHEN ERROR THEN
+ select @@error.message,@@error.statement_text; 
+ ROLLBACK TRANSACTION;
+
+END;
