@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[151]:
 
 
 import psycopg2
@@ -34,7 +34,7 @@ from google.oauth2 import service_account
 
 # # Imported Library
 
-# In[2]:
+# In[152]:
 
 
 is_py=True
@@ -54,7 +54,7 @@ print(f"View name to load to BQ :{view_name}")
 
 # # Imported date
 
-# In[3]:
+# In[153]:
 
 
 dt_imported=datetime.now(timezone.utc) # utc
@@ -65,7 +65,7 @@ print(f"UTC: {dt_imported} For This Import")
 
 # # Set view data and log table
 
-# In[4]:
+# In[154]:
 
 
 log = "models_logging_change"
@@ -107,7 +107,7 @@ print(content_id," - ",view_name_id," - ",sp_name)
 
 # # Set data and cofig path
 
-# In[5]:
+# In[155]:
 
 
 # Test config,env file and key to be used ,all of used key  are existing.
@@ -123,7 +123,7 @@ print(env_path)
 print(cfg_path)
 
 
-# In[6]:
+# In[156]:
 
 
 # Test exsitng project dataset and table anme
@@ -158,7 +158,7 @@ client = bigquery.Client(credentials= credentials,project=projectId)
 
 # Read Configuration File and Initialize BQ Object
 
-# In[7]:
+# In[157]:
 
 
 last_imported=datetime.strptime(updater["metadata"][view_name].value,"%Y-%m-%d %H:%M:%S")
@@ -171,7 +171,7 @@ print(f"UTC:{last_imported}  Of Last Import")
 
 # # Postgres &BigQuery
 
-# In[8]:
+# In[158]:
 
 
 def get_postgres_conn():
@@ -200,7 +200,7 @@ def list_data(sql,params,connection):
  return df 
 
 
-# In[9]:
+# In[159]:
 
 
 def get_bq_table():
@@ -231,7 +231,7 @@ def insertDataFrameToBQ(df_trasns):
 
 # # Check whether it is the first loading?
 
-# In[10]:
+# In[160]:
 
 
 def checkFirstLoad():
@@ -246,7 +246,7 @@ def checkFirstLoad():
     return isFirstLoad
 
 
-# In[11]:
+# In[161]:
 
 
 isFirstLoad=checkFirstLoad()
@@ -258,7 +258,7 @@ print(f"IsFirstLoad={isFirstLoad}")
 # * Get all actions from log table by selecting unique object_id and setting by doing something as logic
 # * Create  id and action dataframe form filtered rows from log table
 
-# In[12]:
+# In[162]:
 
 
 def list_model_log(x_last_imported,x_content_id):
@@ -278,7 +278,7 @@ def list_model_log(x_last_imported,x_content_id):
     return lf
 
 
-# In[13]:
+# In[163]:
 
 
 def check_any_changes_to_collumns_view(dfAction,x_view_name,_x_key_name):
@@ -296,7 +296,7 @@ def check_any_changes_to_collumns_view(dfAction,x_view_name,_x_key_name):
     
 
 
-# In[14]:
+# In[164]:
 
 
 def select_actual_action(lf):
@@ -304,8 +304,9 @@ def select_actual_action(lf):
     listUpdateData=[]
     for id in listIDs:
         lfTemp=lf.query("object_id==@id")
+        print(f"--------------------{id}---------------------------------")
         print(lfTemp)
-        print("----------------------------------------------------------------")
+        
         
         
         # check_any_changes_to_collumns_view(lfTemp,content_id,view_name_id)
@@ -334,7 +335,7 @@ def select_actual_action(lf):
     return dfUpdateData
 
 
-# In[15]:
+# In[165]:
 
 
 if isFirstLoad==False:
@@ -354,7 +355,7 @@ if isFirstLoad==False:
 
 # # Load view and transform
 
-# In[16]:
+# In[166]:
 
 
 def retrive_next_data_from_view(x_view,x_id,x_listModelLogObjectIDs):
@@ -416,7 +417,7 @@ else:
 #   * If there is one deletd row then  we will merge it to master dataframe
 # * IF the next load has only deleted action
 
-# In[17]:
+# In[167]:
 
 
 def add_acutal_action_to_df_at_next(df,dfUpdateData,x_view,x_id):
@@ -455,7 +456,7 @@ def add_acutal_action_to_df_at_next(df,dfUpdateData,x_view,x_id):
 
 
 
-# In[18]:
+# In[168]:
 
 
 if isFirstLoad==False:
@@ -472,7 +473,7 @@ print(df)
 
 # # Last Step :Check duplicate ID & reset index
 
-# In[19]:
+# In[169]:
 
 
 hasDplicateIDs = df[view_name_id].duplicated().any()
@@ -488,7 +489,7 @@ print(df.info())
 print(df)
 
 
-# In[20]:
+# In[170]:
 
 
 df
@@ -496,7 +497,7 @@ df
 
 # # Insert data to BQ data frame
 
-# In[21]:
+# In[171]:
 
 
 if get_bq_table():
@@ -508,7 +509,7 @@ if get_bq_table():
 
 # # Run StoreProcedure To Merge Temp&Main and Truncate Transaction 
 
-# In[110]:
+# In[172]:
 
 
 print("# Run StoreProcedure To Merge Temp&Main and Truncate Transaction.")
@@ -519,14 +520,14 @@ print(sp_id_to_invoke)
 sp_job = client.query(sp_id_to_invoke)
 
 
-# In[111]:
+# In[173]:
 
 
 updater["metadata"][view_name].value=dt_imported.strftime("%Y-%m-%d %H:%M:%S")
 updater.update_file() 
 
 
-# In[112]:
+# In[174]:
 
 
 print(datetime.now(timezone.utc) )

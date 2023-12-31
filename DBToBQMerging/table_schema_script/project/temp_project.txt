@@ -1,5 +1,5 @@
-
-
+table name: temp_project
+cluster : action
 [
   {
     "name": "project_id",
@@ -57,10 +57,10 @@
     "description": null,
     "fields": []
   },
-    {
-    "name": "imported_at",
-    "mode": "REQUIRED",
-    "type": "DATETIME",
+  {
+    "name": "action",
+    "mode": "NULLABLE",
+    "type": "STRING",
     "description": null,
     "fields": []
   }
