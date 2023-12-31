@@ -1,16 +1,10 @@
-inventory
-partition : imported_at=>month
+table name inventory
+partition : update_at
+cluster:  project_id,brand,model
 
 [
   {
     "name": "inventory_id",
-    "mode": "NULLABLE",
-    "type": "INTEGER",
-    "description": null,
-    "fields": []
-  },
-  {
-    "name": "project_id",
     "mode": "NULLABLE",
     "type": "INTEGER",
     "description": null,
@@ -59,9 +53,24 @@ partition : imported_at=>month
     "fields": []
   },
   {
-    "name": "imported_at",
+    "name": "project_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+{
+    "name": "is_deleted",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  }
+  ,
+  {
+    "name": "update_at",
     "mode": "REQUIRED",
-    "type": "DATETIME",
+    "type": "TIMESTAMP",
     "description": null,
     "fields": []
   }

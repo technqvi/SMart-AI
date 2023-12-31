@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Imported Library
-
-# In[89]:
+# In[1]:
 
 
 import psycopg2
@@ -34,7 +32,9 @@ from google.oauth2 import service_account
 # pmr_inventory  = 2019-01-01 00:00:00
 
 
-# In[90]:
+# # Imported Library
+
+# In[2]:
 
 
 is_py=True
@@ -54,7 +54,7 @@ print(f"View name to load to BQ :{view_name}")
 
 # # Imported date
 
-# In[91]:
+# In[3]:
 
 
 dt_imported=datetime.now(timezone.utc) # utc
@@ -65,7 +65,7 @@ print(f"UTC: {dt_imported} For This Import")
 
 # # Set view data and log table
 
-# In[92]:
+# In[4]:
 
 
 log = "models_logging_change"
@@ -75,6 +75,8 @@ def get_contentID_keyName(view_name):
         tableContentID = 36
         key_name = "pm_id"
         sp="merge_pm_plan"
+        changed_field_mapping=['planned_date','ended_pm_date',
+                               'project_id','remark','team_lead_id']
 
     elif view_name == "pmr_pm_item":
         tableContentID = 37
@@ -90,6 +92,8 @@ def get_contentID_keyName(view_name):
         tableContentID = 14
         key_name = "inventory_id"
         sp="merge_inventory"
+        hanged_field_mapping=[
+        ]
 
     else:
         raise Exception("No specified content type id")
@@ -103,7 +107,7 @@ print(content_id," - ",view_name_id," - ",sp_name)
 
 # # Set data and cofig path
 
-# In[93]:
+# In[5]:
 
 
 # Test config,env file and key to be used ,all of used key  are existing.
@@ -119,7 +123,7 @@ print(env_path)
 print(cfg_path)
 
 
-# In[94]:
+# In[6]:
 
 
 # Test exsitng project dataset and table anme
@@ -154,7 +158,7 @@ client = bigquery.Client(credentials= credentials,project=projectId)
 
 # Read Configuration File and Initialize BQ Object
 
-# In[95]:
+# In[7]:
 
 
 last_imported=datetime.strptime(updater["metadata"][view_name].value,"%Y-%m-%d %H:%M:%S")
@@ -167,7 +171,7 @@ print(f"UTC:{last_imported}  Of Last Import")
 
 # # Postgres &BigQuery
 
-# In[96]:
+# In[8]:
 
 
 def get_postgres_conn():
@@ -196,7 +200,7 @@ def list_data(sql,params,connection):
  return df 
 
 
-# In[97]:
+# In[9]:
 
 
 def get_bq_table():
@@ -227,7 +231,7 @@ def insertDataFrameToBQ(df_trasns):
 
 # # Check whether it is the first loading?
 
-# In[98]:
+# In[10]:
 
 
 def checkFirstLoad():
@@ -242,7 +246,7 @@ def checkFirstLoad():
     return isFirstLoad
 
 
-# In[99]:
+# In[11]:
 
 
 isFirstLoad=checkFirstLoad()
@@ -254,7 +258,7 @@ print(f"IsFirstLoad={isFirstLoad}")
 # * Get all actions from log table by selecting unique object_id and setting by doing something as logic
 # * Create  id and action dataframe form filtered rows from log table
 
-# In[100]:
+# In[12]:
 
 
 def list_model_log(x_last_imported,x_content_id):
@@ -274,7 +278,7 @@ def list_model_log(x_last_imported,x_content_id):
     return lf
 
 
-# In[101]:
+# In[13]:
 
 
 def check_any_changes_to_collumns_view(dfAction,x_view_name,_x_key_name):
@@ -292,7 +296,7 @@ def check_any_changes_to_collumns_view(dfAction,x_view_name,_x_key_name):
     
 
 
-# In[102]:
+# In[14]:
 
 
 def select_actual_action(lf):
@@ -330,7 +334,7 @@ def select_actual_action(lf):
     return dfUpdateData
 
 
-# In[103]:
+# In[15]:
 
 
 if isFirstLoad==False:
@@ -350,7 +354,7 @@ if isFirstLoad==False:
 
 # # Load view and transform
 
-# In[104]:
+# In[16]:
 
 
 def retrive_next_data_from_view(x_view,x_id,x_listModelLogObjectIDs):
@@ -412,7 +416,7 @@ else:
 #   * If there is one deletd row then  we will merge it to master dataframe
 # * IF the next load has only deleted action
 
-# In[105]:
+# In[17]:
 
 
 def add_acutal_action_to_df_at_next(df,dfUpdateData,x_view,x_id):
@@ -451,7 +455,7 @@ def add_acutal_action_to_df_at_next(df,dfUpdateData,x_view,x_id):
 
 
 
-# In[106]:
+# In[18]:
 
 
 if isFirstLoad==False:
@@ -468,7 +472,7 @@ print(df)
 
 # # Last Step :Check duplicate ID & reset index
 
-# In[107]:
+# In[19]:
 
 
 hasDplicateIDs = df[view_name_id].duplicated().any()
@@ -484,7 +488,7 @@ print(df.info())
 print(df)
 
 
-# In[108]:
+# In[20]:
 
 
 df
@@ -492,7 +496,7 @@ df
 
 # # Insert data to BQ data frame
 
-# In[109]:
+# In[21]:
 
 
 if get_bq_table():
