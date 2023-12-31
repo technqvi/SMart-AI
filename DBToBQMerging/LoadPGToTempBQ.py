@@ -3,7 +3,7 @@
 
 # # Imported Library
 
-# In[516]:
+# In[89]:
 
 
 import psycopg2
@@ -34,7 +34,7 @@ from google.oauth2 import service_account
 # pmr_inventory  = 2019-01-01 00:00:00
 
 
-# In[517]:
+# In[90]:
 
 
 is_py=True
@@ -54,7 +54,7 @@ print(f"View name to load to BQ :{view_name}")
 
 # # Imported date
 
-# In[518]:
+# In[91]:
 
 
 dt_imported=datetime.now(timezone.utc) # utc
@@ -65,7 +65,7 @@ print(f"UTC: {dt_imported} For This Import")
 
 # # Set view data and log table
 
-# In[519]:
+# In[92]:
 
 
 log = "models_logging_change"
@@ -103,21 +103,27 @@ print(content_id," - ",view_name_id," - ",sp_name)
 
 # # Set data and cofig path
 
-# In[520]:
+# In[93]:
 
 
-# test config,env file and key to be used ,all of them are existing.
-updater = ConfigUpdater()
-updater.read(".cfg")
-
+# Test config,env file and key to be used ,all of used key  are existing.
+cfg_path="cfg_last_import"
 env_path='.env'
+
+updater = ConfigUpdater()
+updater.read(os.path.join(cfg_path,f"{view_name}.cfg"))
+
 config = dotenv_values(dotenv_path=env_path)
 
+print(env_path)
+print(cfg_path)
 
-# In[521]:
+
+# In[94]:
 
 
-# test project exing
+# Test exsitng project dataset and table anme
+
 projectId=config['PROJECT_ID']  # smart-data-ml  or kku-intern-dataai or ponthorn
 credential_file=config['PROJECT_CREDENTIAL_FILE']
 # C:\Windows\smart-data-ml-91b6f6204773.json
@@ -128,11 +134,6 @@ credential_file=config['PROJECT_CREDENTIAL_FILE']
 dataset_id='SMartData_Temp'  # 'SMartData_Temp'  'PMReport_Temp'
 main_dataset_id='SMartDataAnalytics'  # ='SMartDataAnalytics'  'PMReport_Main'
 
-
-# In[522]:
-
-
-# test exsitng dataset and table anme
 credentials = service_account.Credentials.from_service_account_file(credential_file)
 
 table_name=view_name.replace("pmr_","temp_") #can change in ("name") to temp table
@@ -153,7 +154,7 @@ client = bigquery.Client(credentials= credentials,project=projectId)
 
 # Read Configuration File and Initialize BQ Object
 
-# In[523]:
+# In[95]:
 
 
 last_imported=datetime.strptime(updater["metadata"][view_name].value,"%Y-%m-%d %H:%M:%S")
@@ -166,7 +167,7 @@ print(f"UTC:{last_imported}  Of Last Import")
 
 # # Postgres &BigQuery
 
-# In[524]:
+# In[96]:
 
 
 def get_postgres_conn():
@@ -195,7 +196,7 @@ def list_data(sql,params,connection):
  return df 
 
 
-# In[525]:
+# In[97]:
 
 
 def get_bq_table():
@@ -207,15 +208,7 @@ def get_bq_table():
  except NotFound:
     raise Exception("Table {} is not found.".format(table_id))
     
-def collectBQError(x_job):
- if x_job.errors is not None:
-    for error in x_job.errors:  
-      msg=f"{error['reason']} - {error['message']}"
-      listError.append([datetime.now().strftime("%Y-%m-%d %H:%M:%S"),dtStr_imported,source_name,msg])
-    if   len(listError)>0:
-     logErrorMessage(listError,False)  
 
-    
 def insertDataFrameToBQ(df_trasns):
     try:
         job_config = bigquery.LoadJobConfig(write_disposition=to_bq_mode,)
@@ -234,7 +227,7 @@ def insertDataFrameToBQ(df_trasns):
 
 # # Check whether it is the first loading?
 
-# In[526]:
+# In[98]:
 
 
 def checkFirstLoad():
@@ -249,7 +242,7 @@ def checkFirstLoad():
     return isFirstLoad
 
 
-# In[527]:
+# In[99]:
 
 
 isFirstLoad=checkFirstLoad()
@@ -261,12 +254,13 @@ print(f"IsFirstLoad={isFirstLoad}")
 # * Get all actions from log table by selecting unique object_id and setting by doing something as logic
 # * Create  id and action dataframe form filtered rows from log table
 
-# In[528]:
+# In[100]:
 
 
 def list_model_log(x_last_imported,x_content_id):
     sql_log = f"""
-    SELECT object_id, action,TO_CHAR(date_created,'YYYY-MM-DD HH24:MI:SS') as date_created FROM {log}
+    SELECT object_id, action,TO_CHAR(date_created,'YYYY-MM-DD HH24:MI:SS') as date_created ,changed_data
+    FROM {log}
     WHERE date_created  AT time zone 'utc' >= '{x_last_imported}' AND content_type_id = {x_content_id} 
     ORDER BY object_id, date_created
     """
@@ -280,7 +274,25 @@ def list_model_log(x_last_imported,x_content_id):
     return lf
 
 
-# In[529]:
+# In[101]:
+
+
+def check_any_changes_to_collumns_view(dfAction,x_view_name,_x_key_name):
+    """
+    Check dataframe from log model that contain only changed action to select changed fields on view.
+    """
+
+    listACtion=dfAction["action"].unique().tolist()
+    if len(listACtion)==1 and listACtion[0]=='changed':
+        print("###########################################################")
+        print("Process dataframe containing only all changed action")
+        print(dfAction)
+        print("###########################################################")
+    
+    
+
+
+# In[102]:
 
 
 def select_actual_action(lf):
@@ -290,6 +302,9 @@ def select_actual_action(lf):
         lfTemp=lf.query("object_id==@id")
         print(lfTemp)
         print("----------------------------------------------------------------")
+        
+        
+        # check_any_changes_to_collumns_view(lfTemp,content_id,view_name_id)
 
 
         first_row = lfTemp.iloc[0]
@@ -315,7 +330,7 @@ def select_actual_action(lf):
     return dfUpdateData
 
 
-# In[530]:
+# In[103]:
 
 
 if isFirstLoad==False:
@@ -335,7 +350,7 @@ if isFirstLoad==False:
 
 # # Load view and transform
 
-# In[531]:
+# In[104]:
 
 
 def retrive_next_data_from_view(x_view,x_id,x_listModelLogObjectIDs):
@@ -397,7 +412,7 @@ else:
 #   * If there is one deletd row then  we will merge it to master dataframe
 # * IF the next load has only deleted action
 
-# In[532]:
+# In[105]:
 
 
 def add_acutal_action_to_df_at_next(df,dfUpdateData,x_view,x_id):
@@ -436,7 +451,7 @@ def add_acutal_action_to_df_at_next(df,dfUpdateData,x_view,x_id):
 
 
 
-# In[533]:
+# In[106]:
 
 
 if isFirstLoad==False:
@@ -453,7 +468,7 @@ print(df)
 
 # # Last Step :Check duplicate ID & reset index
 
-# In[534]:
+# In[107]:
 
 
 hasDplicateIDs = df[view_name_id].duplicated().any()
@@ -469,7 +484,7 @@ print(df.info())
 print(df)
 
 
-# In[535]:
+# In[108]:
 
 
 df
@@ -477,7 +492,7 @@ df
 
 # # Insert data to BQ data frame
 
-# In[536]:
+# In[109]:
 
 
 if get_bq_table():
@@ -489,7 +504,7 @@ if get_bq_table():
 
 # # Run StoreProcedure To Merge Temp&Main and Truncate Transaction 
 
-# In[537]:
+# In[110]:
 
 
 print("# Run StoreProcedure To Merge Temp&Main and Truncate Transaction.")
@@ -500,14 +515,14 @@ print(sp_id_to_invoke)
 sp_job = client.query(sp_id_to_invoke)
 
 
-# In[538]:
+# In[111]:
 
 
 updater["metadata"][view_name].value=dt_imported.strftime("%Y-%m-%d %H:%M:%S")
 updater.update_file() 
 
 
-# In[539]:
+# In[112]:
 
 
 print(datetime.now(timezone.utc) )
