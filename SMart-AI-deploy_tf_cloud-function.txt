@@ -12,14 +12,22 @@ functions-framework --target=predict_incident_severity_by_tf
 gcloud functions deploy predict-incident-severity-by-tf  --gen2  --region=asia-southeast1  --runtime=python39   --memory=1024 --source=.      --env-vars-file .env.yaml  --trigger-http   --entry-point  predict_incident_severity_by_tf  --timeout 1200s --project smart-data-ml 
 
 
-gcloud functions deploy xgb-tf-predict-incident-severity  --gen2  --region=asia-southeast1  --runtime=python39   --memory=1024 --source=.       --trigger-http   --entry-point  xgb_tf_predict_incident_severity --timeout 1200s  --project smart-data-ml
+
 
 gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southeast1  --runtime=python39  --memory=512 --source=.  --env-vars-file .env.yaml  --trigger-http   --entry-point  load_new_incident_ml_to_bq --project smart-data-ml
 
 gcloud functions deploy load-v2-new-incident-ml-to-bq  --gen2  --region=asia-southeast1  --runtime=python39   --memory=512 --source=.       --trigger-http   --entry-point  load_v2_new_incident_ml_to_bq --timeout 1200s  --project smart-data-ml
 
 
+gcloud functions deploy xgb-tf-predict-incident-severity  --gen2  --region=asia-southeast1  --runtime=python39  --env-vars-file .env.yaml   --memory=1024 --source=.       --trigger-http   --entry-point  xgb_tf_predict_incident_severity --timeout 1200s  --project smart-data-ml
+curl -m 1210 -X POST https://asia-southeast1-pongthorn.cloudfunctions.net/xgb-tf-predict-incident-severity \
+-H "Authorization: bearer $(gcloud auth print-identity-token)" \
+-H "Content-Type: application/json" \
+-d '{
+  "MODEL_FOLDER": "binary_gbt_tf12_tuned_model_dec23",
+  "MODEL_VERSION": "v2_binary_xgb_tf12_tuned_model_dec23"
 
+}'
 
 
 trig-predict-incident-severity-by-tf
