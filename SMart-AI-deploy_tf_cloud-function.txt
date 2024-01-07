@@ -18,18 +18,77 @@ gcloud functions deploy load-new-incident-ml-to-bq  --gen2  --region=asia-southe
 
 gcloud functions deploy load-v2-new-incident-ml-to-bq  --gen2  --region=asia-southeast1  --runtime=python39   --memory=512 --source=.       --trigger-http   --entry-point  load_v2_new_incident_ml_to_bq --timeout 1200s  --project smart-data-ml
 
+==================================================================================================
 
 gcloud functions deploy xgb-tf-predict-incident-severity  --gen2  --region=asia-southeast1  --runtime=python39  --env-vars-file .env.yaml   --memory=1024 --source=.       --trigger-http   --entry-point  xgb_tf_predict_incident_severity --timeout 1200s  --project smart-data-ml
+backfill test call function
 curl -m 1210 -X POST https://asia-southeast1-pongthorn.cloudfunctions.net/xgb-tf-predict-incident-severity \
 -H "Authorization: bearer $(gcloud auth print-identity-token)" \
 -H "Content-Type: application/json" \
 -d '{
   "MODEL_FOLDER": "binary_gbt_tf12_tuned_model_dec23",
-  "MODEL_VERSION": "v2_binary_xgb_tf12_tuned_model_dec23"
+  "MODEL_VERSION": "v2_binary_xgb_tf12_tuned_model_dec23",
+  "DATE_PREDICT_FROM": "2024-01-01" 
 
 }'
+
+on production project
+
+url: https://asia-southeast1-smart-data-ml.cloudfunctions.net/xgb-tf-predict-incident-severity/
+audience:   https://asia-southeast1-smart-data-ml.cloudfunctions.net/xgb-tf-predict-incident-severity
+
+daily preditcion  on body cloud scheduler 
+V1  train data to 15July23   : new data "2023-07-16"
+{
+ "MODEL_FOLDER": "tuned_binary_xgb_tf_model",  
+ "MODEL_VERSION": "tuned_binary_xgb_tf_model_v1_t150723",  
+ "DATE_PREDICT_FROM": "2023-12-25" 
+}
+
+curl -m 1210 -X POST https://asia-southeast1-smart-data-ml.cloudfunctions.net/xgb-tf-predict-incident-severity -H "Authorization: bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json" -d '{  "MODEL_FOLDER": "tuned_binary_xgb_tf_model",  "MODEL_VERSION": "tuned_binary_xgb_tf_model_v1_t150723",  "DATE_PREDICT_FROM": "2023-12-25" }' 
+-------------------------------------------------------------
+V2  train data to Dec23  new data "2024-01-01"
+{
+  "MODEL_FOLDER": "binary_gbt_tf12_tuned_model_dec23",
+  "MODEL_VERSION": "v2_binary_xgb_tf12_tuned_model_dec23",
+  "DATE_PREDICT_FROM": "" 
+}
+
+
+curl -m 1210 -X POST https://asia-southeast1-smart-data-ml.cloudfunctions.net/xgb-tf-predict-incident-severity -H "Authorization: bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json" -d '{  "MODEL_FOLDER": "binary_gbt_tf12_tuned_model_dec23",  "MODEL_VERSION": "v2_binary_xgb_tf12_tuned_model_dec23",  "DATE_PREDICT_FROM": "2024-01-01" }'  
+
+SELECT * FROM `smart-data-ml.SMartML.new2_result_binary_prediction_incident` WHERE model_version="v2_binary_xgb_tf12_tuned_model_dec23";
+SELECT max(prediction_datetime) FROM `smart-data-ml.SMartML.new2_result_binary_prediction_incident` 
+
+
+
+select  * from  `smart-data-ml.SMartML.new2_incident` where imported_at>='2024-01-01'
+
+--delete FROM `smart-data-ml.SMartML.new2_result_binary_prediction_incident` WHERE model_version="v2_binary_xgb_tf12_tuned_model_dec23"
 
 
 trig-predict-incident-severity-by-tf
 0 2 * * *
 
+
+insert into `pongthorn.SMartML.new2_incident` values(
+10000,
+2,
+'Major',
+'24x7 4Hrs Response Time',
+'Software',
+'Incident Managment System',
+'Incident',
+'General Incident',
+8,
+'soonest',
+'2024-01-07T11:28:11.200874')
+
+
+
+
+PROJECT_ID: 'smart-data-ml'
+GS_MODEL_PATH: 'tf1-incident-smart-ml-yip'
+DATE_PREDICT_FROM: ''
+MODEL_FOLDER: 'binary_gbt_tf12_tuned_model_dec23'
+MODEL_VERSION: 'v2_binary_xgb_tf12_tuned_model_dec23'

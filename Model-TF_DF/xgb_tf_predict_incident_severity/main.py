@@ -27,17 +27,13 @@ def xgb_tf_predict_incident_severity(request):
     # # Assign Constant Variable
 
     # In[3]:
-
-
     is_evaluation=False # set False on production
-    request = None # comment on cloud function production
-
 
     # In[4]:
 
 
     projectId=os.environ.get('PROJECT_ID','pongthorn')
-    init_predict_from=os.environ.get('DATE_PREDICT_FROM','2024-01-01')    # daily predction set va lue as ''
+    init_predict_from=os.environ.get('DATE_PREDICT_FROM','')    # daily predction set va lue as ''
     gs_root_path=os.environ.get('GS_MODEL_PATH', 'demo-tf-incident-pongthorn')
     model_folder=os.environ.get('MODEL_FOLDER','binary_gbt_tf12_tuned_model_dec23' )  # the same value as .env.yaml
     model_version=os.environ.get('MODEL_VERSION','v2_binary_xgb_tf12_tuned_model_dec23')    # the same value as .env.yaml
@@ -53,13 +49,19 @@ def xgb_tf_predict_incident_severity(request):
 
     # In[5]:
 
-
-    if request is not None and request.get_json():
+    if request.get_json():
         request_json = request.get_json()
+        print("Json posted data") 
         model_folder=request_json['MODEL_FOLDER']
         model_version=request_json['MODEL_VERSION']
         print(f"Load from JSON Post - Model Folder: {model_folder}")
         print(f"Load from JSON Post - Model Version: {model_version}")
+
+        init_predict_from=request_json['DATE_PREDICT_FROM']
+        print(f"Load from JSON Post - Data to backfill prediction: {init_predict_from}")
+    else:
+        print("No Json posted data")
+
 
     model_gs_path=f"gs://{gs_root_path}/{model_folder}"
     print(f"GS Path: {model_gs_path}")
@@ -269,11 +271,7 @@ def xgb_tf_predict_incident_severity(request):
     def loadDataFrameToBQ():
         # WRITE_TRUNCATE , WRITE_APPEND
         try:
-            if init_predict_from =='':
-                job_config = bigquery.LoadJobConfig(write_disposition="WRITE_APPEND")
-            else:
-                job_config = bigquery.LoadJobConfig(write_disposition="WRITE_TRUNCATE")
-
+            job_config = bigquery.LoadJobConfig(write_disposition="WRITE_APPEND")
             job = client.load_table_from_dataframe(
                 df, predictResult_table_id, job_config=job_config
             )
