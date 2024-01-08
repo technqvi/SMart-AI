@@ -1,0 +1,13 @@
+SELECT date(CURRENT_DATETIME) as date_created, 'tuned_binary_xgb_tf_model_v1_t150723' as model_name, COUNTIF(t.pred_binary_severity=t.label_binary_severity) AS pred_right, COUNTIF(t.pred_binary_severity<>t.label_binary_severity) AS pred_wrong , count(*) as pred_all ,(COUNTIF(t.pred_binary_severity=t.label_binary_severity)/count(*)*100) as pct_acc FROM `smart-data-ml.SMartML.new2_result_binary_prediction_incident` t
+where model_version='tuned_binary_xgb_tf_model_v1_t150723';
+
+
+
+SELECT date(CURRENT_DATETIME) as date_created, 'v2_binary_xgb_tf12_tuned_model_dec23' as model_name, COUNTIF(t.pred_binary_severity=t.label_binary_severity) AS pred_right, COUNTIF(t.pred_binary_severity<>t.label_binary_severity) AS pred_wrong , count(*) as pred_all ,(COUNTIF(t.pred_binary_severity=t.label_binary_severity)/count(*)*100) as pct_acc FROM `smart-data-ml.SMartML.new2_result_binary_prediction_incident` t
+where model_version='v2_binary_xgb_tf12_tuned_model_dec23'
+
+
+job_acc2_v2Dec23_prediction_incident
+
+
+9:45 AM

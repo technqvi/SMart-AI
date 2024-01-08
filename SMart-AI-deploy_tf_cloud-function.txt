@@ -50,16 +50,16 @@ V1  train data to 15July23   : new data "2023-07-16"
 {
  "MODEL_FOLDER": "tuned_binary_xgb_tf_model",  
  "MODEL_VERSION": "tuned_binary_xgb_tf_model_v1_t150723",  
- "DATE_PREDICT_FROM": "2023-12-25" 
+ "DATE_PREDICT_FROM": "" 
 }
 
-curl -m 1210 -X POST https://asia-southeast1-smart-data-ml.cloudfunctions.net/xgb-tf-predict-incident-severity -H "Authorization: bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json" -d '{  "MODEL_FOLDER": "tuned_binary_xgb_tf_model",  "MODEL_VERSION": "tuned_binary_xgb_tf_model_v1_t150723",  "DATE_PREDICT_FROM": "2023-12-25" }' 
+curl -m 1210 -X POST https://asia-southeast1-smart-data-ml.cloudfunctions.net/xgb-tf-predict-incident-severity -H "Authorization: bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json" -d '{  "MODEL_FOLDER": "tuned_binary_xgb_tf_model",  "MODEL_VERSION": "tuned_binary_xgb_tf_model_v1_t150723",  "DATE_PREDICT_FROM": "2023-07-20" }' 
 -------------------------------------------------------------
 V2  train data to Dec23  new data "2024-01-01"
 {
   "MODEL_FOLDER": "binary_gbt_tf12_tuned_model_dec23",
   "MODEL_VERSION": "v2_binary_xgb_tf12_tuned_model_dec23",
-  "DATE_PREDICT_FROM": "2024-01-01" 
+  "DATE_PREDICT_FROM": "" 
 }
 
 
