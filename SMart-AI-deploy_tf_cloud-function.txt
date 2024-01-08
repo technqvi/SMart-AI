@@ -20,7 +20,10 @@ gcloud functions deploy load-v2-new-incident-ml-to-bq  --gen2  --region=asia-sou
 
 ==================================================================================================
 
-gcloud functions deploy xgb-tf-predict-incident-severity  --gen2  --region=asia-southeast1  --runtime=python39  --env-vars-file .env.yaml   --memory=1024 --source=.       --trigger-http   --entry-point  xgb_tf_predict_incident_severity --timeout 1200s  --project smart-data-ml
+gcloud functions deploy xgb-tf-predict-incident-severity  --gen2  --region=asia-southeast1  --runtime=python39  --env-vars-file .env.yaml   --memory=2048 --source=.       --trigger-http   --entry-point  xgb_tf_predict_incident_severity --timeout 1200s  --project smart-data-ml
+Content-Type  : application/json
+User-Agent  :  Google-Cloud-Scheduler
+
 backfill test call function
 curl -m 1210 -X POST https://asia-southeast1-pongthorn.cloudfunctions.net/xgb-tf-predict-incident-severity \
 -H "Authorization: bearer $(gcloud auth print-identity-token)" \
@@ -31,6 +34,11 @@ curl -m 1210 -X POST https://asia-southeast1-pongthorn.cloudfunctions.net/xgb-tf
   "DATE_PREDICT_FROM": "2024-01-01" 
 
 }'
+
+
+update   `smart-data-ml.SMartML.new2_result_binary_prediction_incident` 
+set prediction_datetime='2024-01-07 17:10:00',prediction_item_date='2024-01-07 00:00:00'
+where  model_version='v2_binary_xgb_tf12_tuned_model_dec23'
 
 on production project
 

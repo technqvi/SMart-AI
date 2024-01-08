@@ -10,6 +10,8 @@ from datetime import date,datetime,timedelta,timezone
 import math
 import os
 
+import json
+
 import tensorflow as tf
 import tensorflow_decision_forests as tfdf  # constantly registered to load model
 print(tf.__version__)
@@ -48,22 +50,23 @@ def xgb_tf_predict_incident_severity(request):
     # # Set and Load Configuration Data and Constant Variable
 
     # In[5]:
-    # try:
-    #     if request.get_json():
-    #         request_json = request.get_json()
-    #         print("Json posted data") 
-    #         model_folder=request_json['MODEL_FOLDER']
-    #         model_version=request_json['MODEL_VERSION']
-    #         print(f"Load from JSON Post - Model Folder: {model_folder}")
-    #         print(f"Load from JSON Post - Model Version: {model_version}")
+    try:
+        print("Get Json posted data")
+        if request.get_json():
+            request_json = request.get_json()
+            print("Json posted data") 
+            model_folder=request_json['MODEL_FOLDER']
+            model_version=request_json['MODEL_VERSION']
+            print(f"Load from JSON Post - Model Folder: {model_folder}")
+            print(f"Load from JSON Post - Model Version: {model_version}")
 
-    #         init_predict_from=request_json['DATE_PREDICT_FROM']
-    #         print(f"Load from JSON Post - Data to backfill prediction: {init_predict_from}")
-    #     else:
-    #         print("No Json posted data")
-    # except Exception as ex:
-    #     print(ex)
-    #     raise ex
+            init_predict_from=request_json['DATE_PREDICT_FROM']
+            print(f"Load from JSON Post - Data to backfill prediction: {init_predict_from}")
+        else:
+            print("No Json posted data")
+    except Exception as ex:
+        print(ex)
+        raise ex
 
     
     model_gs_path=f"gs://{gs_root_path}/{model_folder}"
