@@ -51,7 +51,7 @@ V2  train data to Dec23  new data "2024-01-01"
 {
   "MODEL_FOLDER": "binary_gbt_tf12_tuned_model_dec23",
   "MODEL_VERSION": "v2_binary_xgb_tf12_tuned_model_dec23",
-  "DATE_PREDICT_FROM": "" 
+  "DATE_PREDICT_FROM": "2024-01-01" 
 }
 
 
