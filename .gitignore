@@ -14,3 +14,9 @@ tuning
 Model-TF_DF/content_tutorial
 tsb_logs
 
+
+models
+model
+tuned_model
+modelList
+model_binary
