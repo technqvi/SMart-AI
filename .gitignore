@@ -10,6 +10,9 @@ ScriptJob/
 *.pbix
 *.vsdx
 *.ndjson
+*.csv
+*.docx
+*.xlsx
 tuning
 Model-TF_DF/content_tutorial
 tsb_logs
