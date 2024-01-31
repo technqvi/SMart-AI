@@ -37,15 +37,12 @@ The process describes step by step aligned to the figure shown in below. Primari
  - Application & Datebase : Django Web Framework  and Postgresql
 
 # Build & Tune and Evalute Model 
-
-## [DBToBQMerging](https://github.com/technqvi/SMart-AI/tree/main/DBToBQMerging)
-
+## [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) Click link to detail.
+Build Gradient Boost Model on Tensorflow Framework to predict severity level such as 1=Critical and 0=Normal.
 
 ## [Model-TF_Keras](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) (DNN-1-TF-KerasProcessing)
 This folder contain folder and file to buid machine learning wiht Tensorflow-Keras, this active folder is DNN-1-TF-KerasProcessing, the others are option to show different approch  to tranform raw dataset to become proper dataset format for training model. In the part of model design , all of them use the same model,  you can go  to  [DNN-1-TF-KerasProcessing](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_Keras/DNN-1-TF-KerasProcessing) to review detail.
 
-## [Model-TF_DF](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF) Click link to detail.
-Build Gradient Boost Model on Tensorflow Framework to predict severity level such as 1=Critical and 0=Normal.
 ## [DailyIncidentForecast](https://github.com/technqvi/SMart-AI/tree/main/DailyIncidentForecast) Click link to detail.
 Build LSTM Time Series Model by taking the number of dialy incident cases over the past 60 days to predict the number incident cases over the next 5 days. 
 
