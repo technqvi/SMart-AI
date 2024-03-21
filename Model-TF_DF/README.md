@@ -10,6 +10,7 @@
 
 ## [Overview Process](https://github.com/technqvi/SMart-AI#system-overview)
 Describe how the system work in detail on main repository ,click this link
+![image](https://github.com/technqvi/SMart-AI/assets/38780060/b5aba593-4117-4532-9a69-1605f4d0bef8)
  
 <img width="549" alt="image" src="https://github.com/technqvi/SMart-AI/assets/38780060/8856a643-f386-4a1b-9cc2-be8832c8cbb1">
 
