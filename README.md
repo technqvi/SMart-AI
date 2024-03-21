@@ -1,17 +1,16 @@
 # About
 * This project involves in building model to predict severity level of incident case  on a google cloud platform. 
 * Data for building model and feeding into the model to make prediction has been imported from SMartApp Incident System to BigQuery as DataWarehouse. 
-
-## [SMartApp Web (Django Framework)](https://github.com/technqvi/SMartApp)
-<img width="750" alt="image" src="https://github.com/technqvi/SMartApp/assets/38780060/a7c06417-2e6a-489b-be2f-574b852c967c">
+* [SMartApp Web (Django Framework)](https://github.com/technqvi/SMartApp)
 
 
-## Tutorial Youtube&GitHub: 
+## [Severity Prediction Using Gradient Boosted Tree on Tensorflow](https://github.com/technqvi/SMart-AI/tree/main/Model-TF_DF)
+### Tutorial Youtube&GitHub: 
 - [Youtube: Building Gradient Boost Tensorflow Model  on Google Data Anlystics & AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNpP1Azj4c8kkeTZ3y2gEjl)
 - [Youtube:Building Tensorflow Deep Learning Model on Google Data Analystics & Vertext-AI](https://www.youtube.com/playlist?list=PLIxgtZc_tZWNWPTeGPR5FGj_glwAOuoS7)
 - [GitHub :Source Code](https://github.com/technqvi/MyYoutube-Demo/tree/main/google_data_ai)
 
-## System Overview 
+## System Overview  
 The process describes step by step aligned to the figure shown in below. Primarily, we write script for each task and schedule it to run Windows scheduler on SMartApp-Server(on-premises) as well as cloud function/cloud scheduler services on google-cloud to execute these tasks.
 
 ![OverviewProcess](https://github.com/technqvi/SMart-AI/assets/38780060/80e2ae4c-b65b-4090-9721-1e45b94912b2)
