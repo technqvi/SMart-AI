@@ -1,0 +1,34 @@
+BQ
+# generate sql to get data  over the past 10 day by imported_at  from new2_incident table and perform lef join to new2_result_binary table using id as key to join  . additinally take as condition in whare cause  model_version=v2_binary_xgb_tf12_tuned_model_dec23  and for  label_binary_severity and pred_binary_severity columns , change  value if 1 is critical and 0=normal
+SELECT
+    t1.*,
+    CASE
+      WHEN t2.label_binary_severity = 1 THEN 'Critical'
+      ELSE 'Normal'
+    END AS label_binary_severity,
+    CASE
+      WHEN t2.pred_binary_severity = 1 THEN 'Critical'
+      ELSE 'Normal'
+    END AS pred_binary_severity
+  FROM
+    `smart-data-ml.SMartML.new2_incident` AS t1
+
+
+PG
+
+create view ml_view_incident_severity(id, incident_no, updated_at, incident_owner, company_name) as
+SELECT x.id,
+       x.incident_no,
+       x.updated_at,
+       (SELECT emp.employee_name
+        FROM app_employee emp
+        WHERE emp.id = x.incident_owner_id) AS incident_owner,
+       ac.company_name
+FROM app_incident x
+         JOIN app_inventory ai ON ai.id = x.inventory_id
+         JOIN app_project ap ON ap.id = ai.project_id
+         JOIN app_company ac ON ac.id = ap.company_id
+WHERE x.updated_at >= (now() - '12 days'::interval)
+  AND x.incident_status_id = 4;
+
+

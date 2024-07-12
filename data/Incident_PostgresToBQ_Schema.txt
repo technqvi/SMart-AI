@@ -16,12 +16,13 @@
  15  response_datetime  2195 non-null   datetime64[ns]
  16  resolved_datetime  2195 non-null   datetime64[ns]
  17  company            2195 non-null   object  
-
+ 18  case_owner         2195 non-null   object  
 
 pongthorn.SMartDW.incident
 
-partion = imported_at
-cluster =imported_at,updated_at,open_datetime,severity_id
+partition =month
+partion = open_datetime
+cluster =open_datetime,case_owner,company,severity_id
 
 
 
@@ -147,8 +148,16 @@ bigquery schema
     "description": null,
     "fields": []
   },
+
   {
     "name": "company",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "case_owner",
     "mode": "REQUIRED",
     "type": "STRING",
     "description": null,
